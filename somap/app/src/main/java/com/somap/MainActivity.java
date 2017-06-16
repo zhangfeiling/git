@@ -10,11 +10,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapView;
+
+import static com.baidu.mapapi.map.BaiduMap.MAP_TYPE_SATELLITE;
 
 public class MainActivity extends AppCompatActivity {
 
     MapView mMapView=null;
+    BaiduMap baiduMap=null;
+
     //This is a point of test.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_main);
         mMapView = (MapView)findViewById(R.id.bmapView);
+        baiduMap=mMapView.getMap();
+        baiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
     }
 
     @Override
