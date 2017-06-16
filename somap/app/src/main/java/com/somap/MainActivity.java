@@ -15,7 +15,7 @@ import com.baidu.mapapi.map.MapView;
 public class MainActivity extends AppCompatActivity {
 
     MapView mMapView=null;
-
+    //This is a point of test.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
