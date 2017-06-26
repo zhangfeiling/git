@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mMapView = (MapView)findViewById(R.id.bmapView);
         baiduMap=mMapView.getMap();
-        baiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
+        baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+        baiduMap.setBaiduHeatMapEnabled(true);
     }
 
     @Override
