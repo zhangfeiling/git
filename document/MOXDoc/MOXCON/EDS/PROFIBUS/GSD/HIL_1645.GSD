@@ -1,0 +1,148 @@
+;*************************************************************************
+;***                                                                   ***
+;***      Hilscher Gesellschaft fuer Systemautomation mbH              ***
+;***      PROFIBUS DP - Developement                                   ***
+;***      F. Faehrmann                                                 ***
+;***      D-65795 Hattersheim                                          ***
+;***      Rheinstrasse 15                                              ***
+;***      Hotline: 06190/9907-99                                       ***
+;***          Fax: 06190/9907-50                                       ***
+;***                                                                   ***
+;*************************************************************************
+;***                                                                   ***
+;***      Filename: HIL_1645.GSD                  (c) 2005             ***
+;***      GSD file version 3 from  20.05.2005                          ***
+;***                                                                   ***
+;*************************************************************************
+;
+;      ATTENTION:
+;      ==========
+;      Changes in this file can cause configuration or communicationproblems.
+;      This file is compatible to the firmware of the device.
+;
+;      Changes
+;      =======
+;
+;      20.05.05 M. Kroll
+;       - Add. DPV1 key words;
+;       - GSD_Revision from 1 to 3
+;       - Changed Hardware_Release from 1.000 to 2.000
+;       - Changed Software_Release  from 1.001 to 1.200
+;       - Changed Repeater_Ctrl_Sig from 0 to 2
+;       - Changed Revison from "Version 1.001" to "Version 2.200"
+;       - Changed Max_Lsdu_MS and Max_Lsdu_MM from 32 to 244
+;      28.01.05 B. Poertner added baud rate 45,45
+;      - Entries 45.45_supp, MaxTsdr_45.45, Trdy_45.45, Tqui_45.45, 
+;        Tset_45.45 and Tsdi_45.45 added
+;      15.10.98 H.J.
+;       - Hilscher changed name of bitmap
+;      29.06.98 F. Faehrmann
+;       -  Change entry GSD_Revision from 2 of 1
+;       -  Update entry Revision
+;      17.02.98   V1.000  F. Faehrmann
+;       -  created
+
+#Profibus_DP
+
+GSD_Revision        = 3
+Vendor_Name         = "Hilscher GmbH"
+Model_Name          = "CIF50-PB"
+Revision            = "Version 2.200"
+Ident_Number        = 0x1645
+Protocol_Ident      = 0
+Station_Type        = 1
+FMS_supp            = 1
+Hardware_Release    = "Version 2.000"
+Software_Release    = "Version 1.200"
+9.6_supp            = 1
+19.2_supp           = 1
+45.45_supp          = 1
+93.75_supp          = 1
+187.5_supp          = 1
+500_supp            = 1
+1.5M_supp           = 1
+3M_supp             = 1
+6M_supp             = 1
+12M_supp            = 1
+MaxTsdr_9.6         = 60
+MaxTsdr_19.2        = 60
+MaxTsdr_45.45       = 60
+MaxTsdr_93.75       = 60
+MaxTsdr_187.5       = 60
+MaxTsdr_500         = 100
+MaxTsdr_1.5M        = 150
+MaxTsdr_3M          = 250
+MaxTsdr_6M          = 450
+MaxTsdr_12M         = 800
+Trdy_9.6            = 10
+Trdy_19.2           = 10
+Trdy_45.45          = 10
+Trdy_93.75          = 10
+Trdy_187.5          = 10
+Trdy_500            = 10
+Trdy_1.5M           = 10
+Trdy_3M             = 10
+Trdy_6M             = 10
+Trdy_12M            = 10
+Tsdi_9.6            = 70
+Tsdi_19.2           = 70
+Tsdi_45.45          = 70
+Tsdi_93.75          = 70
+Tsdi_187.5          = 70
+Tsdi_500            = 150
+Tsdi_1.5M           = 200
+Tsdi_3M             = 250
+Tsdi_6M             = 450
+Tsdi_12M            = 800
+Tset_9.6            = 1
+Tset_19.2           = 1
+Tset_45.45          = 1
+Tset_93.75          = 1
+Tset_187.5          = 1
+Tset_500            = 1
+Tset_1.5M           = 1
+Tset_3M             = 4
+Tset_6M             = 8
+Tset_12M            = 16
+Tqui_9.6            = 0
+Tqui_19.2           = 0
+Tqui_45.45          = 0
+Tqui_93.75          = 0
+Tqui_187.5          = 0
+Tqui_500            = 0
+Tqui_1.5M           = 0
+Tqui_3M             = 3
+Tqui_6M             = 6
+Tqui_12M            = 9
+Redundancy          = 0
+Repeater_Ctrl_Sig   = 2
+24V_Pins            = 0
+Max_MPS_Length      = 100
+Max_Lsdu_MS         = 244
+Max_Lsdu_MM         = 244
+Min_Poll_Timeout    = 1
+Las_Len             = 125
+Max_Slaves_supp     = 125
+
+Bitmap_Device = "C50PB_R"
+Bitmap_Diag   = "C50PB_D"
+Bitmap_SF     = "C50PB_S"
+
+Master_Freeze_Mode_supp                 =1          ;Master supports Freeze
+Master_Sync_Mode_supp                   =1          ;Master supports Sync
+Master_Fail_Safe_supp                   =1          ;Master supports FailSafe
+DPV1_Master                             =1          ;Master supports DPV1
+DPV1_Conformance_Class                  =2          ;Conformance Class = B
+C1_Master_Read_Write_Supp               =1          ;Master supports C1 Read Write
+
+Master_DPV1_Alarm_supp                  =1          ;Master supports Alarm
+Master_Diagnostic_Alarm_supp            =1          ;Master supports Diagnostic Alarm
+Master_Process_Alarm_supp               =1          ;Master supports Process Alarm
+Master_Pull_Plug_Alarm_supp             =1          ;Master supports Pull Plug Alarm
+Master_Status_Alarm_supp                =1          ;Master supports Status Alarm
+Master_Update_Alarm_supp                =1          ;Master supports Update Alarm
+Master_Manufacturer_Specific_Alarm_supp =1          ;Master supports Manufacturer Specific Alarm
+Master_Extra_Alarm_SAP_supp             =1          ;Master supports Extra Alarm SAP 50
+Master_Alarm_Sequence_Mode              =7          ;Master supports 32 Alarms in total
+Master_Alarm_Type_Mode_supp             =1          ;Master supports Alarm Type Mode
+
