@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mMapView = (MapView)findViewById(R.id.bmapView);
         mLocationClient = new LocationClient(getApplicationContext());
-        mLocationClient.registerLocationListener(myListener);
         initLocation();
+        mLocationClient.registerLocationListener(myListener);
         baiduMap=mMapView.getMap();
         baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         baiduMap.setBaiduHeatMapEnabled(true);
