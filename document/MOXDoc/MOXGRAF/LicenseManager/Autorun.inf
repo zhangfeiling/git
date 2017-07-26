@@ -1,0 +1,6 @@
+[autorun]
+open=Setup.exe
+icon=Product.ico
+label=Install
+shell\Install\command=setup.exe
+shell\Install=&Install

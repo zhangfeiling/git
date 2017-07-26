@@ -1,0 +1,89 @@
+$****************************************************************************
+$
+$ File:   C104CNS.EDS
+$
+$ Author: Tobias Klebert, Hilscher GmbH, Hattersheim, Germany
+$         hotline@hilscher.com
+$ Date:   10.03.00
+$
+$****************************************************************************
+$
+$ ATTENTION:
+$
+$  Changes in this file can cause configuration or communication problems.
+$
+$****************************************************************************
+$
+$ Changes:
+$
+$  Version  Date       Name   Description
+$ -------------------------------------------------------------------------
+$
+$  1.2      21.11.01   kl      Changed parameter from ..1794_Discret_RTD..
+$                              to ..1794_Discrete_RTD..
+$  1.1      08.06.00   KL      Name of Param2 section changed
+$  1.0      10.03.00   KL      created
+$
+$****************************************************************************
+
+[File]
+  DescText    = "EDS-File for CIF 104-CNS";
+  CreateDate  = 03-10-2000;
+  CreateTime  = 00:00:00;
+  ModDate     = 11-21-2000;
+  ModTime     = 00:00:00;
+  Revision    = 1.2;
+
+
+[Device]
+  VendCode    = 283;
+  VendName    = "Hilscher GmbH";
+  ProdType    = 100;
+  ProdTypeStr = "Communication Adapter";
+  ProdCode    = 12;
+  MajRev      = 1;
+  MinRev      = 1;
+  ProdName    = "CIF 104-CNS";
+  Catalog     = "CIF 104-CNS";
+  Icon        = "C104CNS.ico";
+
+
+[Device Classification]
+  Class1 = ControlNet;
+
+
+[Port]
+  Port1  = ControlNet_Redundant,"Port1",
+           "20 F0 24 01",2;
+
+
+[Params]
+  Param1 = 0,,,0x0000,2,2,
+           "Assembly Output Size","","",
+           0,480,32,0,0,0,0,0,0,0,0,0;
+
+  Param2 = 0,,,0x0000,2,2,
+           "Assembly Input Size","","",
+           4,484,36,0,0,0,0,0,0,0,0,0;
+
+  Param3 = 0,,,0x0000,2,2,
+           "Assembly Input Size","","",
+           0,480,32,0,0,0,0,0,0,0,0,0;
+
+
+[Connection Manager]
+  Connection1 =
+           0x04010002,0x44240405,,Param1,,,Param2,,,,,,
+           "Data, In/Out - PLC5","Assembly Object In/Out Data",
+           "20 04 24 01 2C 02 2C 01";
+           1_PLC5C_RTD_Format1 = 1_PLC5C_1794_Discrete_RTD_Format;
+
+  Connection2 =
+           0x04010002,0x44244405,,Param1,,,Param3,,,,,,
+           "Data, In/Out - Enhanced","Assembly Object In/Out Data",
+           "20 04 24 01 2C 02 2C 01";
+
+
+$****************************************************************************
+$ EOF
+$****************************************************************************

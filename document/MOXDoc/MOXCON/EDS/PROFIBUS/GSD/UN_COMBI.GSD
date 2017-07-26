@@ -1,0 +1,119 @@
+;*************************************************************************
+;***                                                                   ***
+;***      Hilscher Gesellschaft fuer Systemautomation mbH              ***
+;***      PROFIBUS DP - Developement                                   ***
+;***      F. Faehrmann                                                 ***
+;***      D-65795 Hattersheim                                          ***
+;***      Rheinstrasse 78                                              ***
+;***      Hotline: 06190/9907-99                                       ***
+;***          Fax: 06190/9907-50                                       ***
+;***                                                                   ***
+;*************************************************************************
+;***                                                                   ***
+;***      Filename: Unknown.GSD                  (c) 1997             ***
+;***      GSD file version 1 from  21.07.1997                          ***
+;***                                                                   ***
+;*************************************************************************
+;
+;      ATTENTION:
+;      ==========
+;      Changes in this file can cause configuration or communicationproblems.
+;      This file is compatible to the firmware of the device.
+;
+;      Changes
+;      =======
+;      28.01.05 B. Poertner added baud rate 45,45
+;      - Entries 45.45_supp, MaxTsdr_45.45, Trdy_45.45, Tqui_45.45, 
+;        Tset_45.45 and Tsdi_45.45 added
+;      - Entry Revision: 'Version 1.000' -> 'Version 1.010'
+;      08.08.01   V1.001  B. Poertner
+;      - German character replaced
+;      26.05.97   V1.000  F. Faehrmann
+;      - created
+
+#Profibus_DP
+
+GSD_Revision        = 1
+Vendor_Name         = "Unknown GmbH"
+Model_Name          = "Other DP/FMS device"
+Revision            = "Version 1.010"
+Ident_Number        = 0x0000
+Protocol_Ident      = 0
+Station_Type        = 1
+FMS_supp            = 1
+Hardware_Release    = "Version 1.000"
+Software_Release    = "Version 1.000"
+9.6_supp            = 1
+19.2_supp           = 1
+45.45_supp          = 1
+93.75_supp          = 1
+187.5_supp          = 1
+500_supp            = 1
+1.5M_supp           = 1
+3M_supp             = 1
+6M_supp             = 1
+12M_supp            = 1
+MaxTsdr_9.6         = 60
+MaxTsdr_19.2        = 60
+MaxTsdr_45.45       = 60
+MaxTsdr_93.75       = 60
+MaxTsdr_187.5       = 60
+MaxTsdr_500         = 100
+MaxTsdr_1.5M        = 150
+MaxTsdr_3M          = 250
+MaxTsdr_6M          = 450
+MaxTsdr_12M         = 800
+Trdy_9.6            = 11
+Trdy_19.2           = 11
+Trdy_45.45          = 11
+Trdy_93.75          = 11
+Trdy_187.5          = 11
+Trdy_500            = 11
+Trdy_1.5M           = 11
+Trdy_3M             = 11
+Trdy_6M             = 11
+Trdy_12M            = 11
+Tsdi_9.6            = 70
+Tsdi_19.2           = 70
+Tsdi_45.45          = 70
+Tsdi_93.75          = 70
+Tsdi_187.5          = 70
+Tsdi_500            = 150
+Tsdi_1.5M           = 200
+Tsdi_3M             = 250
+Tsdi_6M             = 450
+Tsdi_12M            = 800
+Tset_9.6            = 1
+Tset_19.2           = 1
+Tset_45.45          = 1
+Tset_93.75          = 1
+Tset_187.5          = 1
+Tset_500            = 1
+Tset_1.5M           = 1
+Tset_3M             = 4
+Tset_6M             = 8
+Tset_12M            = 16
+Tqui_9.6            = 0
+Tqui_19.2           = 0
+Tqui_45.45          = 0
+Tqui_93.75          = 0
+Tqui_187.5          = 0
+Tqui_500            = 0
+Tqui_1.5M           = 0
+Tqui_3M             = 3
+Tqui_6M             = 6
+Tqui_12M            = 9
+
+Redundancy          = 0
+Repeater_Ctrl_Sig   = 0
+24V_Pins            = 0
+Max_MPS_Length      = 100
+Max_Lsdu_MS         = 32
+Max_Lsdu_MM         = 32
+Min_Poll_Timeout    = 1
+Las_Len             = 125
+Max_Slaves_supp     = 125
+
+Bitmap_Device = "UNKNO_PB"
+Bitmap_Diag   = "UNKNO_PB"
+Bitmap_SF     = "UNKNO_PB"

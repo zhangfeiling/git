@@ -1,0 +1,2487 @@
+;===============================================================================
+; 	GSD file for MOX Products PROFIBUS-DP Slave MOX-CPP
+; 	Version: 1.00.07
+;
+;===============================================================================
+;      	ATTENTION:
+;	      	Changes in this file can cause configuration or communication problems.
+;	      	This file is compatible to the firmware of the device.
+;
+;===============================================================================
+; 	History
+;	14.Feb.2011	v1.00.07	Jason Lin
+;	- Add 32DI module new PN MX603-0132-233.		
+;
+;	09.Nov.2010	v1.00.06	Jason Lin
+;	- Remove standby mode of all modeuls (bottom and front wiring).		
+;
+;	06.Jan.2010	v1.00.05	Jason Lin
+;	- Add MX603 12CH SOE(F) PN: MX603_0112_143.		
+;
+;	04.Jan.2010	v1.00.04	Jason Lin
+;	- Add MX603_12AI_4_20mA PN: MX603_0312_133.		
+;
+;	12.Nov.2008	v1.00.03	Richard Lu
+;	- Add 	failsafe for output module.		
+;
+;	26.Nov.2007	v1.00.02	Richard Lu
+;	- Add 	module MX603-0212-113 12DO(F)
+;	- Add	module MX603-0312-113 12AI(F)4-20mA
+;	- Add	module MX603-0312-123 12AI(F)1-5V
+;	- Add	module MX603-0512-823 12TC(F)
+;	- Add	module MX603-0408-123 8AO(F)
+;	- Add	module MX603-0108-173 8CNT(F)
+;	- Add	module MX603-0116-273 16DI(F)
+;	- Add	User Prm: "swap bytes"
+;
+;	18.Apr.2007	v1.00.01	Richard Lu
+;	- created
+
+;===============================================================================
+;
+;
+#Profibus_DP
+GSD_Revision = 1
+Vendor_Name = "MOX Products"
+Model_Name = "CPP MOX"
+Revision = "V1.00.05"
+Ident_Number = 0x0A5B
+Protocol_Ident = 0
+Station_Type = 0
+Hardware_Release = "V1.02"
+Software_Release = "V1.00"
+9.6_supp = 1
+19.2_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+MaxTsdr_9.6 = 60
+MaxTsdr_19.2 = 60
+MaxTsdr_93.75 = 60
+MaxTsdr_187.5 = 60
+MaxTsdr_500 = 100
+MaxTsdr_1.5M = 150
+MaxTsdr_3M = 250
+MaxTsdr_6M = 450
+MaxTsdr_12M = 800
+Implementation_Type="SPC3"
+Bitmap_Device = "CPP_Run"
+Bitmap_Diag   = "CPP_Diag"
+Bitmap_SF     = "CPP_Def"
+
+; Slave-Specification:
+OrderNumber = "MX603-3020"
+Freeze_Mode_supp = 0
+Sync_Mode_supp = 0
+Set_Slave_Add_supp = 0
+Auto_Baud_supp = 1
+Fail_safe = 0
+Min_Slave_Intervall = 5
+Max_Diag_Data_Len=32
+Max_User_Prm_Data_Len=237
+Modular_Station = 1
+Modul_Offset = 1
+Slave_Family=3
+Max_Module = 15
+Max_Input_Len=244
+Max_Output_Len=244
+Max_Data_Len=280
+;
+;================================================================
+;============ Prm-Text-Def-List =================================
+;================================================================
+;
+;Text-Reference 1
+PrmText   = 1
+Text (0)  = "Standby"
+Text (1)  = "Primary"
+EndPrmText
+;
+
+;Text-Reference 2
+PrmText   = 2
+Text (0)  = "Little Endian (LSB-MSB)"
+Text (1)  = "Big Endian (MSB-LSB)" 
+EndPrmText
+;
+
+;Text-Reference 3
+PrmText   = 3
+Text (0)  = "Disable"
+Text (1)  = "Keep Last Value"
+Text (2)  = "Output 0" 
+EndPrmText
+;
+
+;Text-Reference 101
+PrmText   = 101
+Text (1)  = "9600"
+Text (2)  = "57600"
+Text (3)  = "115200"
+Text (4)  = "230400"
+Text (5)  = "460800"
+Text (6)  = "921600"
+
+EndPrmText
+;
+;Text-Reference 102
+PrmText   = 102
+Text (0)  = "7"
+Text (1)  = "8"
+EndPrmText
+;
+;Text-Reference 103
+PrmText   = 103
+Text (0)  = "1"
+Text (1)  = "2"
+EndPrmText
+;
+;Text-Reference 104
+PrmText   = 104
+Text (0)  = "None"
+Text (1)  = "Odd"
+Text (2)  = "Even"
+EndPrmText
+;
+;Text-Reference 110
+PrmText   = 110			;TC channel type
+Text (0)  = "Type J"
+Text (1)  = "Type K"
+Text (2)  = "Type T"
+Text (3)  = "Type E"
+Text (4)  = "Type N"
+Text (5)  = "Type B"
+Text (6)  = "Type R"
+Text (7)  = "Type S"
+Text (9)  = "mV"
+Text (15) = "inactive"
+EndPrmText
+;
+;Text-Reference 111
+PrmText   = 111			;RTD sensor type
+Text (0)  = "Pt(385)100"
+Text (1)  = "Pt(385)200"
+Text (2)  = "Pt(385)500"
+Text (3)  = "Pt(385)1000"
+Text (4)  = "Cu50"
+Text (5)  = "Cu100"
+Text (6)  = "0-400 Ohm"
+Text (15) = "inactive"
+EndPrmText
+;
+;Text-Reference 112
+PrmText   = 112			;RTD wire type
+Text (0)  = "3-wire"
+Text (1)  = "4-wire"
+Text (2)  = "2-wire"
+EndPrmText
+;
+;Text-Reference 113
+PrmText   = 113			;filter times (default-50)
+Text (0)  = "0"
+Text (1)  = "5"
+Text (2)  = "10"
+Text (3)  = "20"
+Text (4)  = "30"
+Text (5)  = "40"
+Text (6)  = "50"
+EndPrmText
+;
+;Text-Reference 114
+PrmText   = 114			;TC CJ compensation
+Text (0)  = "No"
+Text (1)  = "Internal"
+EndPrmText
+;
+;Text-Reference 115
+PrmText   = 115			;TC compensation channel type
+Text (0)  = "Type J"
+Text (1)  = "Type K"
+Text (2)  = "Type T"
+Text (3)  = "Type E"
+Text (4)  = "Type N"
+Text (5)  = "Type B"
+Text (6)  = "Type R"
+Text (7)  = "Type S"
+Text (9)  = "mV"
+Text (10) = "PT(375)1000"
+Text (15) = "inactive"
+EndPrmText
+;
+;Text-Reference 121
+PrmText   = 121			;CNT Operating Mode1
+Text (0)  = "cont CT(cc)"
+Text (1)  = "period CT(pc)"
+Text (2)  = "cont quad CT(cqc)"
+Text (3)  = "period quad CT(pqc)"
+Text (4)  = "ext CT(ec)"
+Text (5)  = "FQ measure(fm)" 	
+Text (15) = "inactive"
+EndPrmText
+;
+;Text-Reference 122
+PrmText   = 122			;CNT trigger
+Text (0)  = "Rising Edge"
+Text (1)  = "Falling Edge"	
+EndPrmText
+;
+;Text-Reference 123
+PrmText   = 123			;CNT main counting direction
+Text (0)  = "Up"
+Text (1)  = "Down"	
+EndPrmText
+;
+;Text-Reference 124
+PrmText   = 124			;CNT aux logic
+Text (0)  = "0 inc. 1 dec."
+Text (1)  = "0 dec. 1 inc."	
+EndPrmText
+;
+;Text-Reference 125
+PrmText   = 125			;CNT ext logic
+Text (0)  = "0 stop 1 start"
+Text (1)  = "0 start 1 stop"	
+EndPrmText
+;
+;Text-Reference 126
+PrmText   = 126			;CNT period unit
+Text (0)  = "1ms"
+Text (1)  = "10ms"
+Text (2)  = "100ms"
+Text (3)  = "1000ms"	
+EndPrmText
+;
+;Text-Reference 127
+PrmText   = 127			;CNT gate time
+Text (1)  = "10ms"
+Text (2)  = "100ms"
+Text (3)  = "1000ms"	
+EndPrmText
+;
+;Text-Reference 128
+PrmText   = 128			;CNT fq filter
+Text (0)  = "0"
+Text (1)  = "5"
+Text (2)  = "10"
+Text (3)  = "20"	
+EndPrmText
+;
+;Text-Reference 129
+PrmText   = 129			;CNT Operating Mode2
+Text (0)  = "cont CT(cc)"
+Text (1)  = "period CT(pc)"
+Text (5)  = "FQ measure(fm)" 	
+Text (15) = "inactive"
+EndPrmText
+;
+;Text-Reference 130
+PrmText   = 130			;8CNT(F) fq filter
+Text (0)  = "0"
+Text (1)  = "5"
+Text (2)  = "10"
+Text (3)  = "15"	
+EndPrmText
+;
+;Text-Reference 131
+PrmText   = 131			;SOE chatter mode
+Text (0)  = "0"
+Text (1)  = "10"
+Text (2)  = "20"
+Text (3)  = "30"
+Text (4)  = "40"
+Text (5)  = "50"
+Text (6)  = "60"
+Text (7)  = "70"
+Text (8)  = "80"
+Text (9)  = "90"
+Text (10)  = "100"
+Text (11)  = "120"
+Text (12)  = "140"
+Text (13)  = "160"
+Text (14)  = "180"
+Text (15)  = "200"
+EndPrmText
+;
+;Text-Reference 132
+PrmText   = 132			;SOE filter or debounce time unit
+Text (0)  = "1ms"
+Text (1)  = "100ms"	
+EndPrmText
+;
+
+;Text-Reference 212
+PrmText   = 212			;filter times (default-40)
+Text (0)  = "0"
+Text (1)  = "5"
+Text (2)  = "10"
+Text (3)  = "15"
+Text (4)  = "20"
+Text (5)  = "25"
+Text (6)  = "30"
+Text (7)  = "35"
+Text (8)  = "40"
+EndPrmText
+;
+;================================================================
+;============ Ext-User_Prm-Data-Def-List ========================
+;================================================================
+;
+;BUS baudrate selection
+ExtUserPrmData = 1 "Bus Baudrate" 
+BitArea (0-2) 2 1-6              ; Default = 2, Min = 1, Max = 6
+Prm_Text_Ref = 101
+EndExtUserPrmData
+;
+
+;swap bytes
+ExtUserPrmData = 2 "Byte Order" 
+Bit (7) 0 0-1              ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 2
+EndExtUserPrmData
+;
+
+;failsafe
+ExtUserPrmData = 3 "Failsafe" 
+BitArea (5-6) 0 0-3              ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 3
+EndExtUserPrmData
+;
+
+;CPP Parameters
+ExtUserPrmData = 21 "Timeout(ms)"
+Unsigned8 200 1-255           	; Default = 200, Min = 1, Max = 255
+EndExtUserPrmData
+;
+ExtUserPrmData = 22 "Retry"               
+BitArea (0-2) 2 0-7             ; Default = 1, Min = 0, Max = 7
+EndExtUserPrmData
+;
+ExtUserPrmData = 23 "Watch Time(s)"               
+BitArea (3-7) 6 0-31            ; Default = 6, Min = 0, Max = 31
+EndExtUserPrmData
+;
+;
+;
+;IO modules Parameters(EEPROM settings)
+;
+ExtUserPrmData = 51 "Redundancy"               
+BitArea (0-1) 1 0-3               ; Default = 1, Min = 0, Max = 3
+Prm_Text_Ref = 1
+EndExtUserPrmData
+;
+ExtUserPrmData = 52 "Response Delay (ms)"               
+BitArea (4-7) 1 0-15               ; Default = 1, Min = 0, Max = 15
+EndExtUserPrmData
+;
+ExtUserPrmData = 61 "CH1 Filter Times"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 62 "CH2 Filter Times"               
+BitArea (4-7) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 63 "CH3 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 64 "CH4 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 65 "CH5 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 66 "CH6 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 67 "CH7 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 68 "CH8 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 69 "CH9 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 70 "CH10 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 71 "CH11 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 72 "CH12 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 113
+EndExtUserPrmData
+;
+ExtUserPrmData = 81 "TC CH1 Sensor Type"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 82 "TC CH2 Sensor Type"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 83 "TC CH3 Sensor Type"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 84 "TC CH4 Sensor Type"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 85 "TC CH5 Sensor Type"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 86 "TC CH6 Sensor Type"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 87 "TC CH7 Sensor Type"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 88 "TC CH8 Sensor Type"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 89 "TC CH9 Sensor Type"
+BitArea (0-3) 0 0-15		   ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 90 "TC CH10 Sensor Type"
+BitArea (4-7) 0 0-15		   ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 91 "TC CH11 Sensor Type"
+BitArea (0-3) 0 0-15		   ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 92 "TC CH12 Sensor Type"
+BitArea (4-7) 0 0-15		   ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 110
+EndExtUserPrmData
+;
+ExtUserPrmData = 101 "TC CH1 CJ Compensation"               
+BitArea (0-1) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 102 "TC CH2 CJ Compensation"               
+BitArea (2-3) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 103 "TC CH3 CJ Compensation"               
+BitArea (4-5) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 104 "TC CH4 CJ Compensation"               
+BitArea (6-7) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 105 "TC CH5 CJ Compensation"               
+BitArea (0-1) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 106 "TC CH6 CJ Compensation"               
+BitArea (2-3) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 107 "TC CH7 CJ Compensation"               
+BitArea (4-5) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 108 "TC CH8 CJ Compensation"               
+BitArea (6-7) 0 0-3               ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 114
+EndExtUserPrmData
+;
+ExtUserPrmData = 121 "RTD CH1 Sensor Type"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 122 "RTD CH2 Sensor Type"               
+BitArea (4-7) 0 0-15			; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 123 "RTD CH3 Sensor Type"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 124 "RTD CH4 Sensor Type"               
+BitArea (4-7) 0 0-15			; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 125 "RTD CH5 Sensor Type"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 126 "RTD CH6 Sensor Type"               
+BitArea (4-7) 0 0-15			; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 127 "RTD CH7 Sensor Type"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 128 "RTD CH8 Sensor Type"               
+BitArea (4-7) 0 0-15			; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 129 "RTD CH9 Sensor Type"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 130 "RTD CH10 Sensor Type"               
+BitArea (4-7) 0 0-15			; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 131 "RTD CH11 Sensor Type"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 132 "RTD CH12 Sensor Type"               
+BitArea (4-7) 0 0-15			; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 111
+EndExtUserPrmData
+;
+ExtUserPrmData = 141 "RTD CH1 Wire"               
+BitArea (0-1) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 142 "RTD CH2 Wire"               
+BitArea (2-3) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 143 "RTD CH3 Wire"               
+BitArea (4-5) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 144 "RTD CH4 Wire"               
+BitArea (6-7) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 145 "RTD CH5 Wire"               
+BitArea (0-1) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 146 "RTD CH6 Wire"               
+BitArea (2-3) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 147 "RTD CH7 Wire"               
+BitArea (4-5) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 148 "RTD CH8 Wire"               
+BitArea (6-7) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 112
+EndExtUserPrmData
+;
+ExtUserPrmData = 161 "CH1 Operate Mode"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 121
+EndExtUserPrmData
+;
+ExtUserPrmData = 162 "CH2 Operate Mode"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 121
+EndExtUserPrmData
+;
+ExtUserPrmData = 163 "CH3 Operate Mode"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 121
+EndExtUserPrmData
+;
+ExtUserPrmData = 164 "CH4 Operate Mode"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 121
+EndExtUserPrmData
+;
+ExtUserPrmData = 165 "CH5 Operate Mode"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 121
+EndExtUserPrmData
+;
+ExtUserPrmData = 166 "CH6 Operate Mode"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 129
+EndExtUserPrmData
+;
+ExtUserPrmData = 167 "CH7 Operate Mode"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 121
+EndExtUserPrmData
+;
+ExtUserPrmData = 168 "CH8 Operate Mode"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 129
+EndExtUserPrmData
+;
+ExtUserPrmData = 169 "CH2 Operate Mode"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 129
+EndExtUserPrmData
+;
+ExtUserPrmData = 170 "CH4 Operate Mode"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 129
+EndExtUserPrmData
+;
+ExtUserPrmData = 171 "CH1 Trigger"               
+Bit (0) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 172 "CH2 Trigger"               
+Bit (1) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 173 "CH3 Trigger"               
+Bit (2) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 174 "CH4 Trigger"               
+Bit (3) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 175 "CH5 Trigger"               
+Bit (4) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 176 "CH6 Trigger"               
+Bit (5) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 177 "CH7 Trigger"               
+Bit (6) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+ExtUserPrmData = 178 "CH8 Trigger"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 122
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 181 "CH1 Counting Dir(cc/pc/ec)"               
+Bit (0) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 182 "CH2 Counting Dir(cc/pc/ec)"               
+Bit (1) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 183 "CH3 Counting Dir(cc/pc/ec)"               
+Bit (2) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 184 "CH4 Counting Dir(cc/pc/ec)"               
+Bit (3) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 185 "CH5 Counting Dir(cc/pc/ec)"               
+Bit (4) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 186 "CH6 Counting Dir(cc/pc/ec)"               
+Bit (5) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 187 "CH7 Counting Dir(cc/pc/ec)"               
+Bit (6) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+ExtUserPrmData = 188 "CH8 Counting Dir(cc/pc/ec)"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 123
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 191 "CH1 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (0) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 192 "CH2 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (1) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 193 "CH3 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (2) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 194 "CH4 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (3) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 195 "CH5 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (4) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 196 "CH6 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (5) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 197 "CH7 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (6) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+ExtUserPrmData = 198 "CH8 Quad CT Aux.Logic(cqc/pqc)"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 124
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 201 "CH1 Ext Stop/Start Logic(ec)"               
+Bit (0) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 202 "CH2 Ext Stop/Start Logic(ec)"               
+Bit (1) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 203 "CH3 Ext Stop/Start Logic(ec)"               
+Bit (2) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 204 "CH4 Ext Stop/Start Logic(ec)"               
+Bit (3) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 205 "CH5 Ext Stop/Start Logic(ec)"               
+Bit (4) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 206 "CH6 Ext Stop/Start Logic(ec)"               
+Bit (5) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 207 "CH7 Ext Stop/Start Logic(ec)"               
+Bit (6) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+ExtUserPrmData = 208 "CH8 Ext Stop/Start Logic(ec)"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 125
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 211 "CH1 Period Unit(pc/pqc)"               
+BitArea (0-1) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 212 "CH2 Period Unit(pc/pqc)"               
+BitArea (2-3) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 213 "CH3 Period Unit(pc/pqc)"               
+BitArea (4-5) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 214 "CH4 Period Unit(pc/pqc)"               
+BitArea (6-7) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 215 "CH5 Period Unit(pc/pqc)"               
+BitArea (0-1) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 216 "CH6 Period Unit(pc/pqc)"               
+BitArea (2-3) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 217 "CH7 Period Unit(pc/pqc)"               
+BitArea (4-5) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+ExtUserPrmData = 218 "CH8 Period Unit(pc/pqc)"               
+BitArea (6-7) 3 0-3             ; Default = 3, Min = 0, Max = 3
+Prm_Text_Ref = 126
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 221 "CH1 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 222 "CH2 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 223 "CH3 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 224 "CH4 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 225 "CH5 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 226 "CH6 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 227 "CH7 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+ExtUserPrmData = 228 "CH8 Period Length(pc/pqc)"               
+Unsigned8 1 1-250                  ; Default = 1, Min = 1, Max = 250
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 231 "CH1 Gate Time(fm)"               
+BitArea (0-1) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 232 "CH2 Gate Time(fm)"               
+BitArea (2-3) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 233 "CH3 Gate Time(fm)"               
+BitArea (4-5) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 234 "CH4 Gate Time(fm)"               
+BitArea (6-7) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 235 "CH5 Gate Time(fm)"               
+BitArea (0-1) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 236 "CH6 Gate Time(fm)"               
+BitArea (2-3) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 237 "CH7 Gate Time(fm)"               
+BitArea (4-5) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+ExtUserPrmData = 238 "CH8 Gate Time(fm)"               
+BitArea (6-7) 3 1-3             ; Default = 3, Min = 1, Max = 3
+Prm_Text_Ref = 127
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 241 "CH1 Filter(fm)"               
+BitArea (0-1) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 242 "CH2 Filter(fm)"               
+BitArea (2-3) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 243 "CH3 Filter(fm)"               
+BitArea (4-5) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 244 "CH4 Filter(fm)"               
+BitArea (6-7) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 245 "CH5 Filter(fm)"               
+BitArea (0-1) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 246 "CH6 Filter(fm)"               
+BitArea (2-3) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 247 "CH7 Filter(fm)"               
+BitArea (4-5) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+ExtUserPrmData = 248 "CH8 Filter(fm)"               
+BitArea (6-7) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 128
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 251 "CH1 Filter(fm)"               
+BitArea (0-1) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 252 "CH2 Filter(fm)"               
+BitArea (2-3) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 253 "CH3 Filter(fm)"               
+BitArea (4-5) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 254 "CH4 Filter(fm)"               
+BitArea (6-7) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 255 "CH5 Filter(fm)"               
+BitArea (0-1) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 256 "CH6 Filter(fm)"               
+BitArea (2-3) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 257 "CH7 Filter(fm)"               
+BitArea (4-5) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+ExtUserPrmData = 258 "CH8 Filter(fm)"               
+BitArea (6-7) 0 0-3             ; Default = 0, Min = 0, Max = 3
+Prm_Text_Ref = 130
+EndExtUserPrmData
+;
+
+ExtUserPrmData = 301 "CH1 Chatter Mode Count"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 302 "CH2 Chatter Mode Count"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 303 "CH3 Chatter Mode Count"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 304 "CH4 Chatter Mode Count"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 305 "CH5 Chatter Mode Count"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 306 "CH6 Chatter Mode Count"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 307 "CH7 Chatter Mode Count"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 308 "CH8 Chatter Mode Count"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 309 "CH9 Chatter Mode Count"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 310 "CH10 Chatter Mode Count"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 311 "CH11 Chatter Mode Count"               
+BitArea (0-3) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 312 "CH12 Chatter Mode Count"               
+BitArea (4-7) 0 0-15             ; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 131
+EndExtUserPrmData
+;
+ExtUserPrmData = 321 "CH1 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 322 "CH2 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 323 "CH3 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 324 "CH4 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 325 "CH5 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 326 "CH6 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 327 "CH7 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 328 "CH8 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 329 "CH9 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 330 "CH10 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 331 "CH11 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 332 "CH12 Filter Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 341 "CH1 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 342 "CH2 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 343 "CH3 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 344 "CH4 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 345 "CH5 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 346 "CH6 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 347 "CH7 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 348 "CH8 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 349 "CH9 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 350 "CH10 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 351 "CH11 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 352 "CH12 Filter Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 361 "CH1 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 362 "CH2 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 363 "CH3 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 364 "CH4 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 365 "CH5 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 366 "CH6 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 367 "CH7 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 368 "CH8 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 369 "CH9 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 370 "CH10 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 371 "CH11 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 372 "CH12 Debounce Unit"               
+Bit (7) 0 0-1             ; Default = 0, Min = 0, Max = 1
+Prm_Text_Ref = 132
+EndExtUserPrmData
+;
+ExtUserPrmData = 381 "CH1 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 382 "CH2 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 383 "CH3 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 384 "CH4 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 385 "CH5 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 386 "CH6 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 387 "CH7 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 388 "CH8 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 389 "CH9 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 390 "CH10 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 391 "CH11 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 392 "CH12 Debounce Length"               
+BitArea (0-6) 3 0-100                  ; Default = 3, Min = 0, Max = 100
+EndExtUserPrmData
+;
+ExtUserPrmData = 400 "TC CH1 Sensor Type(Compen.)"
+BitArea (0-3) 0 0-15		   	; Default = 0, Min = 0, Max = 15
+Prm_Text_Ref = 115
+EndExtUserPrmData
+;
+
+;0--40 default 5 for 8TC module
+ExtUserPrmData = 401 "CH1 Filter Times"               
+BitArea (0-3) 1 0-15              ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 402 "CH2 Filter Times"               
+BitArea (4-7) 1 0-15              ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 403 "CH3 Filter Times"               
+BitArea (0-3) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 404 "CH4 Filter Times"               
+BitArea (4-7) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 405 "CH5 Filter Times"               
+BitArea (0-3) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 406 "CH6 Filter Times"               
+BitArea (4-7) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 407 "CH7 Filter Times"               
+BitArea (0-3) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 408 "CH8 Filter Times"               
+BitArea (4-7) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 409 "CH9 Filter Times"               
+BitArea (0-3) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 410 "CH10 Filter Times"               
+BitArea (4-7) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 411 "CH11 Filter Times"               
+BitArea (0-3) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 412 "CH12 Filter Times"               
+BitArea (4-7) 1 0-15               ; Default = 1, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+
+;0--40 Default 0 for 8AI,12RTD module
+ExtUserPrmData = 441 "CH1 Filter Times"               
+BitArea (0-3) 0 0-15              ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 442 "CH2 Filter Times"               
+BitArea (4-7) 0 0-15              ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 443 "CH3 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 444 "CH4 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 445 "CH5 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 446 "CH6 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 447 "CH7 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 448 "CH8 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 449 "CH9 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 450 "CH10 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 451 "CH11 Filter Times"               
+BitArea (0-3) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 452 "CH12 Filter Times"               
+BitArea (4-7) 0 0-15               ; Default = 0, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+
+;0--40 Default 20 for RTD module
+ExtUserPrmData = 481 "CH1 Filter Times"               
+BitArea (0-3) 4 0-15              ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 482 "CH2 Filter Times"               
+BitArea (4-7) 4 0-15              ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 483 "CH3 Filter Times"               
+BitArea (0-3) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 484 "CH4 Filter Times"               
+BitArea (4-7) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 485 "CH5 Filter Times"               
+BitArea (0-3) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 486 "CH6 Filter Times"               
+BitArea (4-7) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 487 "CH7 Filter Times"               
+BitArea (0-3) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 488 "CH8 Filter Times"               
+BitArea (4-7) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+ExtUserPrmData = 489 "CH9 Filter Times"               
+BitArea (0-3) 4 0-15               ; Default = 4, Min = 0, Max = 8
+Prm_Text_Ref = 212
+EndExtUserPrmData
+;
+
+;=============================================================================	
+; MoxCPP Specific Diagnosis 	
+;=============================================================================	
+; MoxCPP working status
+Unit_Diag_Area = 4-7
+Value(0) = "no error"
+Value(11) = "version error"
+Value(12) = "CFG error"
+Value(13) = "PRM error"
+Unit_Diag_Area_End	
+
+; Slot 0	
+Unit_Diag_Area = 8-11	
+Value(0) = "empty	Module NO. 0"
+Value(1) = "wrong prm	Module NO. 0"
+Value(2) = "wrong cfg	Module NO. 0"
+Value(3) = "ch. error	Module NO. 0"
+Value(10) = "timeout	Module NO. 0"	
+Value(11) = "offline	Module NO. 0"	
+Value(12) = "online	Module NO. 0"
+Value(13) = "type error Module NO. 0"
+Value(14) = "added new	Module NO. 0"
+Value(15) = "working	Module NO. 0"	
+Unit_Diag_Area_End
+
+; Slot 1	
+Unit_Diag_Area = 12-15	
+Value(0) = "empty	Module NO. 1"
+Value(1) = "wrong prm	Module NO. 1"
+Value(2) = "wrong cfg	Module NO. 1"
+Value(3) = "ch. error	Module NO. 1"
+Value(10) = "timeout	Module NO. 1"	
+Value(11) = "offline	Module NO. 1"	
+Value(12) = "online	Module NO. 1"
+Value(13) = "type error Module NO. 1"
+Value(14) = "added new	Module NO. 1"
+Value(15) = "working	Module NO. 1"	
+Unit_Diag_Area_End	
+	
+; Slot 2	
+Unit_Diag_Area = 16-19	
+Value(0) = "empty	Module NO. 2"
+Value(1) = "wrong prm	Module NO. 2"
+Value(2) = "wrong cfg	Module NO. 2"
+Value(3) = "ch. error	Module NO. 2"
+Value(10) = "timeout	Module NO. 2"	
+Value(11) = "offline	Module NO. 2"	
+Value(12) = "online	Module NO. 2"
+Value(13) = "type error Module NO. 2"
+Value(14) = "added new	Module NO. 2"
+Value(15) = "working	Module NO. 2"	
+Unit_Diag_Area_End	
+	
+; Slot 3	
+Unit_Diag_Area = 20-23	
+Value(0) = "empty	Module NO. 3"
+Value(1) = "wrong prm	Module NO. 3"
+Value(2) = "wrong cfg	Module NO. 3"
+Value(3) = "ch. error	Module NO. 3"
+Value(10) = "timeout	Module NO. 3"	
+Value(11) = "offline	Module NO. 3"
+Value(12) = "online	Module NO. 3"
+Value(13) = "type error Module NO. 3"
+Value(14) = "added new	Module NO. 3"	
+Value(15) = "working	Module NO. 3"	
+Unit_Diag_Area_End	
+	
+; Slot 4	
+Unit_Diag_Area = 24-27	
+Value(0) = "empty	Module NO. 4"
+Value(1) = "wrong prm	Module NO. 4"
+Value(2) = "wrong cfg	Module NO. 4"
+Value(3) = "ch. error	Module NO. 4"
+Value(10) = "timeout	Module NO. 4"	
+Value(11) = "offline	Module NO. 4"	
+Value(12) = "online	Module NO. 4"
+Value(13) = "type error Module NO. 4"
+Value(14) = "added new	Module NO. 4"
+Value(15) = "working	Module NO. 4"	
+Unit_Diag_Area_End
+	
+; Slot 5	
+Unit_Diag_Area = 28-31	
+Value(0) = "empty	Module NO. 5"
+Value(1) = "wrong prm	Module NO. 5"
+Value(2) = "wrong cfg	Module NO. 5"
+Value(3) = "ch. error	Module NO. 5"
+Value(10) = "timeout	Module NO. 5"	
+Value(11) = "offline	Module NO. 5"
+Value(12) = "online	Module NO. 5"
+Value(13) = "type error Module NO. 5"
+Value(14) = "added new	Module NO. 5"	
+Value(15) = "working	Module NO. 5"	
+Unit_Diag_Area_End	
+	
+; Slot 6	
+Unit_Diag_Area = 32-35	
+Value(0) = "empty	Module NO. 6"
+Value(1) = "wrong prm	Module NO. 6"
+Value(2) = "wrong cfg	Module NO. 6"
+Value(3) = "ch. error	Module NO. 6"
+Value(10) = "timeout	Module NO. 6"	
+Value(11) = "offline	Module NO. 6"
+Value(12) = "online	Module NO. 6"
+Value(13) = "type error Module NO. 6"
+Value(14) = "added new	Module NO. 6"	
+Value(15) = "working	Module NO. 6"	
+Unit_Diag_Area_End	
+	
+; Slot 7	
+Unit_Diag_Area = 36-39	
+Value(0) = "empty	Module NO. 7"
+Value(1) = "wrong prm	Module NO. 7"
+Value(2) = "wrong cfg	Module NO. 7"
+Value(3) = "ch. error	Module NO. 7"
+Value(10) = "timeout	Module NO. 7"	
+Value(11) = "offline	Module NO. 7"	
+Value(12) = "online	Module NO. 7"
+Value(13) = "type error Module NO. 7"
+Value(14) = "added new	Module NO. 7"
+Value(15) = "working	Module NO. 7"	
+Unit_Diag_Area_End	
+	
+; Slot 8	
+Unit_Diag_Area = 40-43	
+Value(0) = "empty	Module NO. 8"
+Value(1) = "wrong prm	Module NO. 8"
+Value(2) = "wrong cfg	Module NO. 8"
+Value(3) = "ch. error	Module NO. 8"
+Value(10) = "timeout	Module NO. 8"	
+Value(11) = "offline	Module NO. 8"	
+Value(12) = "online	Module NO. 8"
+Value(13) = "type error Module NO. 8"
+Value(14) = "added new	Module NO. 8"
+Value(15) = "working	Module NO. 8"	
+Unit_Diag_Area_End	
+	
+; Slot 9	
+Unit_Diag_Area = 44-47	
+Value(0) = "empty	Module NO. 9"
+Value(1) = "wrong prm	Module NO. 9"
+Value(2) = "wrong cfg	Module NO. 9"
+Value(3) = "ch. error	Module NO. 9"
+Value(10) = "timeout	Module NO. 9"	
+Value(11) = "offline	Module NO. 9"
+Value(12) = "online	Module NO. 9"
+Value(13) = "type error Module NO. 9"
+Value(14) = "added new	Module NO. 9"	
+Value(15) = "working	Module NO. 9"	
+Unit_Diag_Area_End
+	
+; Slot 10	
+Unit_Diag_Area = 48-51	
+Value(0) = "empty	Module NO. 10"
+Value(1) = "wrong prm	Module NO. 10"
+Value(2) = "wrong cfg	Module NO. 10"
+Value(3) = "ch. error	Module NO. 10"
+Value(10) = "timeout	Module NO. 10"	
+Value(11) = "offline	Module NO. 10"	
+Value(12) = "online	Module NO. 10"
+Value(13) = "type error Module NO. 10"
+Value(14) = "added new	Module NO. 10"
+Value(15) = "working	Module NO. 10"	
+Unit_Diag_Area_End	
+	
+; Slot 11	
+Unit_Diag_Area = 52-55	
+Value(0) = "empty	Module NO. 11"
+Value(1) = "wrong prm	Module NO. 11"
+Value(2) = "wrong cfg	Module NO. 11"
+Value(3) = "ch. error	Module NO. 11"
+Value(10) = "timeout	Module NO. 11"	
+Value(11) = "offline	Module NO. 11"	
+Value(12) = "online	Module NO. 11"
+Value(13) = "type error Module NO. 11"
+Value(14) = "added new	Module NO. 11"
+Value(15) = "working	Module NO. 11"	
+Unit_Diag_Area_End	
+	
+; Slot 12	
+Unit_Diag_Area = 56-59	
+Value(0) = "empty	Module NO. 12"
+Value(1) = "wrong prm	Module NO. 12"
+Value(2) = "wrong cfg	Module NO. 12"
+Value(3) = "ch. error	Module NO. 12"
+Value(10) = "timeout	Module NO. 12"	
+Value(11) = "offline	Module NO. 12"	
+Value(12) = "online	Module NO. 12"
+Value(13) = "type error Module NO. 12"
+Value(14) = "added new	Module NO. 12"
+Value(15) = "working	Module NO. 12"	
+Unit_Diag_Area_End	
+	
+; Slot 13	
+Unit_Diag_Area = 60-63	
+Value(0) = "empty	Module NO. 13"
+Value(1) = "wrong prm	Module NO. 13"
+Value(2) = "wrong cfg	Module NO. 13"
+Value(3) = "ch. error	Module NO. 13"
+Value(10) = "timeout	Module NO. 13"	
+Value(11) = "offline	Module NO. 13"	
+Value(12) = "online	Module NO. 13"
+Value(13) = "type error Module NO. 13"
+Value(14) = "added new	Module NO. 13"
+Value(15) = "working	Module NO. 13"	
+Unit_Diag_Area_End	
+	
+; Slot 14	
+Unit_Diag_Area = 64-67	
+Value(0) = "empty	Module NO. 14"
+Value(1) = "wrong prm	Module NO. 14"
+Value(2) = "wrong cfg	Module NO. 14"
+Value(3) = "ch. error	Module NO. 14"
+Value(10) = "timeout	Module NO. 14"	
+Value(11) = "offline	Module NO. 14"	
+Value(12) = "online	Module NO. 14"
+Value(13) = "type error Module NO. 14"
+Value(14) = "added new	Module NO. 14"
+Value(15) = "working	Module NO. 14"	
+Unit_Diag_Area_End	
+	
+; Slot 15	
+Unit_Diag_Area = 68-71
+Value(0) = "empty	Module NO. 15"
+Value(1) = "wrong prm	Module NO. 15"
+Value(2) = "wrong cfg	Module NO. 15"
+Value(3) = "ch. error	Module NO. 15"
+Value(10) = "timeout	Module NO. 15"	
+Value(11) = "offline	Module NO. 15"	
+Value(12) = "online	Module NO. 15"
+Value(13) = "type error Module NO. 15"
+Value(14) = "added new	Module NO. 15"
+Value(15) = "working	Module NO. 15"	
+Unit_Diag_Area_End	
+	
+;Redundant IO
+; Slot 0	
+Unit_Diag_Area = 72-75	
+Value(0) = "empty	Standby Module NO. 0"
+Value(1) = "wrong prm	Standby Module NO. 0"
+Value(2) = "wrong cfg	Standby Module NO. 0"
+Value(3) = "ch. error	Standby Module NO. 0"
+Value(10) = "timeout	Standby Module NO. 0"	
+Value(11) = "offline	Standby Module NO. 0"	
+Value(12) = "online	Standby Module NO. 0"	
+Value(13) = "type error Standby Module NO. 0"
+Value(14) = "added new	Standby Module NO. 0"
+Value(15) = "working	Standby Module NO. 0"	
+Unit_Diag_Area_End
+
+; Slot 1	
+Unit_Diag_Area = 76-79	
+Value(0) = "empty	Standby Module NO. 1"
+Value(1) = "wrong prm	Standby Module NO. 1"
+Value(2) = "wrong cfg	Standby Module NO. 1"
+Value(3) = "ch. error	Standby Module NO. 1"
+Value(10) = "timeout	Standby Module NO. 1"	
+Value(11) = "offline	Standby Module NO. 1"	
+Value(12) = "online	Standby Module NO. 1"	
+Value(13) = "type error Standby Module NO. 1"
+Value(14) = "added new	Standby Module NO. 1"
+Value(15) = "working	Standby Module NO. 1"	
+Unit_Diag_Area_End	
+	
+; Slot 2	
+Unit_Diag_Area = 80-83	
+Value(0) = "empty	Standby Module NO. 2"
+Value(1) = "wrong prm	Standby Module NO. 2"
+Value(2) = "wrong cfg	Standby Module NO. 2"
+Value(3) = "ch. error	Standby Module NO. 2"
+Value(10) = "timeout	Standby Module NO. 2"	
+Value(11) = "offline	Standby Module NO. 2"	
+Value(12) = "online	Standby Module NO. 2"	
+Value(13) = "type error Standby Module NO. 2"
+Value(14) = "added new	Standby Module NO. 2"
+Value(15) = "working	Standby Module NO. 2"	
+Unit_Diag_Area_End	
+	
+; Slot 3	
+Unit_Diag_Area = 84-87	
+Value(0) = "empty	Standby Module NO. 3"
+Value(1) = "wrong prm	Standby Module NO. 3"
+Value(2) = "wrong cfg	Standby Module NO. 3"
+Value(3) = "ch. error	Standby Module NO. 3"
+Value(10) = "timeout	Standby Module NO. 3"	
+Value(11) = "offline	Standby Module NO. 3"
+Value(12) = "online	Standby Module NO. 3"	
+Value(13) = "type error Standby Module NO. 3"
+Value(14) = "added new	Standby Module NO. 3"	
+Value(15) = "working	Standby Module NO. 3"	
+Unit_Diag_Area_End	
+	
+; Slot 4	
+Unit_Diag_Area = 88-91	
+Value(0) = "empty	Standby Module NO. 4"
+Value(1) = "wrong prm	Standby Module NO. 4"
+Value(2) = "wrong cfg	Standby Module NO. 4"
+Value(3) = "ch. error	Standby Module NO. 4"
+Value(10) = "timeout	Standby Module NO. 4"	
+Value(11) = "offline	Standby Module NO. 4"	
+Value(12) = "online	Standby Module NO. 4"	
+Value(13) = "type error Standby Module NO. 4"
+Value(14) = "added new	Standby Module NO. 4"
+Value(15) = "working	Standby Module NO. 4"	
+Unit_Diag_Area_End
+	
+; Slot 5	
+Unit_Diag_Area = 92-95	
+Value(0) = "empty	Standby Module NO. 5"
+Value(1) = "wrong prm	Standby Module NO. 5"
+Value(2) = "wrong cfg	Standby Module NO. 5"
+Value(3) = "ch. error	Standby Module NO. 5"
+Value(10) = "timeout	Standby Module NO. 5"	
+Value(11) = "offline	Standby Module NO. 5"
+Value(12) = "online	Standby Module NO. 5"	
+Value(13) = "type error Standby Module NO. 5"
+Value(14) = "added new	Standby Module NO. 5"	
+Value(15) = "working	Standby Module NO. 5"	
+Unit_Diag_Area_End	
+	
+; Slot 6	
+Unit_Diag_Area = 96-99	
+Value(0) = "empty	Standby Module NO. 6"
+Value(1) = "wrong prm	Standby Module NO. 6"
+Value(2) = "wrong cfg	Standby Module NO. 6"
+Value(3) = "ch. error	Standby Module NO. 6"
+Value(10) = "timeout	Standby Module NO. 6"	
+Value(11) = "offline	Standby Module NO. 6"
+Value(12) = "online	Standby Module NO. 6"	
+Value(13) = "type error Standby Module NO. 6"
+Value(14) = "added new	Standby Module NO. 6"
+Value(15) = "working	Standby Module NO. 6"		
+Unit_Diag_Area_End	
+	
+; Slot 7	
+Unit_Diag_Area = 100-103	
+Value(0) = "empty	Standby Module NO. 7"
+Value(1) = "wrong prm	Standby Module NO. 7"
+Value(2) = "wrong cfg	Standby Module NO. 7"
+Value(3) = "ch. error	Standby Module NO. 7"
+Value(10) = "timeout	Standby Module NO. 7"	
+Value(11) = "offline	Standby Module NO. 7"	
+Value(12) = "online	Standby Module NO. 7"	
+Value(13) = "type error Standby Module NO. 7"
+Value(14) = "added new	Standby Module NO. 7"
+Value(15) = "working	Standby Module NO. 7"	
+Unit_Diag_Area_End	
+	
+; Slot 8	
+Unit_Diag_Area = 104-107	
+Value(0) = "empty	Standby Module NO. 8"
+Value(1) = "wrong prm	Standby Module NO. 8"
+Value(2) = "wrong cfg	Standby Module NO. 8"
+Value(3) = "ch. error	Standby Module NO. 8"
+Value(10) = "timeout	Standby Module NO. 8"	
+Value(11) = "offline	Standby Module NO. 8"	
+Value(12) = "online	Standby Module NO. 8"	
+Value(13) = "type error Standby Module NO. 8"
+Value(14) = "added new	Standby Module NO. 8"
+Value(15) = "working	Standby Module NO. 8"	
+Unit_Diag_Area_End	
+	
+; Slot 9	
+Unit_Diag_Area = 108-111	
+Value(0) = "empty	Standby Module NO. 9"
+Value(1) = "wrong prm	Standby Module NO. 9"
+Value(2) = "wrong cfg	Standby Module NO. 9"
+Value(3) = "ch. error	Standby Module NO. 9"
+Value(10) = "timeout	Standby Module NO. 9"	
+Value(11) = "offline	Standby Module NO. 9"
+Value(12) = "online	Standby Module NO. 9"
+Value(13) = "type error Standby Module NO. 9"
+Value(14) = "added new	Standby Module NO. 9"	
+Value(15) = "working	Standby Module NO. 9"		
+Unit_Diag_Area_End
+	
+; Slot 10	
+Unit_Diag_Area = 112-115	
+Value(0) = "empty	Standby Module NO. 10"
+Value(1) = "wrong prm	Standby Module NO. 10"
+Value(2) = "wrong cfg	Standby Module NO. 10"
+Value(3) = "ch. error	Standby Module NO. 10"
+Value(10) = "timeout	Standby Module NO. 10"	
+Value(11) = "offline	Standby Module NO. 10"	
+Value(12) = "online	Standby Module NO. 10"
+Value(13) = "type error Standby Module NO. 10"
+Value(14) = "added new	Standby Module NO. 10"
+Value(15) = "working	Standby Module NO. 10"		
+Unit_Diag_Area_End	
+	
+; Slot 11	
+Unit_Diag_Area = 116-119	
+Value(0) = "empty	Standby Module NO. 11"
+Value(1) = "wrong prm	Standby Module NO. 11"
+Value(2) = "wrong cfg	Standby Module NO. 11"
+Value(3) = "ch. error	Standby Module NO. 11"
+Value(10) = "timeout	Standby Module NO. 11"	
+Value(11) = "offline	Standby Module NO. 11"	
+Value(12) = "online	Standby Module NO. 11"	
+Value(13) = "type error Standby Module NO. 11"
+Value(14) = "added new	Standby Module NO. 11"
+Value(15) = "working	Standby Module NO. 11"	
+Unit_Diag_Area_End	
+	
+; Slot 12	
+Unit_Diag_Area = 120-123	
+Value(0) = "empty	Standby Module NO. 12"
+Value(1) = "wrong prm	Standby Module NO. 12"
+Value(2) = "wrong cfg	Standby Module NO. 12"
+Value(3) = "ch. error	Standby Module NO. 12"
+Value(10) = "timeout	Standby Module NO. 12"	
+Value(11) = "offline	Standby Module NO. 12"	
+Value(12) = "online	Standby Module NO. 12"	
+Value(13) = "type error Standby Module NO. 12"
+Value(14) = "added new	Standby Module NO. 12"
+Value(15) = "working	Standby Module NO. 12"	
+Unit_Diag_Area_End	
+	
+; Slot 13	
+Unit_Diag_Area = 124-127	
+Value(0) = "empty	Standby Module NO. 13"
+Value(1) = "wrong prm	Standby Module NO. 13"
+Value(2) = "wrong cfg	Standby Module NO. 13"
+Value(3) = "ch. error	Standby Module NO. 13"
+Value(10) = "timeout	Standby Module NO. 13"	
+Value(11) = "offline	Standby Module NO. 13"	
+Value(12) = "online	Standby Module NO. 13"
+Value(13) = "type error Standby Module NO. 13"
+Value(14) = "added new	Standby Module NO. 13"
+Value(15) = "working	Standby Module NO. 13"		
+Unit_Diag_Area_End	
+	
+; Slot 14	
+Unit_Diag_Area = 128-131	
+Value(0) = "empty	Standby Module NO. 14"
+Value(1) = "wrong prm	Standby Module NO. 14"
+Value(2) = "wrong cfg	Standby Module NO. 14"
+Value(3) = "ch. error	Standby Module NO. 14"
+Value(10) = "timeout	Standby Module NO. 14"	
+Value(11) = "offline	Standby Module NO. 14"	
+Value(12) = "online	Standby Module NO. 14"	
+Value(13) = "type error Standby Module NO. 14"
+Value(14) = "added new	Standby Module NO. 14"
+Value(15) = "working	Standby Module NO. 14"	
+Unit_Diag_Area_End	
+	
+; Slot 15	
+Unit_Diag_Area = 132-135
+Value(0) = "empty	Standby Module NO. 15"
+Value(1) = "wrong prm	Standby Module NO. 15"
+Value(2) = "wrong cfg	Standby Module NO. 15"
+Value(3) = "ch. error	Standby Module NO. 15"
+Value(10) = "timeout	Standby Module NO. 15"	
+Value(11) = "offline	Standby Module NO. 15"	
+Value(12) = "online	Standby Module NO. 15"	
+Value(13) = "type error Standby Module NO. 15"
+Value(14) = "added new	Standby Module NO. 15"
+Value(15) = "working	Standby Module NO. 15"	
+Unit_Diag_Area_End
+	
+
+;================================================================
+;================ User Prm-Data for MoxCPP ======================
+;================================================================
+;
+User_Prm_Data_Len   = 4
+Ext_User_Prm_Data_Const (0) = 0x04,0x02,0xC8,0x32
+Ext_User_Prm_Data_Ref(1) = 2
+Ext_User_Prm_Data_Ref(1) = 3
+;
+
+;================================================================
+;==================== Mox603 IO module types ====================
+;================================================================
+;
+;empty card
+Module = "Blank Module" 		0x00
+EndModule
+;
+;virtual card
+;Module = "MoxCPP Diagnostic Card"	0x41,0x8f,0xff				
+;EndModule		
+;
+Module = "MX603-0108-113 8DI" 		0x41,0x80,0x01
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0208-313 8DO" 		0x81,0x80,0x02
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0308-613 8AI 4-20mA ISO" 0x41,0x8f,0x03
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x06, 0x01, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 441     						;Channel Filter Times
+Ext_User_Prm_Data_Ref(2) = 442
+Ext_User_Prm_Data_Ref(3) = 443
+Ext_User_Prm_Data_Ref(3) = 444
+Ext_User_Prm_Data_Ref(4) = 445
+Ext_User_Prm_Data_Ref(4) = 446
+Ext_User_Prm_Data_Ref(5) = 447
+Ext_User_Prm_Data_Ref(5) = 448
+EndModule
+;
+Module = "MX603-0408-613 8AO"		0x81,0x8f,0x04
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0508-813 8TC"		0x41,0x8f,0x05
+Ext_Module_Prm_Data_Len = 12
+Ext_User_Prm_Data_Const(0) = 0x0C, 0x01, 0x00, 0x00, 0x00, 0x00, 0x11, 0x11, 0x11, 0x11, 0x00, 0x00
+;Ext_User_Prm_Data_Ref (1) = 51      	; Redundancy
+Ext_User_Prm_Data_Ref (2) = 81      	; Channel 1 Sensor Type
+Ext_User_Prm_Data_Ref (2) = 82      	; Channel 2 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 83      	; Channel 3 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 84      	; Channel 4 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 85      	; Channel 5 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 86      	; Channel 6 Sensor Type
+Ext_User_Prm_Data_Ref (5) = 87      	; Channel 7 Sensor Type
+Ext_User_Prm_Data_Ref (5) = 88      	; Channel 8 Sensor Type
+Ext_User_Prm_Data_Ref (6) = 401      	; Channel 1 Filter Times
+Ext_User_Prm_Data_Ref (6) = 402      	; Channel 2 Filter Times
+Ext_User_Prm_Data_Ref (7) = 403      	; Channel 3 Filter Times 
+Ext_User_Prm_Data_Ref (7) = 404      	; Channel 4 Filter Times
+Ext_User_Prm_Data_Ref (8) = 405      	; Channel 5 Filter Times
+Ext_User_Prm_Data_Ref (8) = 406      	; Channel 6 Filter Times
+Ext_User_Prm_Data_Ref (9) = 407    	; Channel 7 Filter Times
+Ext_User_Prm_Data_Ref (9) = 408     	; Channel 8 Filter Times
+Ext_User_Prm_Data_Ref (10) = 101    	; Channel 1 CJ Compensation
+Ext_User_Prm_Data_Ref (10) = 102    	; Channel 2 CJ Compensation
+Ext_User_Prm_Data_Ref (10) = 103    	; Channel 3 CJ Compensation
+Ext_User_Prm_Data_Ref (10) = 104    	; Channel 4 CJ Compensation
+Ext_User_Prm_Data_Ref (11) = 105    	; Channel 5 CJ Compensation
+Ext_User_Prm_Data_Ref (11) = 106    	; Channel 6 CJ Compensation
+Ext_User_Prm_Data_Ref (11) = 107    	; Channel 7 CJ Compensation
+Ext_User_Prm_Data_Ref (11) = 108    	; Channel 8 CJ Compensation
+EndModule
+;
+Module = "MX603-0604-913 4RTD"		0x41,0x87,0x06
+Ext_Module_Prm_Data_Len = 7
+Ext_User_Prm_Data_Const(0) = 0x07, 0x01, 0x00, 0x00, 0x44, 0x44, 0x00
+;Ext_User_Prm_Data_Ref (1) = 51      ; Redundancy
+Ext_User_Prm_Data_Ref (2) = 121     ; Channel 1 Sensor Type
+Ext_User_Prm_Data_Ref (2) = 122     ; Channel 2 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 123     ; Channel 3 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 124     ; Channel 4 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 481      ; Channel 1 Filter Times
+Ext_User_Prm_Data_Ref (4) = 482      ; Channel 2 Filter Times
+Ext_User_Prm_Data_Ref (5) = 483      ; Channel 3 Filter Times 
+Ext_User_Prm_Data_Ref (5) = 484      ; Channel 4 Filter Times
+Ext_User_Prm_Data_Ref (6) = 141		; Channel 1 Wire type
+Ext_User_Prm_Data_Ref (6) = 142		; Channel 2 Wire type
+Ext_User_Prm_Data_Ref (6) = 143		; Channel 3 Wire type
+Ext_User_Prm_Data_Ref (6) = 144		; Channel 4 Wire type
+EndModule
+;
+Module = "MX603-0116-133 16DI"		0x41,0x81,0x07
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0216-123/133 16DO"		0x81,0x81,0x08
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0308-423 8AI 1-5V"		0x41,0x8f,0x09
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x06, 0x01, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 441     						;Channel Filter Times
+Ext_User_Prm_Data_Ref(2) = 442
+Ext_User_Prm_Data_Ref(3) = 443
+Ext_User_Prm_Data_Ref(3) = 444
+Ext_User_Prm_Data_Ref(4) = 445
+Ext_User_Prm_Data_Ref(4) = 446
+Ext_User_Prm_Data_Ref(5) = 447
+Ext_User_Prm_Data_Ref(5) = 448
+EndModule
+;
+Module = "MX603-0308-633/643 8AI 4-20mA" 0x41,0x8f,0x0a
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x06, 0x01, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 441     						;Channel Filter Times
+Ext_User_Prm_Data_Ref(2) = 442
+Ext_User_Prm_Data_Ref(3) = 443
+Ext_User_Prm_Data_Ref(3) = 444
+Ext_User_Prm_Data_Ref(4) = 445
+Ext_User_Prm_Data_Ref(4) = 446
+Ext_User_Prm_Data_Ref(5) = 447
+Ext_User_Prm_Data_Ref(5) = 448
+EndModule
+;
+Module = "MX603-0104-123 4CNT" 	0xc1,0x87,0x97,0x0c
+Ext_Module_Prm_Data_Len = 15
+Ext_User_Prm_Data_Const(0) = 0x0F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0x01, 0x01, 0x01, 0x01, 0xff, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 161     						;operate mode
+Ext_User_Prm_Data_Ref(2) = 162
+Ext_User_Prm_Data_Ref(3) = 163
+Ext_User_Prm_Data_Ref(3) = 164
+Ext_User_Prm_Data_Ref(4) = 171							;trigger
+Ext_User_Prm_Data_Ref(4) = 172
+Ext_User_Prm_Data_Ref(4) = 173
+Ext_User_Prm_Data_Ref(4) = 174
+Ext_User_Prm_Data_Ref(5) = 181							;direction
+Ext_User_Prm_Data_Ref(5) = 182
+Ext_User_Prm_Data_Ref(5) = 183
+Ext_User_Prm_Data_Ref(5) = 184
+Ext_User_Prm_Data_Ref(6) = 191							;quad aux. logic
+Ext_User_Prm_Data_Ref(6) = 192
+Ext_User_Prm_Data_Ref(6) = 193
+Ext_User_Prm_Data_Ref(6) = 194
+Ext_User_Prm_Data_Ref(7) = 201							;external start/stop logic
+Ext_User_Prm_Data_Ref(7) = 202
+Ext_User_Prm_Data_Ref(7) = 203
+Ext_User_Prm_Data_Ref(7) = 204
+Ext_User_Prm_Data_Ref(8) = 211							;period unit
+Ext_User_Prm_Data_Ref(8) = 212
+Ext_User_Prm_Data_Ref(8) = 213
+Ext_User_Prm_Data_Ref(8) = 214
+Ext_User_Prm_Data_Ref(9) = 221							;period length
+Ext_User_Prm_Data_Ref(10) = 222
+Ext_User_Prm_Data_Ref(11) = 223
+Ext_User_Prm_Data_Ref(12) = 224
+Ext_User_Prm_Data_Ref(13) = 231							;gate time
+Ext_User_Prm_Data_Ref(13) = 232
+Ext_User_Prm_Data_Ref(13) = 233
+Ext_User_Prm_Data_Ref(13) = 234
+Ext_User_Prm_Data_Ref(14) = 241							;filter time
+Ext_User_Prm_Data_Ref(14) = 242
+Ext_User_Prm_Data_Ref(14) = 243
+Ext_User_Prm_Data_Ref(14) = 244
+EndModule
+;
+Module = "MX603-0108-143 8SOE" 	0xc1,0x89,0xa3,0x0e 
+Ext_Module_Prm_Data_Len = 22
+Ext_User_Prm_Data_Const(0) = 0x16, 0x01, 0x00, 0x00, 0x00, 0x00, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 301							;chatter mode count
+Ext_User_Prm_Data_Ref(2) = 302
+Ext_User_Prm_Data_Ref(3) = 303
+Ext_User_Prm_Data_Ref(3) = 304
+Ext_User_Prm_Data_Ref(4) = 305
+Ext_User_Prm_Data_Ref(4) = 306
+Ext_User_Prm_Data_Ref(5) = 307
+Ext_User_Prm_Data_Ref(5) = 308
+Ext_User_Prm_Data_Ref(6) = 321							;filter unit
+Ext_User_Prm_Data_Ref(6) = 341							;filter length
+Ext_User_Prm_Data_Ref(7) = 322
+Ext_User_Prm_Data_Ref(7) = 342
+Ext_User_Prm_Data_Ref(8) = 323
+Ext_User_Prm_Data_Ref(8) = 343
+Ext_User_Prm_Data_Ref(9) = 324
+Ext_User_Prm_Data_Ref(9) = 344
+Ext_User_Prm_Data_Ref(10) = 325
+Ext_User_Prm_Data_Ref(10) = 345
+Ext_User_Prm_Data_Ref(11) = 326
+Ext_User_Prm_Data_Ref(11) = 346
+Ext_User_Prm_Data_Ref(12) = 327
+Ext_User_Prm_Data_Ref(12) = 347
+Ext_User_Prm_Data_Ref(13) = 328
+Ext_User_Prm_Data_Ref(13) = 348
+Ext_User_Prm_Data_Ref(14) = 361							;debounce unit
+Ext_User_Prm_Data_Ref(14) = 381							;debounce length
+Ext_User_Prm_Data_Ref(15) = 362
+Ext_User_Prm_Data_Ref(15) = 382
+Ext_User_Prm_Data_Ref(16) = 363
+Ext_User_Prm_Data_Ref(16) = 383
+Ext_User_Prm_Data_Ref(17) = 364
+Ext_User_Prm_Data_Ref(17) = 384
+Ext_User_Prm_Data_Ref(18) = 365
+Ext_User_Prm_Data_Ref(18) = 385
+Ext_User_Prm_Data_Ref(19) = 366
+Ext_User_Prm_Data_Ref(19) = 386
+Ext_User_Prm_Data_Ref(20) = 367
+Ext_User_Prm_Data_Ref(20) = 387
+Ext_User_Prm_Data_Ref(21) = 368
+Ext_User_Prm_Data_Ref(21) = 388
+EndModule
+;
+Module = "MX603-0116-253/263 16DI(AC)"		0x41,0x81,0x11
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0132-133 32DI"	0x41,0x83,0x12
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0132-233 32DI"	0x41,0x83,0x12
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0232-123 32DO"	0x81,0x83,0x13
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0612-923 12RTD"	0x41,0x97,0x14
+Ext_Module_Prm_Data_Len = 14
+Ext_User_Prm_Data_Const(0) = 0x0E, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref (1) = 51      ; Redundancy
+Ext_User_Prm_Data_Ref (2) = 121     ; Channel 1 Sensor Type
+Ext_User_Prm_Data_Ref (2) = 122     ; Channel 2 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 123     ; Channel 3 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 124     ; Channel 4 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 125     ; Channel 5 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 126     ; Channel 6 Sensor Type
+Ext_User_Prm_Data_Ref (5) = 127     ; Channel 7 Sensor Type
+Ext_User_Prm_Data_Ref (5) = 128     ; Channel 8 Sensor Type
+Ext_User_Prm_Data_Ref (6) = 129     ; Channel 9 Sensor Type
+Ext_User_Prm_Data_Ref (6) = 130     ; Channel 10 Sensor Type
+Ext_User_Prm_Data_Ref (7) = 131     ; Channel 11 Sensor Type
+Ext_User_Prm_Data_Ref (7) = 132     ; Channel 12 Sensor Type
+Ext_User_Prm_Data_Ref (8) = 441      ; Channel 1 Filter Times
+Ext_User_Prm_Data_Ref (8) = 442      ; Channel 2 Filter Times
+Ext_User_Prm_Data_Ref (9) = 443      ; Channel 3 Filter Times 
+Ext_User_Prm_Data_Ref (9) = 444      ; Channel 4 Filter Times
+Ext_User_Prm_Data_Ref (10) = 445      ; Channel 5 Filter Times
+Ext_User_Prm_Data_Ref (10) = 446      ; Channel 6 Filter Times
+Ext_User_Prm_Data_Ref (11) = 447      ; Channel 7 Filter Times 
+Ext_User_Prm_Data_Ref (11) = 448      ; Channel 8 Filter Times
+Ext_User_Prm_Data_Ref (12) = 449      ; Channel 9 Filter Times
+Ext_User_Prm_Data_Ref (12) = 450      ; Channel 10 Filter Times
+Ext_User_Prm_Data_Ref (13) = 451      ; Channel 11 Filter Times 
+Ext_User_Prm_Data_Ref (13) = 452      ; Channel 12 Filter Times
+EndModule
+;
+Module = "MX603-0212-113 12DO(F)" 0x81,0x81,0x15
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0312-113 12AI(F)4-20mA"	0x41,0x97,0x16			;
+Ext_Module_Prm_Data_Len = 8
+Ext_User_Prm_Data_Const(0) = 0x08, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 441     						;Channel Filter Times
+Ext_User_Prm_Data_Ref(2) = 442
+Ext_User_Prm_Data_Ref(3) = 443
+Ext_User_Prm_Data_Ref(3) = 444
+Ext_User_Prm_Data_Ref(4) = 445
+Ext_User_Prm_Data_Ref(4) = 446
+Ext_User_Prm_Data_Ref(5) = 447
+Ext_User_Prm_Data_Ref(5) = 448
+Ext_User_Prm_Data_Ref(6) = 449
+Ext_User_Prm_Data_Ref(6) = 450
+Ext_User_Prm_Data_Ref(7) = 451
+Ext_User_Prm_Data_Ref(7) = 452
+EndModule
+;
+Module = "MX603-0312-123 12AI(F)1-5V" 0x41,0x97,0x17			;
+Ext_Module_Prm_Data_Len = 8
+Ext_User_Prm_Data_Const(0) = 0x08, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 441     						;Channel Filter Times
+Ext_User_Prm_Data_Ref(2) = 442
+Ext_User_Prm_Data_Ref(3) = 443
+Ext_User_Prm_Data_Ref(3) = 444
+Ext_User_Prm_Data_Ref(4) = 445
+Ext_User_Prm_Data_Ref(4) = 446
+Ext_User_Prm_Data_Ref(5) = 447
+Ext_User_Prm_Data_Ref(5) = 448
+Ext_User_Prm_Data_Ref(6) = 449
+Ext_User_Prm_Data_Ref(6) = 450
+Ext_User_Prm_Data_Ref(7) = 451
+Ext_User_Prm_Data_Ref(7) = 452
+EndModule
+;
+Module = "MX603-0512-823 12TC(F)" 0x41,0x97,0x18			;
+Ext_Module_Prm_Data_Len = 14
+Ext_User_Prm_Data_Const(0) = 0x0E, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref (1) = 51      ; Redundancy
+Ext_User_Prm_Data_Ref (2) = 400     ; Compensation Channel 1 Sensor Type
+Ext_User_Prm_Data_Ref (2) = 82     ; Channel 2 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 83     ; Channel 3 Sensor Type
+Ext_User_Prm_Data_Ref (3) = 84     ; Channel 4 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 85     ; Channel 5 Sensor Type
+Ext_User_Prm_Data_Ref (4) = 86     ; Channel 6 Sensor Type
+Ext_User_Prm_Data_Ref (5) = 87     ; Channel 7 Sensor Type
+Ext_User_Prm_Data_Ref (5) = 88     ; Channel 8 Sensor Type
+Ext_User_Prm_Data_Ref (6) = 89     ; Channel 9 Sensor Type
+Ext_User_Prm_Data_Ref (6) = 90     ; Channel 10 Sensor Type
+Ext_User_Prm_Data_Ref (7) = 91     ; Channel 11 Sensor Type
+Ext_User_Prm_Data_Ref (7) = 92     ; Channel 12 Sensor Type
+Ext_User_Prm_Data_Ref (8) = 401      ; Channel 1 Filter Times
+Ext_User_Prm_Data_Ref (8) = 402      ; Channel 2 Filter Times
+Ext_User_Prm_Data_Ref (9) = 403      ; Channel 3 Filter Times 
+Ext_User_Prm_Data_Ref (9) = 404      ; Channel 4 Filter Times
+Ext_User_Prm_Data_Ref (10) = 405      ; Channel 5 Filter Times
+Ext_User_Prm_Data_Ref (10) = 406      ; Channel 6 Filter Times
+Ext_User_Prm_Data_Ref (11) = 407      ; Channel 7 Filter Times 
+Ext_User_Prm_Data_Ref (11) = 408      ; Channel 8 Filter Times
+Ext_User_Prm_Data_Ref (12) = 409      ; Channel 9 Filter Times
+Ext_User_Prm_Data_Ref (12) = 410      ; Channel 10 Filter Times
+Ext_User_Prm_Data_Ref (13) = 411      ; Channel 11 Filter Times 
+Ext_User_Prm_Data_Ref (13) = 412      ; Channel 12 Filter Times
+EndModule
+;
+Module = "MX603-0108-173 8CNT(F)" 0xc1, 0x8f, 0xaf, 0x19
+Ext_Module_Prm_Data_Len = 24
+Ext_User_Prm_Data_Const(0) = 0x18, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0xff, 0xff, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 161     						;operate mode
+Ext_User_Prm_Data_Ref(2) = 169
+Ext_User_Prm_Data_Ref(3) = 163
+Ext_User_Prm_Data_Ref(3) = 170
+Ext_User_Prm_Data_Ref(4) = 165
+Ext_User_Prm_Data_Ref(4) = 166
+Ext_User_Prm_Data_Ref(5) = 167
+Ext_User_Prm_Data_Ref(5) = 168
+Ext_User_Prm_Data_Ref(6) = 171							;trigger
+Ext_User_Prm_Data_Ref(6) = 172
+Ext_User_Prm_Data_Ref(6) = 173
+Ext_User_Prm_Data_Ref(6) = 174
+Ext_User_Prm_Data_Ref(6) = 175							
+Ext_User_Prm_Data_Ref(6) = 176
+Ext_User_Prm_Data_Ref(6) = 177
+Ext_User_Prm_Data_Ref(6) = 178
+Ext_User_Prm_Data_Ref(7) = 181							;direction
+Ext_User_Prm_Data_Ref(7) = 182
+Ext_User_Prm_Data_Ref(7) = 183
+Ext_User_Prm_Data_Ref(7) = 184
+Ext_User_Prm_Data_Ref(7) = 185							
+Ext_User_Prm_Data_Ref(7) = 186
+Ext_User_Prm_Data_Ref(7) = 187
+Ext_User_Prm_Data_Ref(7) = 188
+Ext_User_Prm_Data_Ref(8) = 191							;quad aux. logic
+Ext_User_Prm_Data_Ref(8) = 193
+Ext_User_Prm_Data_Ref(8) = 195							
+Ext_User_Prm_Data_Ref(8) = 197
+Ext_User_Prm_Data_Ref(9) = 201							;external start/stop logic
+Ext_User_Prm_Data_Ref(9) = 203
+Ext_User_Prm_Data_Ref(9) = 205							
+Ext_User_Prm_Data_Ref(9) = 207
+Ext_User_Prm_Data_Ref(10) = 211							;period unit
+Ext_User_Prm_Data_Ref(10) = 212
+Ext_User_Prm_Data_Ref(10) = 213
+Ext_User_Prm_Data_Ref(10) = 214
+Ext_User_Prm_Data_Ref(11) = 215							
+Ext_User_Prm_Data_Ref(11) = 216
+Ext_User_Prm_Data_Ref(11) = 217
+Ext_User_Prm_Data_Ref(11) = 218
+Ext_User_Prm_Data_Ref(12) = 221							;period length
+Ext_User_Prm_Data_Ref(13) = 222
+Ext_User_Prm_Data_Ref(14) = 223
+Ext_User_Prm_Data_Ref(15) = 224
+Ext_User_Prm_Data_Ref(16) = 225							
+Ext_User_Prm_Data_Ref(17) = 226
+Ext_User_Prm_Data_Ref(18) = 227
+Ext_User_Prm_Data_Ref(19) = 228
+Ext_User_Prm_Data_Ref(20) = 231							;gate time
+Ext_User_Prm_Data_Ref(20) = 232
+Ext_User_Prm_Data_Ref(20) = 233
+Ext_User_Prm_Data_Ref(20) = 234
+Ext_User_Prm_Data_Ref(21) = 235							
+Ext_User_Prm_Data_Ref(21) = 236
+Ext_User_Prm_Data_Ref(21) = 237
+Ext_User_Prm_Data_Ref(21) = 238
+Ext_User_Prm_Data_Ref(22) = 251							;filter time
+Ext_User_Prm_Data_Ref(22) = 252
+Ext_User_Prm_Data_Ref(22) = 253
+Ext_User_Prm_Data_Ref(22) = 254
+Ext_User_Prm_Data_Ref(23) = 255							
+Ext_User_Prm_Data_Ref(23) = 256
+Ext_User_Prm_Data_Ref(23) = 257
+Ext_User_Prm_Data_Ref(23) = 258
+EndModule
+;
+Module = "MX603-0408-123 8AO(F)"		0x81,0x8f,0x1a
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0116-273 16DI(F)"		0x41,0x81,0x1B
+Ext_Module_Prm_Data_Len = 2
+Ext_User_Prm_Data_Const(0) = 0x02, 0x01
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+EndModule
+;
+Module = "MX603-0312-133 12AI(F)4-20mA"	0x41,0x97,0x1C			;
+Ext_Module_Prm_Data_Len = 8
+Ext_User_Prm_Data_Const(0) = 0x08, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 441     						;Channel Filter Times
+Ext_User_Prm_Data_Ref(2) = 442
+Ext_User_Prm_Data_Ref(3) = 443
+Ext_User_Prm_Data_Ref(3) = 444
+Ext_User_Prm_Data_Ref(4) = 445
+Ext_User_Prm_Data_Ref(4) = 446
+Ext_User_Prm_Data_Ref(5) = 447
+Ext_User_Prm_Data_Ref(5) = 448
+Ext_User_Prm_Data_Ref(6) = 449
+Ext_User_Prm_Data_Ref(6) = 450
+Ext_User_Prm_Data_Ref(7) = 451
+Ext_User_Prm_Data_Ref(7) = 452
+EndModule
+;
+Module = "MX603-0112-143 12SOE(F)" 	0xc1,0x89,0xa3,0x1d 
+Ext_Module_Prm_Data_Len = 32
+Ext_User_Prm_Data_Const(0) = 0x20, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03
+;Ext_User_Prm_Data_Ref(1) = 51							;redundancy
+Ext_User_Prm_Data_Ref(2) = 301							;chatter mode count
+Ext_User_Prm_Data_Ref(2) = 302
+Ext_User_Prm_Data_Ref(3) = 303
+Ext_User_Prm_Data_Ref(3) = 304
+Ext_User_Prm_Data_Ref(4) = 305
+Ext_User_Prm_Data_Ref(4) = 306
+Ext_User_Prm_Data_Ref(5) = 307
+Ext_User_Prm_Data_Ref(5) = 308
+Ext_User_Prm_Data_Ref(6) = 309
+Ext_User_Prm_Data_Ref(6) = 310
+Ext_User_Prm_Data_Ref(7) = 311
+Ext_User_Prm_Data_Ref(7) = 312
+Ext_User_Prm_Data_Ref(8) = 321							;filter unit
+Ext_User_Prm_Data_Ref(8) = 341							;filter length
+Ext_User_Prm_Data_Ref(9) = 322
+Ext_User_Prm_Data_Ref(9) = 342
+Ext_User_Prm_Data_Ref(10) = 323
+Ext_User_Prm_Data_Ref(10) = 343
+Ext_User_Prm_Data_Ref(11) = 324
+Ext_User_Prm_Data_Ref(11) = 344
+Ext_User_Prm_Data_Ref(12) = 325
+Ext_User_Prm_Data_Ref(12) = 345
+Ext_User_Prm_Data_Ref(13) = 326
+Ext_User_Prm_Data_Ref(13) = 346
+Ext_User_Prm_Data_Ref(14) = 327
+Ext_User_Prm_Data_Ref(14) = 347
+Ext_User_Prm_Data_Ref(15) = 328
+Ext_User_Prm_Data_Ref(15) = 348
+Ext_User_Prm_Data_Ref(16) = 329
+Ext_User_Prm_Data_Ref(16) = 349
+Ext_User_Prm_Data_Ref(17) = 330
+Ext_User_Prm_Data_Ref(17) = 350
+Ext_User_Prm_Data_Ref(18) = 331
+Ext_User_Prm_Data_Ref(18) = 351
+Ext_User_Prm_Data_Ref(19) = 332
+Ext_User_Prm_Data_Ref(19) = 352
+Ext_User_Prm_Data_Ref(20) = 361							;debounce unit
+Ext_User_Prm_Data_Ref(20) = 381							;debounce length
+Ext_User_Prm_Data_Ref(21) = 362
+Ext_User_Prm_Data_Ref(21) = 382
+Ext_User_Prm_Data_Ref(22) = 363
+Ext_User_Prm_Data_Ref(22) = 383
+Ext_User_Prm_Data_Ref(23) = 364
+Ext_User_Prm_Data_Ref(23) = 384
+Ext_User_Prm_Data_Ref(24) = 365
+Ext_User_Prm_Data_Ref(24) = 385
+Ext_User_Prm_Data_Ref(25) = 366
+Ext_User_Prm_Data_Ref(25) = 386
+Ext_User_Prm_Data_Ref(26) = 367
+Ext_User_Prm_Data_Ref(26) = 387
+Ext_User_Prm_Data_Ref(27) = 368
+Ext_User_Prm_Data_Ref(27) = 388
+Ext_User_Prm_Data_Ref(28) = 369
+Ext_User_Prm_Data_Ref(28) = 389
+Ext_User_Prm_Data_Ref(29) = 370
+Ext_User_Prm_Data_Ref(29) = 390
+Ext_User_Prm_Data_Ref(30) = 371
+Ext_User_Prm_Data_Ref(30) = 391
+Ext_User_Prm_Data_Ref(31) = 372
+Ext_User_Prm_Data_Ref(31) = 392
+EndModule
+;
+;

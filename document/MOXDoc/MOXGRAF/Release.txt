@@ -1,0 +1,1901 @@
+
+
+List of bugs resolved in the 5.20 release
+------------------------------------------
+
+2449	4:Could		Get function returns always BAD_RET
+2515	3:Should	Incompatibility in macro declaration
+3776	3:Should	dsysSocOptionSet may use incorrect buffer size in future developement
+4596	3:Should	Bad comment in MoxGRAF source code
+4871	3:Should	Unused Target files shall be removed from SourceSafe
+5207	3:Should	LINUX target V5.0 generation warnings
+5406	3:Should	Target: A call to the function "dsymSeaInfoFromVA" causes a crash under specific conditions
+5451	3:Should	Add a mechanism to know which C function or C function block is not found
+5593	3:Should	Allow changing the IP address without recompiling
+5712	1:Must/Blocking	PRDK: 219 is wrong as it is finished by a "}" and it should be a "\"
+5713	1:Must/Blocking	PRDK: in file dio0cus.c some #ifdef ITGTDEF_MODIF should be added
+5725	2:Must		Drift problem in the execution of the TIC code
+5749	3:Should	Virtual machine task terminates when receiving a WM_USER message
+5768	2:Must		Integral function block does not initialise from X0
+5869	2:Must		Change char variable to uchar in kerStrEqu function used by kernel TIC engine
+5881	3:Should	Change the call to dkerCycleSrvCom in dkerExec
+5886	2:Must		Target system variable ISA_SYSVA_RESMODE is written larger than one byte at some places in the code
+5898	2:Must		Linux Target failed to pass Coverage_new_dt10_portage test, 2 errors found
+5924	2:Must		Bad processing of TIC_PA6INT in kernel TIC interpreter
+5925	3:Should	Intialize the global variables of the port to multi-thread
+5929	3:Should	uCOS and CMX target porting shall use VSS file sharing
+5995	2:Must		Virtual machine program exits on the second download when the resource is in error
+5996	3:Should	For not implemented C Function block, FB instance init is shown instead of FB call not implemented
+6026	2:Must		The ETCP communication is corrupted when the header is split
+6273	3:Should	The define ITGTDEF_BINDIMPROVE2 is not present in file dsys0def.h
+6274	3:Should	PRDK: Merge changes of file dio0cus.c in branch NewOS
+6277	3:Should	In dsys0wng.c, the management related to the variable _cuWngShmemInit should be merged to NewOS
+6352	3:Should	Bad return value for dsysArgGet
+6360	3:Should	Minor fixes to the target
+6389	1:Must/Blocking	PRDK bad comment
+6422	2:Must		Enhanced communication with mirror target
+6425	1:Must/Blocking	Derivate Block does not behave like IEC description
+6434	2:Must		Merge IO Configuration Tool from Vantage to MoxGRAF 5.14
+6492	2:Must		The variable 'luInitialStepOfs' may be used uninitialized in the function 'evoSfcInstStartExt'
+6493	3:Should	The functions evoSteModifStart and evoSteModifStop should be declared following the ANSI-C format
+6494	2:Must		IXL writing of a variable of type TIME may have the wrong Endian
+6495	2:Must		IXL password is not implemented on the mono-task target
+6514	3:Should	Minor fixes to the target #2 
+6524	3:Should	Bad casting for the tic code "TIC_PA6INT" 
+6530	1:Must/Blocking Merge DiaTargetV5.01 changes into DiaTargetV5.20 
+6571	3:Should	Unable to recover from a binding init error, even after a new download 
+6572	3:Should	The functions evoSteModifStart and evoSteModifStop should be declared following the ANSI-C format 
+6573	2:Must		IXL writing of a variable of type TIME may have the wrong Endian
+
+
+
+List of bugs resolved in the 5.13 release
+------------------------------------------
+
+2317	4:Could	 Workbench: prog name in STF should be changed after rename
+5294	2:Must	 Drag a Pou from Programs and Drop it to Functions doesn't create the function output parameter
+5639	2:Must	 DIC: Initial value in complex type disappear after saving and opening
+5675	2:Must	 OPC DA Server cannot connect to MoxGRAF 3 configuration in MoxGRAF 5 project
+5679	3:Should In the dictionary, the "Support info" option is always grayed in Help menu
+5691	3:Should In the dictionary, the Numerical Display format value does not remember previous setting
+5726	3:Should ISa3Gen automatically creates a substitute drive before launching the MoxGRAF 3 compiler
+5741	1:Must/Blocking In the Setting Floating Licenses documentation, the path defined for the command line is incorrect
+5757	3:Should File/Rename Project does not allow changing the project comment
+5758	2:Must	 The SFC and FBD editors lose the Output window content when clicking on grid
+5783	4:Could	 FBD: Output error do not drive directly to program
+5807	2:Must	 Multi-language editor: In French version, Ctrl+H shortcut does not work
+5876	2:Must	 DTA_SRV: Workbench tries to access properties that were removed from target when connecting to debug mode
+5982	2:Must	 Impossible to open an instance of a function block to debug it from the link architecture view
+6115	2:Must	 Workbench: Programs (functions, function blocks, and sub-programs) have a maximum of 32 parameters (inputs and outputs)
+6152	2:Must	 Confusing message when a project is added as a dependency
+6203	3:Should Syntax coloring incorrect for UNTIL reserved word
+6219	3:Should C elements from MoxGRAF 3 require a link to a library to work (was not the case in version 3)
+6221	3:Should Accept the use of a function block with the same name as one of its parameters for library projects used with MoxGRAF 3 targets only
+6225	2:Must	 For version 3 targets, remove symbols monitoring information using a setting in diamond.ini
+6246	2:Must	 No error message shown when a 5.11 project is opened with 5.10
+6262	2:Must	 When coil element is locked in FBD editor, the star (*) is not displayed FBD editor 
+6330	2:Must	 RSC files not considered when using MoxGRAF 5 with MoxGRAF 3 targets
+6346	2:Must	 SFC editor - ST text editing problem
+6353	3:Should Project updater does not open when selecting a project having a different version
+6365	2:Must	 Problem with SFC engine and null pointer causing a crash of IsaVM
+6392	2:Must	 Cannot check-in a project twice
+6412	2:Must	 Build alarms error in some scenarios: "Database may me corrupted" 
+6424	2:Must	 The behaviour is different with the two possibilities for editing configuration properties
+
+
+
+List of bugs resolved in the 5.12 release
+------------------------------------------
+
+2549	3:Should TDBUILD comments for simple devices inside a complex device are incorrect
+3955	3:Should Generated "C" function block from tdbuild does not include array parameter dimension
+4287	3:Should Do more work in IAC
+4292	2:Must   Add the possibility of showing only the complex device in the IO wiring window selection
+4302	3:Should Application converter must also import arrays
+4396	3:Should Cannot unlock variables in FBD during debug
+4420	3:Should Target Definition Builder:Cut/delete a complex IO device makes the TDBuild Crash
+4542	3:Should 1 Gain function not converted correctly with IAC
+4543	3:Should Comments are converted incorrectly with IAC (garbage chars and missing comments)
+4544	3:Should Some code disappears when converting application with IAC
+4549	3:Should SFC transitions with multiple contacts in parallel are not converted properly with IAC
+4928	2:Must   Possibility to access the Cross reference (Browser) by right clicking on the mouse from any editors
+4930	2:Must   Display in the browser information about the variable's position in program
+5217	3:Should Workbench Look and feel - old POU and Config VSC icons in MoxGRAF 5
+5427	3:Should Automatically close all editors when exiting Workbench if nothing to save
+5469	2:Must   Spy selection should be enabled when function block is selected in the editor
+5480	2:Must   FBD: Display parameters type as tooltips or in Status bar 
+5490	2:Must   We need the variable group can be moved up and down with nothing other changed
+5498	2:Must   The size of the variable in FBD can be changed for watch the variable value directly in the editor.
+5505	3:Should Allow user to set the simple device size in a complex device
+5523	2:Must   IO Wiring: Variable connected to a board are not displayed in the same order during debug
+5542	4:Could  Target Definition Builder shall warn if the targeted file is READ-ONLY
+5587	2:Must   Multi-language editor is blowing-up on activation of the "Edit" pop-up menu
+5623	3:Should Change some IAC behaviours
+5638	2:Must   Multi-language editor: FBD Display comment of variable or Function Block in tooltips or status bar
+5656	2:Must	 Isa3Gen: Gain/Offset does not work in Project5
+5669	2:Must   Isa3Gen: Erase application files when a resource has no POU
+5692	2:Must   OPC: TimeOut if writing variable to ISA3 tgt when OPC client set as Synchronous
+5786	2:Must   Multi-language editor: when using Ladder icons in FBD, should add icon for P and N contact
+5808	3:Should Workbench: When Copy/paste POUs, the hourglass does not appear
+5820	2:Must   Stopping VM does not ask for confirmation
+5883	2:Must   A project is not recompiled after the import of variables
+5894	2:Must   Wiring lost after an import
+5957	2:Must   CMP: No possibility to make on-line change after a mistake
+6006	1:Must/Blocking SFC: CRASH when using "Down" arrow key after selection of step
+6046	2:Must   SCC: When Structured C Code is selected the compilation is not incremental but completely done all the time
+6120	2:Must	 Handson.chm: Correct links and procedures
+6128	3:Should Variables imported using ImportExport.exe do not appear in variable selector
+6138	3:Should Error about network missing between configurations in IEC 61499 project
+6147	1:Must/Blocking CMP: Compiler goes into infinite loop for a specific project
+6163	2:Must   Destroy IEC61499 and unused bindings on build/rebuild
+6166	2:Must   Version source control database path must be configurable
+6169	2:Must	 Application converter: LD function block is not correctly translated
+6170	2:Must   isa3gen: instance of FB (parameter) doesn't work correctly
+6173	3:Should DIE: Wiring not correctly imported in a specific project
+6177	3:Should Editor not licensed error if Workbench 3 is opened at the same time as Worbench 5
+6211	3:Should FC editor crashes when switching to simulation
+6217	3:Should Possibility to clean the VSC history
+6219	3:Should C elements from MoxGRAF 3 require a link to a library to work (was not the case in version 3)
+6220	2:Must   MoxGRAF 3 Compiler returns an error for FB or functions having more than 32 parameters (input, output and local) but locals should not count
+6221	3:Should Accept the use of FB with the same name as one of its parameters for library projects used with MoxGRAF 3 targets only
+6225	3:Should For version 3 targets, remove symbols monitoring information with a setting in diamond.ini
+6226	2:Must   IEC 61499: It is possible to use an IEC 61499 FB many times in the same POU (It should not be possible).
+6228	3:Should MoxGRAF 3 Motorola type target: Locking a variable in the dictionary causes strange behaviors
+6231	2:Must   Config XML Import/Export and version source control not working
+6234	1:Must/Blocking  DWN: Impossible to download an application when using v5.1 SP1 with target 4.5
+6281	3:Should SWITCH (CASE) doesn't support the SINT type on big-endian
+6282	3:Should Adding a new device in IO wiring causes corruption of parameters
+6287	2:Must   MoxGRAF 3 build must be refused when two or more resources in the same configuration
+6298	2:Must	 Compiler: the compiler goes into an infinite loop in build or rebuild situation
+6299	3:Should Application converter tool problem with encrypted projects, workaround to add in Handson.chm
+6301	2:Must   Crash of the editor window (DGE) when Minimizing and Restoring it while the select variable window is opened
+6328	1:Must/Blocking Workbench crashes when clicking on button in dictionary for in structure declaration
+
+
+
+List of bugs resolved in the 5.11 release
+------------------------------------------
+
+2516	4:Could IAC: Import fail depending on MoxGRAF 3 defined var comment
+3447	4:Could IAC should check for encrypted POU
+4303	2:Must IAC must also import IO card mapping
+4409	2:Must IAC should support I/O wiring
+4414	3:Should IAC does not include Short Names of IEC functions and function blocks
+4545	3:Should Compiler returns Internal error when converting app with sub-programs (with IAC)
+4546	3:Should When converting SFC programs with IAC, comments appear in different action than the code itself
+5661	2:Must Isa3Gen: Libraries files are not generated for MoxGRAF 3 compiler
+5662	2:Must Call the MoxGRAF 3 compiler when cleaning, building, rebuilding a library or building a library POU
+5663	2:Must Create a library having all the MoxGRAF 3 functions
+5664	2:Must Isa3Gen: Some specific validations are not implemented
+5667	2:Must MoxGRAF 3: In LD POUs, the NOT operator does not exist
+5700	2:Must Missing documentation to explain how to use MoxGRAF 3 in MoxGRAF 5.1 workbench
+5702	2:Must When using application converter to import a resource in MoxGRAF 5.1, the target must be set to MoxGRAF 3
+5706	2:Must MoxGRAF 3 embedded resource not executed during compilation
+5728	2:Must MoxGRAF 3 Error at compilation when creating an SFC program using ISaGRAF 3 template
+5774	2:Must Separate the MoxGRAF 3 function blocks from list in Select blocks dialog
+5846	2:Must Local parameters not recognized when using MoxGRAF 3 function blocks
+5847	2:Must IAC converts functions from MoxGRAF 3 but for MoxGRAF 3 projects it should not
+5853	3:Should IAC should also import resource properties
+6010	2:Must IAC incorrect conversion of function block as local parameter of function block
+6064	3:Should MoxGRAF 3 does not support bindings, when downloading to an MoxGRAF 3 target, no error message should be displayed
+6098	2:Must IAC: The "GS2.t>t#5s" function does not work in MoxGRAF 5 but it works in MoxGRAF 3
+6099	3:Should Application converter: No offset can be declared for a channel
+6100	2:Must Application converter: Error when importing project in MoxGRAF 5
+6101	2:Must Isa3Gen: More validation required
+6103	2:Must Isa3Gen: Isa3gen should display an error when the project contains more than one MoxGRAF 3 configuration
+6104	2:Must isa3Gen: Isa3gen should validate the local IO
+6105	2:Must Workbench: Message box is displayed when simlating a project: compilation not up to date
+6106	2:Must Workbench: If you copy/paste (FBD), some error messages are displayed
+6109	2:Must CMP: With an incremental compilation, the POU is not re-compiled even when it was modified
+6112	2:Must Workbench: Isa3 restrictions
+6115	2:Must Workbench: Programs (functions, function blocks, and sub-programs) have a maximum of 32 parameters (inputs and outputs)
+6116	2:Must DPM: Resource definitions are not currently supported in MoxGRAF 5
+6117	2:Must SFC editor: SFC editor should name its step GSx and GTx for MoxGRAF 3 targets instead of Sx and Tx
+6118	2:Must Sample project "Project5" with MoxGRAF 3 configuration is not up to date
+6119	2:Must Documentation: Update dif.chm and remove all beta version in differences documentation
+6121	2:Must Workbench fails when importing exchange file with empty OEM parameters
+6123	3:Should Target Definition Builder: Uses 100% of the CPU when exporting libraries
+6134	2:Must IAC must generate a TDB file for IO devices in a project when the device is not defined in the MoxGRAF 3 library
+6139	2:Must Project clean command should automatically destroy 1499 bindings
+6157	2:Must ISa3GEN local parameter refused
+
+
+
+List of bugs resolved in the 5.1 SP1 release
+-----------------------------------------------------
+
+3961	3:Should Compilation on medium Target does not set warning when datas above 64K
+4576	3:Should VxWorks target (medium) crashes when calling a child SFC function block
+4719	2:Must   Compiler with medium memory model do work with new VA assignement algorithm
+5053	2:Must	 <Resource>_LinkInfo.mtc may contain an invalid offset1 for online modification
+5221	2:Must	 SFC function blocks don't work with medium memory model
+5815	3:Should Deleting a user variable of type array of STRING causes compiler error for online change
+
+
+
+List of bugs resolved in the 5.1 release
+----------------------------------------
+
+2464	4:Could Workbench: Download fails when several networks.
+2954	3:Should If logged in without admin rights, licensing info disappears after every close of the Licensing window
+3155	1 Must/Blocking Be able to debug LD / ST elements in SFC steps, while in debug mode (same thing in dictionary)
+3267	3:Should The item entered in "Find what" is searched. The following found item should be active.
+3415	2:Must iomanager should start polling even if some builds fail.
+3482	4:Could In FBD and LD Editors, display Variable comments for all variables
+3761	3:Should FBD editor: UNDO does not work properly with drag and drop of variable and FB.
+3782	4:Could variable I/O comment in FBD should split and the remainder printed on the next page.
+4273	3:Should Use multiple computer IDs based on distinct properties in license file
+4377	2:Must Cannot debug instance of function block defined in library with the FBD editor
+4412	3:Should Short name in library object not saved & displayed in FBD
+4420	4:Could Target Definition Builder: Cutting/deleting a complex I/O device makes the Target Definition Builder crash
+4475	3:Should A default network and IP address should be in the projects template
+4480	3:Should Changes from Table tab in print dialog are not maintained.
+4481	3:Should Print two sheets on one page does not work when printing from print preview
+4482	3:Should Too much data printed when POU source section is selected
+4483	3:Should In print dialog, cannot set start section number n.n.n.n.2
+4484	4:Could The dots on the branch points are printed ellipses.
+4488	4:Could 'bool' is not included in the comment of the Select Blocks Dialog
+4490	2:Must FBD editor crash when debugging long instance name
+4491	2:Must Sometimes, all objects in the diagram disappear with specific scenario.
+4492	2:Must Unexpected (incorrect) characters are displayed and printed when multi-byte character string is word-wrapped
+4493	4:Could Online change progress bar value is hidden when progress reaches 50%
+4507	3:Should Workbench terminates abnormally with project rename and external binding dialog is open.
+4508	2:Must Memory leak with external binding tools
+4518	3:Should Enable controlling to display or not the following message when online-change downloading
+4519	4:Could Enable to search across multiple diagrams with one Find/Replace dialog.
+4520	4:Could Display defined words values in debug mode
+4522	4:Could Allow displaying I/O variable comments for LD variables
+4524	4:Could Enable to customize the color of the cursor for FBD editor when creating objects.
+4666	2:Must Linux description in Target Definition Builder is incorrect
+4627	2:Must Validate RDCC at download
+4647	3:Should 61499 program disables "Generate symbol monitoring information" and "Generate debug information" properties
+4688	2:Must Copy-Paste in SFC/ST Editor is not working
+4887	4:Could Splash window is always shown even if SW_HIDE is specified
+4890	2:Must Grammatical error in PLCI.LOG error message
+4993	2:Must Structure of structure at the output of a function block causes an "Assignment not implemented" error
+5069	3:Should In DGE of debug mode, a value is not shown in a specific case
+5072	3:Should In multi-language IL and FBD Editor Customize option are reset after opening of Options/Customize
+5086	2:Must Use of padding by OPC server 5.0 should not influence IXL request (confusion with Octal value)
+5114	3:Should Browser does not bring user to the right place in LD POU when double-clicking on the reference
+5127	3:Should Alarm "actions setup" message is not saved in the alarm options window
+5143	3:Should NT-Target installation changes French documentation into English documentation
+5171	2:Must Add new Sentinel Protection Installer 7.2.1 in MoxGRAF installation process.
+5184	3:Should Cannot add in spy list the variable defined as function block parameter when debugging an automatic function block instance
+5188	3:Should Avoid unnecessary files download during online changes, by preventing binary POUs modifications in cases where POUs order numbers are modified.
+5191	3:Should During on-line change, symbol table file must be downloaded only if there is a modification, ignoring compilation date and compilation version number.
+5201	4:Could Browse library access path with PROPI
+5210	3:Should Resource properties do not conserve modifications when switching between tabs.
+5228	2:Must Wiring created with wiring tool not saved when switching from one resource to another
+5242	2:Must SFC initial step with token is not drawn correctly
+5254	3:Should Internal error message when debugging a target without step-by-step debugging implemented
+5258	2:Must Setting the license file user permission to read-only allows demo mode forever
+5269	3:Should Problems with configuration in debug with password protection
+5271	2:Must Update Target Definition Builder to generate IEC 61499 "C" function blocks
+5274	2:Must Library license string #1 in license file can be overwritten
+5276	2:Must PROPI ProOpenProject() must return a specific error code when project is password-protected.
+5277	2:Must VBPatch.exe must return an appropriate return code
+5278	2:Must Add return code ProHookAfterOnlineChange()  when symbol table download fails.
+5279	       Margin frame of the second and the following pages of the TOC are not printed properly.
+5280	2:Must Insertion of standard function blocks in FBD 61499: The icon to insert a standard function block is grayed in the language editor
+5283	       Variable not saved in dictionary when using an existing variable name.
+5287	3:Should Write the License Manager log after the transfer step 2
+5298	3:Should Output of a function block is not resolved in language editor
+5303	2:Must PXF - Exporting resource wirings only exports global variables
+5305	2:Must Importing resource wirings does not reconnect properly for complex devices.
+5306	2:Must Online change problem: adding a boolean variable will use 1k to each online change
+5309	2:Must DTA_SRV freezes when target is too old to respond to ixlResCapabilitiesGet request
+5321	2:Must Must be not possible to debug a password-protected function in library without entering the password.5127	Alarm "Actions setup" message is not saved in the alarm options window
+5325	2:Must Language editor crashes when asked for a POU password while another POU is already being debugged
+5333	3:Should Initial value fields of Imported variables which are user-defined structures all put in first variable field
+5334	3:Should Initial value field of imported string variables lose the first quote in the desctiption and causes a compile error
+5335	2:Must Language editor crashes when replacing name of a block in LD
+5339	3:Should Download problems to controller with big project
+5340	2:Must Moving a tag in FBD causes the compiler to return an internal error
+5342	3:Should Connection with the events logger is not possible for user who is not part of the accepted users
+5376	2:Must Add VA overlapped verification at the end of compilation.
+5377	2:Must Cannot load a "C" Function Block DLL for WIN32_L in the SIMULATOR
+5384	2:Must Workbench crashes in single-resource mode
+5385	3:Should Add a mechanism to know where the code has been stopped with error
+5386	2:Must Warning "Use of loop is not recommended" is not displayed in some scenarios
+5387	2:Must The MoxGRAF Bin files and Adv. Opt. 5.10.000 do not use the correct MoxGRAF version entry of Windows Registry.
+5388	2:Must The MoxGRAF Adv Opt 5.1 Help files do not use the correct Windows Registry entry as reference.
+5398	3:Should Generate Debug Info retains only last setting modification on LD POUs properties at build project
+5399	2:Must Cannot assign 0 to a USINT, ULINT, UINT, UDINT, INT in ST
+5405	2:Must STF PROG 61499 not deleted with a specific scenario
+5407	2:Must Language editor freezes when performing a replace all in LD
+5421	2:Must Help not accessible from Workbench interface
+5452	2:Must Deleting an IEC 61499 POU does not delete the .stf file in DATA_IEC61499 folder
+5453	3:Should Compiler Error Input Variable unwired even if wired once
+5455	3:Should Online change not allowed when STRING variable has retain attribute.
+5458	2:Must Impossible to perform an on-line download when the last on-line download is erroneous
+5466	2:Must Find/Replace: Match whole word filter when doing a replace stops searching after one failed match.
+5471	2:Must Local and global instances of function blocks with same names cause conflict with one another.
+5475	2:Must Entering twice Registration key 1 causes additional licenses to be issued and no error message
+5477	4:Could LD editor: Undo with a function block in a rung does not manage output symbols properly
+5484	2:Must OPC Server 5.0 client connection problems with hardware key
+5488	2:Must Modify binding error variables to remove producer variable "error variables"
+5496	2:Must More scopes should be added in the variable selector
+5507	2:Must OPC: Use one socket for each resource connected to the SMA server
+5508	2:Must OPC: A five-second delay ajustable via the registry
+5521	3:Should The compiler should report a warning when multiple defined words are used but do not have the same values
+5524	2:Must Workbench crashes in the dictionary list when deleting a row while in "grid mode".
+5532	3:Should Sometimes: Online Change progress bar not appearing
+5543	2:Must Kanji character causes problems on Japanese Windows (only in versions 4.20 and 4.50. )
+5548	2:Must The MoxGRAF 5.1 Components do not read the correct entry of Windows Registries for opening of help files.
+5557	2:Must OPC Server crashes when changing the refresh rate or when closing an OPC client
+5577	2:Must Compiler crashes sometimes with a complex data type defined in library and in project
+5578	3:Should OPC: When connecting,"Connection table full" message is logged
+5581	2:Must ASSERT generated in a particular situation while running LD in simulation mode (REMOVE hard coded value)
+5584	2:Must Initial value of two-dimensional array does not appear correctly in dictionary
+5588	       New FBD cursor with customizable color creates huge USER Objects (GDI) leak.
+5591	2:Must Completing missing functionalities to debug function block instances in libraries
+5602	2:Must An application that uses PROPI may fail with an "Access Violation" error message at DAO clean-up from ExitInstance
+5607	2:Must Modifying wiring twice may cause a loss of channels for a device.
+5617	3:Should Restore the simulator with advanced options
+5629	2:Must Database does not give the correct data type when the standard data types are splitted
+5630	2:Must Wiring tool always asks to save
+5635	2:Must Debugger REFRESH???? problem caused by confusion in notification ID
+5654	3:Should Incorrect display of variables in wiring tool
+5670	2:Must MoxGRAF 3: Converter incorrectly handles multiple action blocks in SFC level2
+5674	2:Must SFC editor very slow at a zoom scale of 100%
+5685	2:Must IF THEN ELSE END_IF in Uppercase not recognized in ST with IS3 Target
+5694	2:Must Isa3Gen: Generated file *.DFB does not contain instances of standard function blocks
+5697	2:Must Workbench and multi-language editor startup are slower with a soft license
+
+
+
+List of bugs resolved in the 5 SP2 (5.00.004) release
+-----------------------------------------------------
+
+4454	3:Should	Cannot import variable with wiring different than %QU or %IU
+4843	2:Must		Add floating license
+5086	2:Must		Use of padding by OPC server 5.0 should not influence IXL request (confusion with Octal value)
+5177	2:Must		Bad FB size calculation makes target crash
+5333	3:Should	Initial value Fields of Imported variables which are user defined structures all put in 1st variable field
+5334	3:Should	Initial value field of imported string variable loses the first quote in the description and causes a compile error
+5475	2:Must		Entering twice Registration key 1 causes additional licenses to be issued and no error message
+
+
+
+List of bugs resolved in the 5 SP1 (5.00.003) release
+-----------------------------------------------------
+
+1572	3:Should	Warn users when licensing components that are not installed
+2239	2:Must		Wiring tool: Too many devices with the command undo/redo	
+2258	3:Should	Wiring tool: No error if div=0 and mult =0 on a channel.
+2286	4:Could		OPC server: prompted dialog is not adapted to ISA.PRO
+3037	3:Should	Must put option "complete symbol table" in workbench for the OPC browser to work
+3841	2:Must		It must be possible to open in "single resource mode" a multi-resource project having a Single-resource license
+4495	3:Should	Add Device], Parts of the description of  some devices are hidden in displayed list
+4496	2:Must		The order of the I/O variables shown in the Unwired Variables list is random
+4553	2:Must		Have the possibility of changing the IO boards order in the IO wiring window
+4567	3:Should	prohook related functions should be called also when Propi function are used
+4579	2:Must		Step-by-step debugging failed with structure or array assignement and bit operation
+4777	3:Should	Should be able to change target type without losing "C" function block instances in dictionary
+4848	3:Should	PXF import - display a warning when importing a configuration, resource or POU that contains 61499 programs
+4856	2:Must		Crash on build with propiclient and project4
+4885	2:Must		When adding complex devices we are not warned that we have overcome the number of IO allowed (for a limited IO license)
+4886	3:Should	A strange notation (%ld) is used to notify user if exceed number of IO allowed in a project with complex boards
+4901	2:Must		POUs with identical names and contents cannot be imported into a project
+4904	3:Should	Alt-f does not open "Fichier" menu in french version in sfc editor
+4905	2:Must		Expand Array in OPC DA Browser
+4907	3:Should	Generate debug information available when all items are check
+4947	3:Should	Bad workbench behavior in read-only mode
+4957	3:Should	Tools menu "Check-in" and "View History" entries should be disabled during build
+4974	3:Should	Variable data type not printed when its type is defined in library
+5008	2:Must		The Find/replace option no longer finding an action block name in SFC Level 2 editor
+5012	3:Should	OPC DA SERVER should pop-up a message box when the symbols table on windows does not match the symbols table on target
+5037	2:Must		Add a delay for RS-485 switch in OPC DA Server for the MoxGRAF 3 target
+5078	2:Must		Use IXL target buffer size in OPC DA server
+5106	3:Should	PXF import - Importing a POU in a resource is not made following name but resource Number
+5107	3:Should	Sometimes SFC editor crashes when removing breakpoint at debug termination
+5110	2:Must		PXF import - Variable groups are deleted from existing resources when imported PXF contains the same variable group name
+5116	3:Should	When inserting a rung in LD, the comment on the existing rung disappears
+5121	2:Must		When unwiring I/O variables, sometimes they get erased from the dictionary
+5123	2:Must		Incorrect parameter passing when calling a function into a function
+5124	3:Should	Lower cases in target names produces a compile error on usage of a library POU
+5131	2:Must		Cannot assign structure variable to array index in FBD diagram
+5135	2:Must		Compilation error: contact Output can only be a variable with output or internal attribute
+5136	2:Must		Avoids an isomorph warning with C types
+5140	2:Must		Simulator crashes when simulating library that contains C function blocks and SFC function block childs
+5141	3:Should	Incorrect version when sending an email from the License Manager
+5151	3:Should	No key character found (=, ]) in line [field] BSEL1.  Error : Name corresponding to a reserved word.
+5153	2:Must		Cannot initialize the "Address" field of the instance of a function block
+5154	2:Must		PXF import does not import the complex type (structure, array) definition
+5155	2:Must		OPC DA SERVER 5.0 does not work properly when it is requested to read large amount of variables on one resource
+5160	2:Must		ST: Print problem since some lines at the bottom of the page are not shown
+5168	2:Must		Workbench crashes when deleting a resource from link architecture view
+5170	2:Must		STFs are deleted from disk when deleting another configuration
+5177	2:Must		Bad function block size calculation makes target crash
+5178	3:Should	Compiler shows an Internal Error while building SFC with bad type use
+5185	2:Must		Wiring tool crashes when adding a new complex device, expand it immediately and click on a channel inside the simple device
+5189	2:Must		In Russian version of MoxGRAF 5.0.3, print does not work
+5205	3:Should	Libraries' basic types are visible from the dictionary
+
+
+
+List of bugs resolved in the 5.0 release
+----------------------------------------
+
+299	3:Should	MoxGRAF Workbench should memorize sub-window positions and states
+300	4:Could		MoxGRAF Workbench suggestions for improved user interface layout
+1606	3:Should	"virgo document\drivers" not always required for particular component but installed
+2018	3:Should	Repair/Modify corrupt the alarm demo
+2066	3:Should	Wrong toolbar appears when changing from ST to LD in Level 2
+2073	3:Should	In Level 2 of SFC_FB Find/Replace using Find next doesn't select the find variable
+2085	3:Should	In SFC Editor, default language is not used correctly
+2105	4:Could		SFC: Qualifier column of the action's level2 disappears
+2116	4:Could		SFC: LD transition first screen not nice
+2122	4:Could		SFC: Action block name with '_' as 1rst char not saved
+2125	4:Could		SFC: Bad language toolbar if many action blocks
+2142	4:Could		SFC: Displaying problem with scroll bar in level2
+2143	4:Could		SFC: Displaying a huge number of action blocks
+2144	4:Could		SFC: ST toolbar is valid instead of being grayed
+2145	4:Could		SFC: displaying problem with action blocks and toolbars
+2147	4:Could		SFC: Cursor doesn't reach the code end line
+2148	2:Must		Bindings: cannot produce same var to two variables
+2149	4:Could		SFC: If split window and ZOOM +, level2 code is hidden
+2157	3:Should	SFC: Crash when closing program with comments on actions
+2159	4:Could		SFC: Action name duplication test is case sensitive
+2163	4:Could		SFC: Squares are inserted after copy/paste of some code
+2164	4:Could		Spy list:first display of real variable is wrong
+2171	4:Could		SFC/LD: Strange copy/paste into the level2
+2172	4:Could		SFC: Can't display action block code during debugging
+2222	4:Could		SFC: Start debug-> no more button in toolbar
+2237	3:Should	DPM: Not responding after see information of a library
+2338	4:Could		SFC: Editor key level 2 LD not working
+2339	4:Could		SFC: Pop menu select all text in level 2 text editor
+2443	2:Must		TGT: dsysMemMove bug if memmove() not used
+2448	4:Could		DEBUG:Bad display for real variables from 11 digits after comma
+2451	3:Should	DPM: Crash when deleting network and change target
+2539	3:Should	SFC:cursor disappears when changing of windows
+2553	3:Should	SFC FBs cannot share local variables with its child FBs
+2555	4:Could		Would be nice to be able to use the TAB when navigating in the dictionary
+2557	4:Could		in debug mode, a REAL variable should be able to be forced to, for example, "50", without having to write "50.0"
+2588	3:Should	Changes in Link view should be changed automatically
+2626	3:Should	When writing to a bit of a DINT that is Output, the VM is in ERROR mode
+2676	3:Should	Cannot spy variables in SFC program
+2708	2:Must		4.20.17.5 Find/Replace doesn't work in SFC editor
+2754	3:Should	When uninstall MoxGRAF Enhanced 2.4, "Machnm1.exe" in the system32 for the operation of LicenceManager is removed.
+2794	3:Should	Ctrl-V after Ctrl-X is not working in LD editor
+2855	3:Should	Users should be able to choose a font for ST editing in an SFC step
+2884	3:Should	The SFC editor level 2 does not move the cursor like the most popular text editors
+2888	3:Should	The SDI, SDO and SDR range of LR is change from [0-63] to [0--1023], we need to change the documentation
+2914	3:Should	Speed up compilation time of projects
+2956	3:Should	The vertical scroll bar of the code window in SFC level2 editor does not work
+3031	4:Could		OPC Installation not tell when user not have administrator rights
+3131	2:Must		Garbage added in the SFC level 2 (ST code)
+3181	2:Must		Allow setting the font size with the options dialog for the text in  FC ( LD, ST, IL and SFC diagram done)
+3204	2:Must		SFC editor crashes when we try to edit an LD diagram in a transition
+3217	2:Must		When opening a project, add a check box to disable the Advanced Options
+3231	2:Must		Compilation not done after clicking on "yes" button of the warning dialog when going to simul mode when the project is not up to date
+3233	3:Should	Notify the user when he reaches his I/O limit
+3248	3:Should	Translate or fulfill language interface terms
+3293	3:Should	The display area of the editor should expand depending on the size of the block. with MUX4 or MUX8
+3314	2:Must		Workbench dataserver should not load symbol table in the same space name as the target resource
+3365	2:Must		STF file not created when copy/paste POU multiple times 
+3418	3:Should	During build we can import variables
+3442	2:Must		Ladder rung colors do not properly represent the physical state
+3456	3:Should		Mouse wheel not working in LD,SFC and FC Editors
+3457	3:Should	File/Export/Variable should be grayed during build
+3464	2:Must		Use latest "cell width" setting to print LD diagram
+3467	2:Must		Possibility to create a metafile output to print the graphical POUs with a plotter
+3468	2:Must		Installer does not look at proper partition for disk space
+3511	3:Should	SFC Transition code written in ladder with parallel contacts not saved
+3522	2:Must		FBD editor should validate data type when connecting to elements
+3556	2:Must		SFC Editor: code disappears when using zoom level 100% and up
+3772	3:Should	Sometimes font is resetted to 10 when changing background color and font size in FBD editor
+3781	2:Must		Must be possible to set background color of level 1 and level2 SFC editor
+3793	2:Must		Allocate additional data space to support online changes involving bindings
+3816	3:Should	Read-only allows change in FC editor
+3824	2:Must		Use distinct color to fill boxes in diagram (SF, SFC, LD & FBD) than background color
+3837	2:Must		Generate a symbol table with case sensitive variable names instead of upper case variable names
+3852	2:Must		Improve speed of compilation with  40960 I/O channels!
+3853	2:Must		Dictionary - Ctrl-end and page-up/down do not work to navigate through it
+3859	2:Must		Downloading after changing order in SFC POU causes the virtual machine to crash
+3861	2:Must		Possibility to change the font of the level2 editor of the SFC
+3873	3:Should	Cannot specify more than 10 bits for binary format of DINT (2#1001...)
+3879	2:Must		Make WB settings (sizes and positions for windows, toolbars, dictionary, etc) retained from one Workbench session to the other
+3898	2:Must		Details of error not displayed in editor when double clicking on build error in output window
+3899	2:Must		Landscape chart not printing correctly when chart has a description
+3900	2:Must		Text overlaps when font increased in print dialog
+3906	2:Must		Cannot insert SFC Step time variable with Variable Selector
+3907	2:Must		Workbench crashes if a too wide SFC is printed
+3911	2:Must		Text and Graphics overlap when SFC or FC is huge and has many level 2 (and or descriptions)
+3919	2:Must		Only the first 2-3 lines of SFC Level 2 is printed
+3921	2:Must		Wrong toolbar is displayed in SFC level 2
+3968	2:Must		Homogenous Debug icon bar during debug whatever is the editor
+4019	2:Must		Enable setting date/time of Linux RTAI from an MoxGRAF function
+4026	2:Must		Incorrect alarm server shutdown in MoxGRAF demo mode
+4049	2:Must		Incorrect "C" code generation with symbol monitoring information
+4050	3:Should	Allow multiple MoxGRAF versions installed on computer
+4060	2:Must		Stopping debugging from multi-language editor leaves diagram in read-only mode
+4088	2:Must		Copying and pasting in SFC Level 2 IL/ST copies level 1 data
+4091	2:Must		Licensing: Finish development not done in MoxGRAF 4.5
+4092	2:Must		Merge 4.22 RC10 and over in MoxGRAF 5
+4093	2:Must		Locked FLDIOBOOL member produces strange behavior
+4107	3:Should	Trends: incorrect color when variable has a dimension
+4111	2:Must		Password dialog is incorrect when item uses its parent password
+4120	2:Must		VSC Toolbar not disabled in build/debug modes
+4128	2:Must		Workbench crashes in Version Source Control when viewing configuration history (details)
+4131	2:Must		VSC allows Get of earlier version when project is opened in read-only mode
+4141	2:Must		Get of resource version is sometimes disabled when another resource is locked (password protected)
+4147	2:Must		VSC get operation can be performed even when an editor is currently open
+4157	2:Must		Cannot add __SYSVA_TCYCURRENT system variable from Variable selector
+4158	3:Should	"100." no longer allowed in ST file
+4160	3:Should	VSC resource history comparison fails when it is password protected
+4170	3:Should	Sometimes project save flag was activated without any changes to project 
+4172	2:Must		Transfer Licensing doesn't work
+4175	2:must		Import / Export Variables fails when advanced options are not installed
+4216	2:Must		copying and pasting a POU in demo mode produces a decrypted STF file
+4219	2:Must		VSC get operation does not correctly restore bindings
+4220	2:Must		FC editor crashes on exit
+4233	2:Must		Variable selector conviviality improvement
+4244	2:Must		The workbench stays in read-only mode after a compiler internal error
+4255	3:Should	The uninstallation of MoxGRAF does not remove all files
+4266	2:Must		POU files encrypted in demo mode are not decrypted before applying a protection password
+4338	2:Must		Incorrect syntax highlight
+4344	3:Should	Copying/Pasting a non-encrypted POU in demo mode freezes the workbench
+4371	2:Must		Bad assignation in TIC may cause a kernel crash when using SFC function blocks4407	2:Must		Incorrect error message when installing MoxGRAF 4.50 over MoxGRAF Enhanced
+4425	2:Must		When saving a big project (STD_1499_TEST_ALL), building the project waits (sometimes) for DGE to quit.
+4464	2:Must		Linux and QNX runtime installation problems from version 4.21 to 4.50
+4489	2:Must		FBD Editor remains read-only mode after Stopping  'Debug' from Workbench
+4502	2:Must		Linked library (dependency) to a project causes a recompilation window to pop up every time simulation is launched
+4538	2:Must		Add PRT.CHM in Help directory when installing "Target Run-Time" component
+4555	2:Must		Description of HiBeam is cut in french installation
+4582	2:Must		Child FC/SFC function blocks are not imported
+4590	2:Must		Cannot print SFC child with MoxGRAF 4.50
+4629	2:Must		Workbench tooltips not working in projects with advanced options
+4632	2:Must		With automatic save enabled, Edit FC, close dialog, save dialog displayed
+4633	2:Must		binding link not refreshed when data type changed for a variable used in binding
+4636	3:Should	Use USINT instead of SINT for event input, event output
+4643	3:Should	Link from an output to corner is not accepted
+4649	2:Must		FBD 61499 editor incorrect behavior4653	2:Must		Print in Word file: diagram incorrectly printed
+4654	3:Should	Print in word file : missing indentation for I/Os
+4677	2:Must		New Icons and Toolbars for MoxGRAF 5
+4679	2:Must		Cannot compile a library that uses advanced options target
+4858	2:Must		Variable Data type lost when deleting POU
+4900	2:Must		Values of two local variables with same name does not work properly in debug
+4905	3:Should	Expand arrays in OPC DA Browser
+4962	3:Should	GSTART & GRST behaviors are not the same in program and function blocks
+4964	2:Must		Child and Father execution order incorrect
+4994	2:Must		Find replace error or crash for variable Type, Group, Attribute, Scope....
+5026	3:Should	Variable locking status for SFC child function block parameters is not correctly displayed in dictionary
+5028	3:Should	In debug, cannot see value for SFC child with an input parameter of type array or structure
+5033	2:Must		Advanced options NT-TARGET run-time is not real-time
+5035	2:Must		Function's input parameter not saved
+
+
+
+List of bugs resolved in the 4.50.001 release
+---------------------------------------------
+
+1845	3:Should	Importing resource error
+2301	4:Could		Workbench: message should appear after export is finished
+2417	4:Could		Workbench: Resource import long pathname is not properly managed
+2450	4:Could		Workbench: Export, problem if space in name of variable group
+2696	3:Should	Remove the read-only option in the open dialog offered when importing
+2749	3:Should	Export dialog should have a 'Close' or 'OK' button when the export is finished
+3762	2:Must		Password usage with library's POU are not working properly
+3786	2:Must		Resource with retain variables importation failed
+3997	4:Could		Enable uploading resource even if license limited to single resource (Essential)
+4123	3:Should	Recompile check with link libraries always displaying when downloading/debugging/simulating
+4157	2:Must		Cannot add system variable __SYSVA_TCYCURRENT from Variable selector
+4179	2:Must		Workbench compiles too many POUs and resources related to some modification in a POU
+4242	2:Must		Change the timeouts in EventsLogger
+4325	2:Must		Project DB file size increases at each VSC Get
+4328	2:Must		VSC Get Fails for some more items
+4331	2:Must		Improve XML File generation performance
+4335	2:Must		Uninstallation of MoxGRAF delete the settings in Diamond.ini file
+4336	2:Must		Workbench crashes, when building a POU in Multi-language editor, after a change in dictionary
+4337	2:Must		(Sometimes) Deletion or selection of character can cause a crash in IL or ST with syntax highlight
+4338	2:Must		Incorrect syntax highlight
+4341	3:Should	Open in single resource mode is disabled when installing workbench without advanced options
+4358	2:Must		Version Source Control's "Get" missing some definition types for FFB paramters
+4362	2:Must		Incorrect TAG validation with optimized version of DCI
+
+
+
+List of bugs resolved in the 4.5 release
+-----------------------------------------
+
+859	3:Should	Binding from Read IO to Write IO for Bool and Dint is refused	
+1632	3:Should	Driver monitor does not fit in 800x600 display monitor
+1638	3:Should	Advanced Options: Bug in the trends server
+1652	3:Should	Run-time error when trying to remove trend-number of days to purge data
+1664	3:Should	Advanced options: Wiring error when variable's comment contains a single quote
+1682	2:Must		"File / Rename project" does not work in the Workbench
+1687	2:Must		Do not reload the dictionary if local symbols table not changed
+1735	3:Should	No OPC DA Server system event generated when ixl_mgr cannot start-up
+1805	3:Should	Advanced Options: Error Description does not match with the error when importing I/Os
+1812	3:Should	Windows CE Incorrect Installation
+1856	3:Should	Advanced Options: Trend variable list is empty
+1915	3:Should	iomanager does not display an error on download if a build request fails to a driver
+2017	3:Should	Advanced Options: Crash when changing trend server options
+2033	3:Should	Initial value for String with CHAR > 126 are refused
+2041	3:Should	iomanager configuration at download may return an error due to timeout for large applications even if IO configuration has not changed
+2052	3:Should	When PRO OPC is installed on the same pc running an Enhance OPC server there are problems
+2169	4:Could		Workbench: If no Internet Explorer, help menu crashes
+2173	4:Could		IL: Equal operator doesn't work in IL language
+2186	3:Should	FC:level2 not visible in the TILE mode
+2191	3:Should	ST: cannot add any parameter of F to variable list
+2198	4:Could		DINT Value cannot be set to -2147483648 in decimal
+2268	3:Could		FC: Cannot select instance of FB in LD of FC
+2306	3:Should	Workbench: _IO_IX is displayed instead of var name in diagnosis
+2308	3:Should	FC: Crash after finding action in FC Pou with LD action
+2342	4:Could		Target: Start command must be done twice to restart resource
+2395	2:Must		Initial values are not updated after an on line change
+2451	3:Should	Crash when deleting network and changing target
+2559	4:Could		Downloading a new project should erase all traces of previous project
+2587	2:Must		Variable types incoherence when they are defined in a library
+2622	2:Must		Corrected a timeout problem when downloading large project
+2656	3:Should	Misc. download errors when downloading to a monotask target when resource number does not match the one configured on the configuration
+2658	3:Should	Decrypt all encrypted files create during demo period on licensed workbench build
+2661	1:Must/Blocking	DIC: -0.9 value incorrectly displayed in dictionary during debug
+2717	4:Could		Workbench does not opens automatically in "normal" mode when the opened project defines only one resource
+2754	3:Should	When uninstalling MoxGRAF Enhanced 2.4, "Machnm1.exe" in the system32 for the operation of Licence Manager is removed.
+2843	2:Must		FBD Execution order does not display tag on Instance of FB
+2914	3:Should	Speed up compilation time of projects
+2924	2:Must		Enable hardware key protection
+3031	4:Could		OPC Installation does not inform when user does not have administrator rights
+3060	3:Should	Workbench does not detect a bad version of an import RXF file
+3124	3:Should	Some resource properties stay read-only after build
+3150	3:Should	Bindings: problem when specifying a default value in case of consumption error
+3151	3:Should	SYSVA_RESMODE missing mode in documentation
+3164	3:Should	Do not shown the first variable member in the variable locked list
+3216	2:Must		Workbench crashes when trying to reopen a project with one resource in single resource mode 
+3225	2:Must		Cannot print pin names in user FB
+3227	3:Should	The produced data for all resources is effectively sent to all resources
+3231	2:Must		Compilation not done after clicking on "yes" button of the warning dialog when switching to simulation mode when the project is not up to date
+3237	2:Must		The FBD comments are printed over the report's section title
+3242	2:Must		OPC may disconnect and not be able to reconnect or crash
+3246	2:Must		Workbench crashes with ProHook sample DLL
+3250	3:Should	The menu item described as "Edit Project/Library Description"  in the User's Guide is shown actually as "Edit Project Description."
+3251	3:Should	The menu item described as "Hide/Show Links"  in the User's Guide is shown actually as "Hide Links."
+3252	3:Should	User's Guide does not describe "Step," "Step into," or "Show current step."
+3255	2:Must		All the changes in Dictionary are not allowed in Read only
+3258	2:Must		The Resource should be pasted. (crash)
+3262	2:Must		The Resource description dialog should be displayed. (crash)
+3265	2:Must		Workbench terminates forcedly when creating no Resource folder.
+3272	3:Should	User's Guide contains "1.0F-15" as an example.
+3279	3:Should	"RUN   CODE" should be shown on the title bar.
+3288	2:Must		Workbench terminates forcedly. with Look and Feel01
+3292	3:Should	"abs" is shown as an instance name above the block.
+3296	2:Must		Abnormal Termination in Select Blocks dialog
+3299	2:Must		Disabled Build before Simulation
+3300	2:Must		Timing of calling Debug mode terminate Hook
+3302	3:Should	Occasional display problem of the Select Variable dialogs
+3312	3:Should	No refresh done in LD editor Select Variable window when creating new Defined words in the dictionary
+3313	2:Must		LD Text button not working in document generator dialog
+3317	2:Must		Online change: Binding with Error variable not using the new one after download
+3326	2:Must		Variable locking does not work properly with MoxGRAF Enhanced FBP drivers
+3327	2:Must		Warning about on line change not possible after modification of internal variable equation
+3329	2:Must		Structure library usage in a project cause a crash.
+3330	3:Should	Compact Database is not working when the project has a password
+3333	3:Should	Header page was not set correctly in print preview
+3334	3:Should	items numbering bugs when table of contents was selected until the table of contents was displayed.
+3338	2:Must		No question to save when closing the DPM
+3339	3:Should	The workbench asks to save when the user selects a configuration in the hardware view or a resource in the architecture view.
+3343	3:Should	Variable selector dialog does not show just created variable.
+3346	2:Must		structure member value is not diaplyed in FBD debugger
+3347	3:Should	Parameter type of the same function block type cause dictionary to freeze.
+3349	2:Must		In Variable Selector Dialog, function's parameter type can be displayed incorrectly.
+3353	2:Must		Crash when inserting function from library into the FBD editor program
+3354	2:Must		Importing variables with instance of function block not working properly
+3356	3:Should	Variable selector dialog cancel button acting like OK in some situations.
+3357	2:Must		OPC Server: cannot connect when both project and config have passwords
+3362	2:Must		GSTATUS not working anymore
+3364	1:Must/Blocking	Dongle license slows down ST and FBD editors
+3371	2:Must		Direction empty when Printing project with function block
+3373	2:Must		SFC Editor problems with Insertion of Identifier
+3380	3:Should	Copy Array of array produces an unknown tic code in target TIC interpreter.
+3384	2:Must		Function Block in LD does not display values in Debug or Simulation mode
+3402	2:Must		Workbench freezes if driver info is missing when calling the advanced options
+3404	2:Must		Copy/Paste between two SFC programs does not work
+3411	3:Should	Installation:	The "linux without FPU" target is the same as "Linux with FPU"
+3412	2:Must		project password incorreclty handles special characters
+3418	3:Should	During a build we can import variables
+3420	2:Must		Wiring Tool (Dwt): Print, Undo and Redo are disable
+3423	2:Must		Current selection is reset when FBD editor lost focus
+3426	2:Must		Incorrect token display in SFC editor
+3432	2:Must		Advanced Options crashes when importing field communications with fewer devices
+3443	2:Must		ProHookOnStopDebug()'s ldSimulation parameter may be incorrect in simulation mode
+3444	3:Should	Incorrect error file open / close in DDD module.
+3446	2:Must		In debug mode, On-line Change: Download command propose to compile the project without being able to do so.
+3448	2:Must		Binding problem in monotask NT target
+3455	2:Must		Last modication date-time of a resource is not set when removing a POU.
+3463	2:Must		IAC (MoxGRAF Application Converter) problems with big projects
+3468	2:Must		Installer does not look at proper partition for disk space
+3474	3:Should	Copy/Paste of a SFC Program and modification of the copy makes the editor crash
+3535	3:Should	FBD Editor: Overlapping link behavior bug
+3567	3:Should	PRDK\Drivers\NTIO.exe still display Altersys
+3581	3:Should	Resource number can be negative when inserting a new resource
+3587	2:Must		Missing error message in DiaDCI.err
+3601	3:Should	Cannot be able to change physical value of a locked output variable
+3620	2:Must		In export pro mode, exportimport.exe crash when uncheck the wiring field
+3643	3:Should	Abnormal behavior when quitting Browser tool while creating browse information.
+3644	3:Should	Browser (DBR) tool can be started many times.
+3658	2:Must		sometime online modifications with new FB instances crash the VM
+3690	2:Must		The method DDB_CDataServer::DsDisconnect performs updates
+3748	3:Should	Browser: resizing windows remove read only mode.
+3752	2:Must		Upload resource problem
+3756	2:Must		Deleting bindings causes MoxGRAF to crash
+3759	2:Must		Incorrect encryption POU file with password
+3796	2:Must		Cannot write to a string variable created via an online change
+3804	2:Must		Workbench takes a lot of CPU time to save minor changes
+3842	2:Must		Multiple SFCs are not executed in the right order
+3851	2:Must		SCC: Local array variables not defined in appli.h
+3852	2:Must		Improve speed of compilation with  40960 I/O channels!
+3857	3:Should	The "Find and Replace" should also work when the dictionary is in the line edit mode
+3881	2:Must		IEC function block in library using "C" function block inside does not compile
+3893	3:Should	Add an option in the resource build settings to refresh the browser after builds
+3898	2:Must		Details of error not displayed in editor when double clicking on build error in output window
+3899	2:Must		Landscape chart is not printed correctly if chart has a description
+3900	2:Must		Text overlaps if font is increased in print dialog
+3904	2:Must		Incremental compilation should not be used when a POU has monitoring
+3907	2:Must		Workbench crashes if a too wide SFC is printed
+3911	2:Must		Text and Graphics overlap when SFC or FC is huge and has many level 2 (and/or has a description)
+3919	2:Must		Only the first 2-3 lines of SFC Level 2 are printed
+3920	2:Must		SFC Option -> Show as a list or Detail does not work every time
+3921	2:Must		Wrong toolbar is displayed in SFC level 2
+3923	2:Must		Speed up POU compilation
+3958	2:Must		Enable to select the text size when Printing LD diagram
+3962	2:Must		256 letters is needed in Log message window.
+3963	2:Must		Add IXL errors in Log message window
+3985	2:Must		Cannot open a POU created in demo mode
+4039	2:Must		Function Block without parameters compiles incorrectly
+4060	2:Must		Stopping debugging from multi-language editor leaves diagrams in read-only mode
+4088	2:Must		Copy and Paste in SFC Level 2 IL/ST copy level 1 data
+4096	2:Must		Editor's compilation does not call every prohook which causes a crash with advanced options
+
+
+
+List of bugs resolved in the 4.20 release
+-----------------------------------------
+
+1966	3:Should	DGE crash when Ladder Diagram is empty and click on Adjust in Option/Layout
+1989	3:Should	When doing cut and paste on FBD editor elements are modify
+2028	2:Must		Instruction MUL -1 with SINT type variable always gives -1
+2032	2:Must		POW doesn't gives 0.0 when IN =0.0 and EXP < 0.0
+2037	2:Must		DEBUG:Using Initial value in Array of Structure mixup when 2 or more initial value are the same at run-time
+2038	3:Should	WB Crash after Copy Paste without enter in dictionary
+2089	3:Should	OPC doesn't recognize parameters member of SFC FB instance variable
+2114	3:Should	No save is asked if modify program and build in DPM
+2180	3:Should	DDC: Error on min and max value of a DINT
+2220	2:Must		FBD CMP: too complicated diagrams cannot be compiled
+2244	3:Should	CMP: error when one of communicaiton parm is =
+2248	4:Could		DPM: can't insert resource with same NR after delete
+2251	4:Could		FBD: Compiling error divergence after corner or Gain
+2304	3:Should	CMP:Var of IL register are lost with incremental compil
+2320	4:Could		CMP: Error not found by FBD compiler on a string
+2370	2:Must		CMP: Errors appear with test equality on TIME var
+2384	3:Should	CMP: Wrong value in real variable after on line change
+2426	3:Should	TDBuild DDB: After new import of FB, variables have no type
+2428	3:Should	LS standard, the reverse contact is -|/|-, and the reverse coil is -(/)-
+2463	3:Should	TGT: conversion STRING to REAL Problem
+2470	3:Should	DDC: Wrong display for init value of complex type var.
+2483	3:Should	WB: Download is done even if project not compiled
+2498	2:Must		CMP: Problem when using Define word in library
+2527	2:Must		CMP: Error when writting a bit number in a FB paramater
+2528	3:Should	TDBuild  CMP/LNK:Wrong offset if used 2 'C' block as local param
+2533	2:Must		List all error instead of only one in the build process verification 
+2567	2:Must		Problem with Init function block instance 
+2575	2:Must		Compilation error when using global variables, function and FB parameters of the same name
+2580	2:Must		Memory leak on ISaGRAF.exe on NT and Win2000
+2589	2:Must		OPC server for PRO not working properly with RSI drivers
+2618	2:Must		The ANY_TO_STRING conversion does not work with inputs of type REAL.
+2628	2:Must		CMP comparing members of structures 6 times in an IF statement within an ST step of an SFC program causes a VM crash
+2641	3:Should	Cannot open function block copied from program
+2642	2:Must		Incorrect behavior in SFC level 2 ST editor
+2644	3:Should	IL program RETNC error
+2683	3:Should	With an RTX runtime on a remote PC, the handle count and virtual memory size increases every 20 seconds
+2775	3:Should	Copy of a program does not work if the project is not save after the creation of a program
+2778	3:Should	SFC Editor Crash when closing
+2787	3:Should	Ctrl-P is working only the first time in Link and Hardware architecture
+2792	3:Should	4.20.17.2.1 Missing Redo Ctrl-Y in Edit menu of IL editor
+2895	2:Must		Restarting 30 days demo period does not work
+2899	2:Must		ProBuildProject, ProBuildResource, ProBuildPOU return 0 (OK) when error occurs in Phase Checking database
+2923	3:Should	Can't load DIP.exe with some path
+2937	2:Must		C function blocks with hidden input parameters generate compiler error
+2949	3:Should	A message should inform the user when the selected POU is not found.
+3129	2:Must		Initial values changed with on-line change download use old value after re-started
+
+
+
+List of bugs resolved in the 4.13 release
+-----------------------------------------
+
+1038 R 3 CMP: GPF when compiling bad syntax IL POU
+1054 R 3 CMP: FB with cpx type inside function don't work
+1103 R 3 CMP: Fields not updated in ResDwlOrder table
+1156 R 3 CMP: compiling error when comment in Cyrillic
+1225 V 2 CMP: error in FC if action is connected from connector
+1250 R 3 TGT: Error in the DERIVATE function block
+1312 V 3 *.chm: Add sentence in all documentations of MoxGRAF Pro
+1344 R 3 CMP: On-line Change not OK if new IEC FB instance
+1364 V 4 CmnLayer.chm: "pvData" allocation not clear
+1386 V 4 ProIO.chm: Kerdata should be pvKerData
+1406 V 4 ProIO.chm: Bad link for "See I/O definition in database"
+1408 V 4 ProIO.chm: Wrong description for huNbChan and pRtIoChan
+1421 R 4 ProDk.chm: some IXL functions are not documented
+1422 V 2 Debug:Connect pb with tgt if stop/restart all res.
+1426 V 4 Prodk.chm: monotask kernel is an IXL server
+1428 R 3 CMP: negative init value for real is loaded in positive
+1430 R 4 SCC: Local array variables not defined in appli.h
+1432 R 4 Browser: Bad language is displayed for functions
+1449 V 5 Descrip. of ANY_TO_SINT output parameter Type is wrong
+1450 V 3 Binding : problem on CRC with local array variables
+1451 R 3 CMP: Binding error variables problem with param names
+1453 R 4 Doc PROTIC: TIC_STD_FBL_CALL  has just 1 param
+1468 V 5 ProDK.chm: add precision about kerHookRStart
+1478 V 3 TGT: I/Os do not work under windows 2000
+1479 V 3 DDC: FB parameter order not saved with NoUserOrder
+1484 V 2 DPM: No network available in German in 4.10 and 4.12
+1486 V 3 Pro.chm: Modify inputs for comparaison operators
+1490 R 3 DTA:Download fails with runtime installation on one node
+1492 R 3 CMP: compiler duplicate the ST code in executable files
+1493 R 3 CMP: Bad management of qualifiers on SFC child program
+2059 R   String length not copy when Copy+Paste from SFC Program to SFC FB
+2060 R   ESC after a cut crash the Workbench
+2062 R   Cut & Paste on the same Function Block is not refused
+2064 R   Drag & Drop of Child SFC between Resource is allowed
+2070 R   GPF at compilation when an FB is named FATHER or CHILD
+2071 R   GPF at compilation when an FB child has more than two underscores
+
+
+
+List of bugs resolved in the 4.12 release
+-----------------------------------------
+
+1169 V 4 CHM: Missing system variab: _SYSVA_WNGNUM & ...WNGARG
+1172 V 4 Pro.chm : Some statut not implemented for IXL FB
+1180 V 4 Pro.chm: OR and XOR should not show =1, >=1
+1184 V 3 ETCP: Binding problem (Network is overloaded)
+1188 V 4 Help: Change Consuming Error Variable expression
+1229 V 4 Pro.chm: PRT: size of LD font not taken into account
+1236 V 3 ETCP: GPF when binding mono and multi task
+1239 V 2 CMP/FBD: 2 calls to R_TRIG instead of one
+1240 V 3 TGT:OS9 mono does not produce when binding with NT Mono
+1241 V 3 TGT:create sockets if producer not started on remote tgt
+1242 V 3 DBG: Resource from ERROR to RUN on big project
+1244 V 3 TGT:Mono not consume if start in first (hetero binding)
+1249 V 3 ProDK.chm: bad description of the month of GMT time
+1254 V 2 CMP : InstInit not called when C FB is nested
+1255 V 2 DDC: Instance of user C FB cannot be expanded
+1262 V 4 DDC: DPM not responding after copying a var in a stuct
+1263 V 2 DPM:Resource popup menu not display items of prohook.dll
+1267 V 2 DDB : Std instance of FB are lost in copy of a resource
+1275 V 2 ProHook : Info name of copied global variable is wrong
+1276 V 2 Prohook:Menu option is disabled in fct which var is sel
+1279 V 2 IAC: problems with corrupted eols in MoxGRAF files
+1280 V 4 TGT: Nb Locked var is modified if lock/unlock many times
+1281 V 2 CMP : Bad translation by FBD compiler in ST
+1283 V 3 DGE/LD:Real values not displayed if change num. display
+1284 V 4 Readme.txt is not updated about IL, complex types
+1285 V 4 Pro.chm : Bad link in Simulate panel of I/Os
+1286 V 4 Pro.chm : IL instrustions are generated in C code
+1289 V 2 DIP: Bad diplay for logical value like ù,é in string var
+1297 V 3 FC: bad check of action/test names
+1299 V 4 ProIO.chm: Miss some explanations about boolean variable
+1301 V 3 DDC: Bad initial value for fields with complex type
+1302 V 3 CMP:Error found for a right syntax of complex init value
+1303 V 4 ProDk.chm : Wrong syntax for "occurrence in structure"
+1304 V 3 DDC: Wrong display for a structure with array type
+1305 V 2 DEBUG : All hook download called even if errors
+1306 V 2 DGE: LD Find/Replace endless loop
+1309 V 2 CMP : Loop back of one variable in FBD not compiled
+1315 V 4 ProDK.chm: A title is missing in Download hook functions
+1316 V 2 Import ressource problem on complex devices
+1319 V 4 Import: configuration name should not appear twice
+1320 V 5 DPM:Can not change MoxGRAF word in dialog box of patcher
+1321 V 5 DPM: Do not ask confirm. of prj renaming when patched
+1323 V 3 CMP: When link, there are errors which should not appear
+1326 V 3 DDB: Pb with import resource when different target type
+1327 V 3 DDC: After duplicate, save option not available
+1328 V 4 DDB: IO device import pb with lower case target name
+1329 V 2 CMP: code size exceeds the limit (jump) with return
+1330 V 4 ProdK.chm: Status of dsysMsgQReceive should be int32
+1331 V 3 TGT: Infinite loop If rtnCusInit return BAD_RET
+1332 V 3 TGT: Exit RTN routine is called after data are destroyed
+1334 V 2 DPM:Customized splash window if launch DPM not from BIN
+1335 V 3 DDC: Impossible to set a comment or alias in array var.
+1338 V 3 CMP: Wrong value in real variable after on line change
+1339 V 2 DWT:Bad wiring if on last channel
+1340 V 5 Pro.chm: CTU block help little error
+1341 V 4 DPM: Shortcut to "defined word" does not work in french
+1342 V 4 DPM: Spelling error in a warning
+1345 V 2 DPM french: GPF when open or create project on Win2000
+1346 V 4 "Embed symbol table" should be "Built symbol table"
+1347 V 1 ETCP: error in SocketSendCom & RcvCom functions
+1348 V 4 ProDk.chm: update the section about ETCP porting 
+1349 V 2 DPM: Win2000: cannot open a project twice
+1350 V 3 Import: double quote in comment of defined word not ok 
+1354 V 4 DPM: Two messages appear after open a project moved
+1355 V 3 IOWT: allows assigning variable to OEM param
+1356 V 3 CMP:Pb with empty init value for var with complex type
+1361 V 4 Binding: should not accept default for complex type
+1363 V 2 CMP: err if same C POU for 1 target and for Simulator
+1366 V 2 CMP:Err on array type if same target project and library
+1368 V 4 Pro.chm: Bad verb in workbench/Import Export resources
+1370 V 3 DDC:Wrong display for a function block with complex type
+1372 V 2 SFC: on Win2000 can not enter several lines of ST
+1378 V 3 PRT: print a ST prog, repaginate not responding
+1379 V 3 CMP: Crash when compile with init value exceeds limit
+1381 V 1 CMP/SCC: Nb instances always 0
+1384 V 2 Help: some dll and exe appear in help/about/info box
+1388 V 4 TDBuild:standard target files not ok for RSI and ETCP
+1390 V 3 CMP:GPF after download and modif made on array variable
+1393 V 4 PRO.chm: error concerning on line modification
+1395 V 2 Download: Too long when many resources are running
+1407 V 4 TdBuild: "Description" is lost if tgt name contains "-"
+1414 V 4 CMP: Memory leaks if trace mode activated
+1415 V 2 CMP: incorrect translation of jump in FC
+1434 V 3 DDC:GPF if change attr to var with array string type
+
+
+
+List of bugs resolved in the 4.10 release
+-----------------------------------------
+
+0010 R 4 FB global instance can't be found by debugger      
+0033 R 4 DDC: input, output, internal in french and german  
+0270 R 4 Menus of DIP don't work if devices are open (win98)
+0284 R 3 insert res with same name impossible after delete  
+0446 R 3 DOC PRDK : ISA_IXD_TASK_ID is not a macro          
+0494 R 4 IOWT:error when connect array not clear enough     
+0509 R 3 DPM:toolbars not displayed as saved before         
+0515 R 4 DEBUG: can set a DINT to its max value             
+0517 R 2 DDC: copy or duplicate wired I/O =>error msg       
+0528 R 3 CMP:R/W/Free is always 'X' (free) in symbol table  
+0571 R 4 DPM: GPF after opening many projects               
+0582 R 3 Error from database should be detect per resource  
+0606 R 4 ProDk.Chm:inversion in System variables description
+0613 R 5 STRING length not displayed after expand.structure 
+0646 R 3 DDC:no output param after Cut & paste a function   
+0650 R 5 DGE/IL:the REDO command doesn't work               
+0660 R 4 IOWT: Help button does not work in debug mode      
+0669 R 5 LD:shouldn't insert parallel element after cancelg 
+0684 R 3 ST/IL: "Replace and Next" button doesn't work fine 
+0690 R 4 DCC:After Sort current column is set to first      
+0692 R 4 LD: Name+Alias not possible in debug               
+0693 R 5 LD: Auto Input option should be grey in debug      
+0694 R 3 IOWT:new devices are not displayed during debugg   
+0696 R 3 FC: File/description should be greyed in debug     
+0700 R 5 DIP: cannot open devices with the CTRL+D           
+0704 R 3 Gain not OK displayed in IO filter columnPATCH863  
+0706 R 4 DDC:string length is not displayed                 
+0707 R 5 LD:Fb is empty after doing REDO in LD editor       
+0709 R 5 FBD:not accessible FBD program after zoom          
+0713 R 3 No message if "On-Line change: Update" failed      
+0716 R 2 DPM:GPF in debug mode when going to cycle mode     
+0720 R 3 Bad string value after insert 255 + 1 characters   
+0721 R 3 IOWT:Possible to have 2 variables in same channel  
+0722 R 4 Dble click on inserted device Help don't work P863 
+0723 R 5 Hourglass always appear after delete a variable    
+0724 R 2 PRT:'input real mode' appear in the complex device 
+0726 R 2 DPM: Problem if changing resource numbers to 1000  
+0727 R 4 IOWT: No save box when undo after saved            
+0728 R 2 DDC : Possible to duplicate Output of Function     
+0729 R 3 SFC:del action block never grayed even if the last 
+0731 R 4 FBD:in variable name, 'Undefined variable' appears 
+0732 R 3 FBD: error in DTA_srv after use the same variable  
+0734 R 3 DWT: Conv. lost write value in IO filter PATCH863  
+0735 R 5 Demo version, can not use the Special Paste in LD  
+0737 R 3 Bad generated code in LD editor with NOT operator  
+0738 R 3 SFC: GPF if bad step name and use undo command.    
+0740 R 5 SFC:'one initial step is required' wng  not clear  
+0741 R 3 Simul Pb or CMP GPF if a space after config name   
+0743 R 3 CMP:GPF when get a FB output when it has no output 
+0744 R 2 CMP:GPF with OUT struct connected to "=" PATCH848  
+0745 R 3 Comm pb if no null-modem wire used                 
+0755 R 3 SFC:ST toolbar unvailable in level2 after compile  
+0756 R 3 DDC:long type names visibility pb in dialog        
+0757 R 3 Error in the DPM output windows when download      
+0759 R 3 assignment global structure from function not OK   
+0762 R 3 CMP does not detect FB definition has changed      
+0763 R 4 Possible to simulate whatever the PRO version      
+0767 R 2 CMP :cannot lock/unlock the array of string        
+0768 R 3 Time behaviour help page for KVBETCP incorrect     
+0769 R 3 Debug icon on FC don't change if start debug mode  
+0770 R 3 PRT:devices aren't printed into the good order     
+0774 R 2 DDC: The shortcut "Ctrl + F" for Find do not work  
+0776 R 2 CMP:err with FB using structure of array in LD     
+0777 R 3 Edit binding fail if 2 consumed var. have same nam 
+0779 R 3 DPM: shows 2 '?'  icons per unknown VM             
+0783 R 4 CMP:grammar fault into the error message           
+0784 R 3 IXL abort Download before start a dwnload failed   
+0785 R 1 GPF on ISaRSI task when rebooting the client PC    
+0786 R 2 UDTMPRO: positionning problem from labels/blocks   
+0788 R 3 DIP: cannot open more than one device              
+0789 R 3 DPM:comment is erased by the multiresource comment 
+0790 R 3 FBD: var to contact translation pb=>cmp error msg  
+0791 R 4 IOWT in debug: expanding board=>dta_srv warnings   
+0794 R 3 DDC:comment of fields do not appear in variable    
+0795 R 3 Fr. DPM:grammar fault into the hard archi window   
+0796 R 3 French HLP:grammar fault                           
+0797 R 3 DPM:help on the "embed symbol table" don't work    
+0800 R 4 TDBuild                                            
+0801 R 3 DDC: grammar fault into the french version         
+0802 R 4 DIP stays open after not Ok on the message box     
+0803 R 4 ProDk.chm:dsysDsaXxxx not documented - symbol      
+0804 R 4 LD: Cancel variable selection still choose it.     
+0805 R 2 DDC: Problem with Cut/paste                        
+0807 R 2 DPM: Copy POU of a Copy does not work correctly    
+0808 R 1 DPM:Lose program if rename upper/lower character   
+0809 R 3 CMP: Bad code for FBD with contacts and NOT        
+0811 R 3 IOWT:REAL and DINT not displayed correctly         
+0812 R 4 DIP:initial real value is 0 instead of 0.0         
+0813 R 3 GPF if click on Hardware just after start debug    
+0815 R 2 PLCI: Pb if import 2 Cplx equipt w/same IO simple  
+0816 R 1 GPF after try to connect variable to a device      
+0817 R 1 ??REFRESH?? if many strings with size <256         
+0818 R 4 DTA: panic when read a timer > 24h                 
+0819 R 3 Debug:Cannot force DINT to 16#80000000             
+0820 R 4 Pro.chm definition of binding not clear            
+0821 R 2 DDC: Refresh physical value problem                
+0822 R 4 Impossible to decrease index if other is200        
+0823 R 3 IOWT:can't access to the structure values          
+0824 R 3 CMP: Missing network files with the extension .xws 
+0825 R 3 Link error:'Size of code exceed the limit' w/ SCC  
+0826 R 2 CMP: The symbol table EDT_TMP2 created twice       
+0827 R 2 CMP: problem if alignment is >=8 and strict        
+0828 R 1 CMP: most UA with hexa digit not in Symbol table   
+0829 R 4 ITGTDEF_KVB not used within ETCP binding driver    
+0830 R 3 Display CRC in hexadecimal in the output window    
+0831 R 4 ProDK.chm:Path not referenced to use ProHook.dll   
+0832 R 2 CMP:no error if C func called but not defined      
+0834 R 4 IOWT:virtual complex device contains real devices  
+0835 R 2 DIP:values aren't displayed correctly              
+0836 R 2 IOWTdebug:option numerical display doesn't work    
+0837 R 2 IOWT:bad physical values initialization            
+0838 R 2 CMP: in IOWT little square appears during debug    
+0839 R 2 CMP : Segmented code if use Array in NT-TARGET     
+0840 R 3 IOWT:only the 1st field name of array is displayed 
+0841 R 2 IOWT/debug:pb with expand the complex devices      
+0842 R 3 Strange error if compile ST with array [1..70000]  
+0843 R 3 'could not init symbol table' if same POU/2 tgt    
+0844 R 2 ixlSymInfoFrom... arr of string luDataSize notok   
+0845 R 2 DIP:wrong initialized value with complex devices   
+0846 R 2 DIP:structure containing arrays and structure      
+0848 R 2 Error code Size exceed the limit (64K) for large   
+0850 R 4 DIP:time value incorrect after writing anything    
+0851 R 4 hexa value always equal to 16 for input variable   
+0852 R 4 DIP:option numerical display unchecked             
+0853 R 3 Add hourglass after try to open a very big program 
+0855 R 3 FBD: Lot of corners appear after open a FBD        
+0856 R 3 Possible to select complex in binding error var    
+0857 R 5 replace "consumed var." with "consuming var."      
+0859 R 4 help: update or del. spaces description in pro.chm 
+0860 R 3 resource2 in CODE state after refresh before start 
+0861 R 4 project.gpm still contain info of deleted resource 
+0862 R 3 IOWT:changing displaying mode makes no change      
+0863 R 2 Device index duplicated after modifying channel    
+0864 R 2 IOWT:can delete complex device OEM parameters      
+0865 R 3 IOWT:displaying 16#16 whatever the DINT value      
+0866 R 3 IOWT:wrong REAL displaying after changing DINT     
+0868 R 5 help: replace 'CAT' with '+'                       
+0869 R 3 CMP:Bad code if var connect to a left power bar    
+0870 R 3 CMP/FBD:Bad code if coil & jump are in parallel    
+0871 R 2 DIP:old values not restored after writing wrong val
+0872 R 3 DIP:cannot display SINT in hexadecimal             
+0873 R 3 IOWT:sometimes, can't plug an unwired array        
+0874 R 1 DTA_Srv takes 30sec to start in Win2000 system     
+0875 R 3 Bad code Return connected to power bar by neg link 
+0876 R 1 GPF:FBD after drag and drop objects out the window 
+0877 R 4 reading FB local var allowed from ST pgm only      
+0878 R 3 CMP: Bad code with power bar, contact and two coil 
+0879 R 3 IOWT:no displaying array values defined in local   
+0880 R 1 GPF after verify FBD prog with ODDand a NOT block  
+0881 R 4 DIP:names are hidden after modifying a value       
+0882 R 5 DIP:no scroll bar on windows in the tile mode      
+0883 R 4 IOWT: save changes even if not desired             
+0884 R 2 CMP: Size of jump must be verified memory model    
+0885 R 2 DBG: error if try to lock a field of an IO structur
+0886 R 2 TDbuild: bad generated C files with complex devices
+0887 R 4 DDC:unknown instance type after change of FB name  
+0888 R 4 DDC:array dimension is changed after copying FB    
+0889 R 2 Launched Target task differ from Win2000 and NT/98 
+0890 R 2 "transport failed" n DPM output windows in win2000 
+0892 R 3 Signal under OS9 in an IXL client                  
+0893 R 4 IOWT:can't open the IO filter window after debug   
+0894 R 4 Simul: Resource not started after start debug      
+0895 R 4 IOWT:displaying gain value not correct             
+0896 R 4 ProDk.chm: Update comments for dsysMsgQSend functio
+0897 R 3 FBD/CMP : Bad genrated code with COS and 1GAIN     
+0898 R 3 FBD/CMP: Error not clear because bad generated code
+0899 R 3 FBD/CMP :Bad generated code with multi coil        
+0900 R 3 CMP: Bad code with variable and LD connector       
+0901 R 1 GPF after compile FBD prog with contacts & Loop    
+0902 R 3 Bad generated code with NOT link to a LD connector 
+0903 R 3 FBD/CMP: Bad generated code with NOT link to a NOT.
+0904 R 3 Impossible to restart ISaVM after use CTRL+C       
+0905 R 3 CMP:Error appear if connect Output of + to the Inp 
+0906 R 3 no restart of config manager after CTRL-C on OS9   
+0907 R 2 CMP err if 2nd local binding driver used           
+0908 R 3 SFC/DGE: LD doesn't respond after inserting a FB   
+0912 R 2 Division by 0. 'C' source code does not correspond 
+0914 R 3 TDBuild: Problems with IO device                   
+0915 R 3 Global var appear like local in the binding editor 
+0916 R 3 BindingCMP: Execution problem when we "bind" arrays
+0918 R 3 CMP error local arrays with same name on devices   
+0920 R 3 IOWT:complex devices aren't deleted correctly      
+0921 R 2 ProHook..DownloadEndConfig function never call     
+0922 R 2 ProHook:GPF after cleaning and download a project  
+0925 R 4 Binding/CMP: No error when there is no network     
+0926 R 3 CMP: Error for the first CMP and not for the others
+0927 R 3 IOWT: Index value not kept if entered with keyboard
+0928 R 4 Pro.chm: add description of system variables       
+0931 R 5 Pro.chm: bit access sint.i:"i" must be a value     
+0932 R 2 CMP/LD:bad ST code for call FB with no bool input  
+0933 R 5 Pro.chm: min value for a DINT not correct          
+0934 R 5 DEBUG:Real not displayed correctly in debug mode   
+0936 R 3 ProDk.chm:wrong prototype of CallBack function     
+0937 R 3 ProDK.chm:display wrong page for IxlStartDialog()  
+0938 R 3 CMP:no error in FBD if 'return' not connected      
+0939 R 3 'Var not connected' err with internal direction    
+0940 R 3 ProDk.chm:declaration error into strIsxsDrvFctToReg
+0941 R 3 CMP/FBD: wrong error if pulse contact used in FBD  
+0942 R 3 TDB:access is READ instead READ ONLY in txt file   
+0943 R 3 DDC: type of local param (instance) becomes Number 
+0944 R 2 FC:GPF after deleting, adding & saving             
+0948 R 3 FC:not visible new window in the TILE/SPLIT mode   
+0953 R 3 TDBuild: package name pb and cplex eq. pbs         
+0955 R 3 ST/Debug: Physical do not appear in the spy window 
+0956 R 2 FC/DEBUG:can change the FC sub-program             
+0957 R 4 IOWT: default gain for real I/O should not be 0    
+0958 R 4 binding:selecting error variables is not immediate 
+0959 R 2 FC:GPF after cutting a sub-program                 
+0960 R 3 IOWT:local variable with same name not displayed   
+0961 R 3 DGE:mistakes the I/O local variables with same name
+0962 R 3 Print: bad parameters of networks is printed       
+0963 R 2 DDC:new FB param not displayed in FB instance      
+0964 R 2 CMP: compile crash after move param of F.Block     
+0967 R 3 CMP:no error with not connected local strings      
+0968 R 3 IOWT/DEBUG:incorrect default gain with arrays      
+0969 R 2 Error if write value on Memory for retain and del  
+0970 R 4 Debug:refresh pbs if variable name is 128 char.long
+0972 R 3 ISXS drv doesn't remove channels if all IXS cnx    
+0973 R 3 SFC/CMP:error with the IL action block             
+0974 R 2 SFC:GPF after clicking on a compilation error      
+0975 R 4 ProDK: sentences are cut when manual is printed out
+0976 R 3 ixlResInfoGet called with unknown res num: no error
+0977 R 3 TDbuild: Modif in "description" tab are lost       
+0979 R 2 Missing system variab: _SYSVA_WNGNUM & ...WNGARG   
+0980 R 3 No check on cell of resource or network properties 
+0981 R 2 GPF if clicking HELP in res properties w/out Netw  
+0983 R 3 CMP/FBD:Bad ST if operator w/ more than 2 inputs   
+0984 R 2 DDB: should not accept struct. name including '.'  
+0987 R 3 FBD/CMP:error with loop using corner               
+0990 R 2 IOWT: memory leak when selecting boards            
+0991 R 3 FBD:the links are badly drawn after copy/paste     
+0992 R 5 FBD: can't place correctly elements after pasting  
+0993 R 3 DDB: Initial value of string is 253 instead of 255 
+0995 R 2 DPM do not responding after print string variable..
+0996 R 3 FC:not responding after Find Next                  
+0997 R 2 FC:GPF after undo and renumbering                  
+0998 R 3 Real var. impossible to set value more than 11 nbr 
+1000 R 3 SCC / GPF in ISaVM/bad translation of the constant 
+1001 R 4 CMP infinite loop/translate FBD wth 2 close corner 
+1004 R 3 System layer - Binary semaphore - OS9              
+1008 R 2 FBD/CMP:GPF with loop back in FBD                  
+1009 R 2 PLCI:should allow importing same POU on other tgt  
+1010 R 5 PLCI/CMP: link error if same driver for 2 targets  
+1013 R 2 syminit() Function already define in the VxWorksOS 
+1014 R 3 comp. error on "const" in _isxlHsdOnNotifReadL()   
+1015 R 3 CMP: Bad gener.of the default binding string value 
+1016 R 2 CMP:default val. not coherant when use several NET 
+1017 R 2 DDB: IOWT not coherant with the data base          
+1018 R 1 No error if "update after download" command failed 
+1019 R 3 Error if deleting User adress of several variable  
+1020 R 4 DEBUG: on-line change if modif res properties      
+1022 R 2 Binding var change after close and reopen the bind 
+1023 R 1 IOWT: GPF deleting complex equipt with OEM param   
+1024 R 4 DEBUG: on-line change accepted if modif on var def 
+1026 R 4 DBG: on-line mod. accept if modif POU/Projectname  
+1027 R 3 DGE: No saving in Demo version                     
+1028 R 4 DEBUG: on-line change accepted if modif res number 
+1031 R 4 DEBUG: on-line change accepted if modif on POU     
+1032 R 3 FBD:Error if use ANY_TO_REAL and ANY_TO_DINT       
+1034 R 4 DCC : changing type should reset initial value     
+1037 R 4 target type should not be changeable in debug      
+1039 R 2 FBD:cmp error if var.is connected twice on right   
+1040 R 3 STRING hidden of FB do not have quote after enter  
+1041 R 3 TDB: STRING hidden of FB or IO do not have quote.. 
+1042 R 3 DDC: in debug, physical values are divided by 10   
+1043 R 3 cuIsModified always False in strIxlResInfo struct. 
+1044 R 3 ProDK: Miss ISA_TYPSINT on READ ACCESS help  IXL   
+1045 R 3 ProDK.chm : No omogeneity between pages            
+1046 R 5 Binding dialog: replace 'comsummation' keyword     
+1047 R 3 Error in Pro.chm w/ parameter ETCP_KVB_ERR_PRO...  
+1048 R 3 debug:workbench looks as blocked if 1 VM stopped   
+1049 R 2 CMP : OEM parameters missing if create new network 
+1050 R 2 CMP: Dialog box appear (GPF) after build project   
+1051 R 3 Content of "Time-out behavior" on line help page   
+1052 R 3 CMP:No check Dbase if modify IO after insert it    
+1053 R 3 PLCI:instance of device not upgrade if reimport IO 
+1055 R 2 IsaIXD: GPF if serial debugging overnight          
+1056 R 5 LD:short names param ending with '_' aren't drawn  
+1057 R 2 CMP:Symbol table describes all inputs with  'O'    
+1058 R 3 FBD/CMP:error if verify prog w/ Fct w/ hidden para 
+1059 R 3 Error not clear if prj w/ structure without fields 
+1061 R 3 Fatal error in dsysFileMsgGet().                   
+1065 R 2 DPM:change Tpl dir in INI file, can't create proj  
+1066 R 3 FBD / LD compiler error with bit access            
+1067 R 3 Print IO problems                                  
+1068 R 3 FBD: compiler error with link: FB output - corners 
+1069 R 3 Debug:Stop command -> no request to VM             
+1071 R 4 IOWT: Change virtual / Real  attribute 4.04        
+1072 R 4 iSaVM GPF if IXL FB comID changed dynamically      
+1073 R 4 pro.chm: improve IXL FB documentation              
+1074 R 3 ISaIXD:GPF refreshing many strings with RSI 115200 
+1080 R 4 DBT: When select var. can't see long name          
+1081 R 3 Hook calls not symetric if pb during download      
+1082 R 4 PLCI: no error if updating a non-existing target   
+1083 R 4 Import of device txt file. No updates of instance  
+1084 R 2 PLCI:import C FB, direction of par is lost         
+1085 R 2 TGT: KmpMrpWriteime use pcuSource instead of macro 
+1086 R 3 Only 3 clt IXL could use ETCP(RSI)driver at a time 
+1088 R 5 Pro.chm: =, <=, >= operators add TIME type         
+1089 R 2 DDC: moving a FB param/order may not be OK in DB   
+1090 R 3 SFC: errors not well showed                        
+1091 R 3 SFC: GPF when changing jump in back loop           
+1093 R 4 pro.chm:the link Resource goes to Other ressource  
+1094 R 2 PLCI: board dfn not upgraded if OEM param removed  
+1095 R 3 QLD : Copy and paste leads to a GPF                
+1096 R 4 PLCI does not replace a structure                  
+1097 R 4 Target: Exit routine of binding in HSD             
+1099 R 4 TDBuild:file name "Packages.h" must not be in cap  
+1100 R 4 Doc :BF_INT, BF_BOOL ...not used in macro          
+1101 R 3 On line modification is allocated even if size=0   
+1104 R 4 Pro.chm : The link "I/O Wiring" is wrong           
+1105 R 2 CMP/FBD:wrong output used for connection to coil   
+1107 R 4 IXL:Impossible to reconnect to a local VM          
+1108 R 4 ixlOnNotifStpDlgRc() problem with ETCP driver      
+1109 R 2 FBD: source not OK if CFB with hidden param PATCH  
+1110 R 4 DPM : error when changing the target               
+1111 R 4 IAC : Problem with real initial values             
+1112 R 3 CMP : strDfIoChan: bad value of cuCnvGainTyp field 
+1113 R 4 DPM:GPF when close a popup menu on extern resource 
+1115 R 4 DDC:It should be prohibited to call a Var. "_IO..."
+1116 R 3 Default net param erased by "" in ixlDrvConfig()   
+1117 R 3 PLCI: no error if no dir for C func and Device     
+1118 R 1 CMP:Retain table not OK-> VM crash                 
+1119 R 2 DDC :Retain field is empty when re-open Var. Grp.  
+1121 R 5 DPM:Cut a FB paste to function no out param        
+1123 R 1 CMP: Crash of ISAVM on a TIC_A4I      PATCH        
+1124 R 3 CMP:GPF if instance connected to a bool para of FB 
+1126 R 4 IXL clt in blocking mode no detect timeout         
+1127 R 4 TGT:Not clear error message between Vxworks and NT 
+1130 R 3 ETCP: binding is always as fast as possible        
+1133 R 2 SCC:bad res:function with cste as input PATCH      
+1136 R 3 TGT : GPF when created  new IXL client             
+1137 R 4 Block data size is wrong when all pous are empty   
+1138 R 4 DEBUG : In DDD, save target not implemented        
+1140 R 5 DPM : binding links not in front of resource icon  
+1145 R 2 DDC: can not expand array of structures            
+1148 R 2 SCC:bad code in C fct with underscore '_'  PATCH   
+1153 R 2 GPF when compiling resource with no Target         
+1154 R 4 LIB:Book icons not display if insert library FB    
+1158 R 2 DGE:GPF if corner connected & linked to other Var  
+1159 R 2 CMP: QLD: bad compiling of pulse coils             
+1160 R 2 CMP : GPF when making a loop of two "gain" FB      
+1161 R 3 SCC:Bad boolean constant VA with C fct call  PATCH 
+1162 R 3 SCC: in appli.h no declaration of std block PATCH  
+1163 R 3 SCC:bit writing with a bool expression PATCH       
+1164 R 3 SCC:same name in fct.h and local typVa fct PATCH   
+1165 R 3 SCC: add internal edge management      PATCH       
+1166 R 2 DCC: Function block instance can not be expanded   
+1167 R 4 IOWT:Conversion not display for DINT in Complex IO 
+1173 R 3 SPY: Impossible to show numerical display menu+GPF 
+1174 R 2 Binding:consuming variable not updated             
+1175 R 4 DPM:GPF when compiling project with empty cpx dvc  
+1176 R 3 SCC: compiling error on a temporary variable       
+1177 R 3 DPM:GPF click on DDC and immediatly on IOWT icon   
+1191 R 3 Target: clean does not cancel symbol nor zip src   
+1192 R 2 DGE: GPF whenn using Find/replace                  
+1194 R 4 DIP: Numerical display ->.5 icon does not work     
+1197 R 2 Browser: cant see vars used as array indexes       
+1199 R 3 CMP:Physical value are initialized with init value 
+1201 R 3 CMP/FBD:error when coil is connected to a power bar
+1203 R 2 CMP:Same variable appear two time  in symbol table 
+1204 R 4 CMP: GPF in the linker                             
+1205 R 3 CMP: FB with name of prog : No error in Check DB   
+1208 R 2 DIE: nested FBs are exported in bad order          
+1211 R 1 DUP: GPF if UpLoad from a tgt with>32 res          
+1213 R 3 DDC : Return to the first line after delete VAR    
+1214 R 3 GPF /FC : When simulate and visualise FC prog + FB 
+1216 R 3 CMP: Error defined word in lower case used in LD   
+1221 R 4 Splash bitmap has not the windows size (japan)     
+1228 R 3 TdBuild: GPF when clicking on Window/New Window    
+1232 R 3 CMP : Wrong initial value with string variable     
+1234 R 4 PRT: Font by default For LD should be attribute    
+
+
+
+List of bugs resolved in the 4.03 release
+-----------------------------------------
+   
+0118 R 1 PTR: GPF after print a project.
+0476 R 1 TGT: Bad String values when 'replace', 'mid' or 'insert'
+0486 R 1 GPF after compile project with array input not connected
+0499 R 1 CMP: Nested block results are not correct          PATCH
+0523 R 1 SFC: putting SFC child name into (**) damages code
+0573 R 1 ISaIXD does not connect to ETCP task
+0601 R 1 SCC: tmp var undeclared in a .h file
+0608 R 1 FBD: if change contact type, save is not asked
+0006 R 2 Addition, substraction of TIME does not work in FBD
+0021 R 2 DDC:No error if you create a parameter with a FB name
+0087 R 2 'TIC code' checkbox disappears after use plc.txt
+0177 R 2 TransAppli: Problem with importation of Function
+0199 R 2 DDC: Defined words not correctly saved
+0204 R 2 DDC:possible to modify fields in read-only structure
+0206 R 2 Transappli: no scope for local variable of block
+0294 R 2 IOWT: no update after change target in the DPM
+0312 R 2 PrDk doc: wrong prototype of ixlCallbackActiv        AVi
+0326 R 2 DCC:length of string param is lost when renaming fct
+0392 R 2 CMP: if big program, code is segmented
+0403 R 2 SFC: code not updated when renumbering
+0406 R 2 SFC : start chart with transition is allowed
+0419 R 2 no refresh of array of strings, local var of FB PATCH429
+0429 R 2 refresh problem on instance of FB with array param PATCH
+0442 R 2 Ixd : GPF after modify ISaIXD, [APP] CnxNb=500
+0448 R 2 DPM: possible to delete an open SFC program
+0450 R 2 Memory leak during compilation (100 empty resources)
+0452 R 2 SFC: Step not linked after edit transition            NR
+0454 R 2 DPM not responding after download and start debug
+0455 R 2 CMP :No error generated if same IP in two configs
+0456 R 2 debug: FBD editor refresh problem with Funtion Block
+0459 R 2 GPF after stop debug mode in the I/O wiring tool
+0461 R 2 Hard architecture: configs may be unreachable   PATCH477
+0462 R 2 IL: GPF when using structures
+0463 R 2 '?' do not appear for unknown ISaVMs
+0464 R 2 CMP:compil err on LD or FBD FB using structures as input
+0465 R 2 CMP:IL:No error message when using structures
+0468 R 2 PLCI:can not use type not DINT for out of Function
+0469 R 2 DDC: dimension of FB array param not displayed  PATCH429
+0470 R 2 CMP: in FBD some TIME expressions produce a cmp error
+0471 R 2 binding: error in dialog box when binding local variable
+0473 R 2 debug: problem with scientific notation for reals
+0474 R 2 print of SFC/FC does not work if Res Num changed
+0475 R 2 Copy resource does copy SFC/FC hierarchy
+0477 R 2 DDC:bad value of string when using init values     PATCH
+0478 R 2 SFC: comment after transition name is lost
+0480 R 2 Binding: 'default value' not taken into account
+0482 R 2 DTA produce GPF after start debug mode
+0487 R 2 PRT:Print SFC actions are in the wrong order       PATCH
+0491 R 2 Double click on error in FC do not select the error
+0493 R 2 PLCI:same Field numbers for Net Parameters
+0495 R 2 IOWT:delete one array element should unwrire all
+0497 R 2 dta_srv: error 205 in VMachine if cycle time >2s
+0498 R 2 Use array to receive value of function not OK
+0500 R 2 CMP: error if block with no param in LD
+0501 R 2 Dongle Pro: possible to copy paste a resource
+0502 R 2 DDC: if complex type in read-only, copy/paste not grey
+0504 R 2 SFC:GPF when clicking on error if chart modified
+0505 R 2 CMP:char missing in string value due to $ in msg   PATCH
+0506 R 2 SFC editor GPF, because of duplicated action names
+0508 R 2 Refresh pb if array of struct with String ->N00122 PATCH
+0510 R 2 CMP:N actions not executed if SFC_child action     PATCH
+0512 R 2 DEBUG: set a $ in msg variables with debugger   Patch505
+0517 R 2 DDC: copy wired I/O => DDC error message
+0520 R 2 OS9: alignement pb on 68000: can't write on odd add
+0522 R 2 CMP: Do not allow SFC child as ACTION name
+0524 R 2 Virtual memory shortage has occured while handling Dic.
+0526 R 2 Could not build project code if we once modify a program
+0527 R 2 LD editor: Spy variable is partially failed
+0529 R 2 Build Project P00524 take very long time (55min)
+0530 R 2 PLCI:complex device:order of first device should be 0
+0531 R 2 Can't browse IXL if two variables have same name
+0532 R 2 Renumber address does not manage hexadecimal
+0535 R 2 Boo action with qualifier P1 and P0 accepted by compiler
+0536 R 2 SFC: Boo action changed into ST action
+0538 R 2 DPM not responding after move scroll bar dico in debug
+0541 R 2 GPF after try to open or compile a FBD program
+0544 R 2 GPF in SFC after move two step at the top of windows
+0548 R 2 Error if the initial value of string have a size of 200
+0551 R 2 Local variables in debug, not read if same name
+0558 R 2 DPM not responding if write a string with 250 characters
+0559 R 2 DMP after import new target, does not show it
+0561 R 2 PLCI: import F or FB, order of first param should be 0
+0577 R 2 DPM: move resource should ask to close document
+0578 R 2 PLCI: function returning string-> string size is 0
+0579 R 2 Binding problems if validate default value by ENTER key
+0581 R 2 CMP: +sign in "FOR ..BY..+.. " causes execution pb
+0584 R 2 PLCI: Pbm Import target with Code type
+0586 R 2 Startup parameter on command line pbm when type string
+0590 R 2 CMP:crash in DCI when loopback in FBD
+0593 R 2 CMP: error message without any detail
+0599 R 2 DGE: crash after exit after move in FBD
+0603 R 2 CMP: Impossible to browse the entire symbol table.
+0604 R 2 DDC: Struct Fields order not OK (move of fields)
+0609 R 2 Bad code in the ETCP/detc0vru.c/ etcpVruInit() function
+0615 R 2 SFC:no compilation error if a transition is not linked
+0618 R 2 SFC:2 links are deleted instead of one.               NR
+0620 R 2 FBD:Error not expected 'missing )' after call FB
+0625 R 2 DIP:simple devices in complex not in Open dialog
+0626 R 2 CMP/FBD: no error if jump not connected
+0628 R 2 If download fails,previously stored app are restored
+0630 R 2 Download: bad case of restoration of resource
+0631 R 2 download aborted => tranfer no more possible
+0633 R 2 CMP:error if a function returns a SINT type
+0635 R 2 GPF after Print LD program and do not save before
+0636 R 2 SFC:GPF when adding many lines code into the level 2
+0641 R 2 SFC:can create var or delete action blocks during debug
+0642 R 2 CMP FBD: Error using block NEG
+0643 R 2 CMP FBD/LD:GPF if structure is followed by '[0]'
+0644 R 2 CMP FBD: err if func. out connected to <,>,<=...
+0648 R 2 SFC / CMP: No error when no initial step in a child
+0654 R 2 CMP: IsaVM: GPF if step name is the same as variable
+0656 R 2 DDC: local var. not refreshed if FB instance is local
+0657 R 2 CMP: No error if parameter of F with same name of FB
+0659 R 2 CMP FBD:negative link not translated in ST
+0661 R 2 DPM exits when download failed
+0663 R 2 FC: GPF when opening dictionary or the simulator
+0665 R 2 DDC:resources don't correspond to link architecture
+0671 R 2 Debug: Can force TRUE/FALSE constant during debug
+0673 R 2 ETCP binding don't work if one resource is stopped
+0674 R 2 HSD binding don't work if one resource is stopped
+0675 R 2 VbPatch error but change the version number
+0687 R 2 FBD: same block instance in 2 programs
+0689 R 2 PLCI:simples devices are mixed up when importing complex
+0695 R 2 IOWT:array elements are hidden except the first element
+0699 R 2 FC/LD: set ratio X/Y to zero -> FC not responding
+0701 R 2 PRT/IOWT:array are printed as if elements were unwired
+0702 R 2 CMP : No error if child SFC have P0 or P1 qualifier
+0703 R 2 SCC:intermediate code on SINT variables
+0705 R 2 Binding tool: very long to create new binding
+0708 R 2 FBD:inverted link from contact translated as direct
+0711 R 2 Bool pb Init val with strict aligment 4 medium or higher
+0120 R 3 FBD: select block + Cancel -> should not insert block
+0193 R 3 DCR: Problems with Binding default value
+0207 R 3 PLCTools: No string size for array of STRING type
+0214 R 3 OS-9 ETCP error 700
+0226 R 3 OS9: IsaIXD Error 0031
+0227 R 3 DTA:Error 513 appear during a long time in debug mode
+0230 R 3 Print Japan: problem with history on header page
+0232 R 3 HELP: description of MSACCESS tables in ProDk.Chm    Avi
+0234 R 3 CMP: bad generate code after compile FBD
+0237 R 3 CMP no error with string array of a FB      PATCH253 AVi
+0241 R 3 DPM: project renaming: prjname.err is not renamed
+0244 R 3 Problem after call ixlResInfoGet, ixlResPouInfoGet
+0246 R 3 HELP: error appear in ProDK.chm, Target, Kernel ...  AVi
+0247 R 3 Help:in ProDK.chm, impossible to open items          AVi
+0264 R 3 IOWT:Conversion change to gain, with STRING device
+0268 R 3 CMP IL:error if compile LD A, AND( B OR C )          AVi
+0272 R 3 DIP:Only the 1st chann of arrays on devices is refreshed
+0273 R 3 "align coil" and  "insert link" not in on-line help  AVi
+0277 R 3 debug in IO panel: var can be forced on their name
+0280 R 3 HLP:target part, replace ISaIpl directory by ISaVm   AVi
+0282 R 3 CMP: wrong generated code in the calling FB POU      AVi
+0286 R 3 Status=1 and 3 not documented for block URCV_S       AVi
+0292 R 3 Name of jump are not completely displayed in FBD editor
+0304 R 3 array cell selection pb from Select Variable box
+0311 R 3 PrDK: No doc on Notification in system layer         AVi
+0314 R 3 IXL/ ETCP /notification with no time-out does not work
+0315 R 3 Call 'ixl...ResStoredGet()' then a system error appears
+0338 R 3 FBD: '&'  in a comment do not appear correctly
+0340 R 3 Initial value not set for arrays at run-time
+0346 R 3 DIP: no keyboard shortcuts for open devices
+0352 R 3 DIP execution problem with simple string device
+0365 R 3 SFC:Arr[0], struct field, DINT bit as Boo action not OK
+0385 R 3 DIP: accuracy of Real input 123456700.0
+0386 R 3 DIP: Time values displayed in ms instead of T#
+0391 R 3 DPM:possible to copy a resource when program is open
+0394 R 3 SFC: Zoom + don't work correctly
+0395 R 3 SFC editor should not propose saving in debug
+0396 R 3 Possible to connect internal variable to a device
+0399 R 3 SFC:replace all does not work on action name
+0409 R 3 SFC: adding new LD contact is not immediate
+0413 R 3 help : 'isaipl' directory instead of 'isavm' in doc  AVi
+0422 R 3 No scroll bar in LD editor if use down arrow after zoom
+0423 R 3 LD : undo don't work after change coil contact type
+0428 R 3 DGE/LD : shortcut keyboard of Find/Replace don't work
+0431 R 3 CMP:problem when  when create a mono array variable
+0440 R 3 LD: Error message if size of comment is more than 251car
+0443 R 3 FC: display problem when copy/paste a test in LD
+0445 R 3 DOC PRDK : IxlResInfoGet last param type not correct
+0447 R 3 DOC:in PRDK help replace 'cannot be' with 'can be not'
+0449 R 3 ITGTDEF_PRINTF undef generate unresolved
+0453 R 3 GPF after compile project (config name has 110 char)
+0460 R 3 CMP: unexpected type error on a variable
+0466 R 3 No check in 'Jump label' dialog box
+0467 R 3 'find' in Pro.chm and ProDK.chm does not work        AVi
+0472 R 3 LD: refresh problems with boolean variables color
+0479 R 3 DDC: read only attribute lost on complex types
+0484 R 3 DDB:check database does not say in which resource
+0485 R 3 DDC: undo after delete param ->2output param
+0489 R 3 TIME type not in the help for addition, subtraction...
+0503 R 3 CMP:no error if 2 trans with same name         PATCH505
+0511 R 3 "tab setting" not save after close the ST editor
+0513 R 3 DEBUG ST& IL: var in lowercase can not be spyed
+0518 R 3 I/O can appear as wired and unwired at once !
+0519 R 3 IOWT:GPF after p00518
+0521 R 3 GPF in DTA_SRV.exe after unplug the ethernet connector
+0525 R 3 Takes more than 20-30 seconds to switch dictionary
+0533 R 3 Debug: '#' not accepted to change dint value
+0542 R 3 In debug, not correct icon if stop and restart a VM
+0543 R 3 DIP: Simple Device of complex not in open dialog box
+0545 R 3 Undo after delete a device,variables are not reconnected
+0546 R 3 bad undo after change number of channels on devices
+0549 R 3 Print in I/O wiring, comment of OEM parameters not print
+0550 R 3 Resource ref is always in the database after delete it
+0552 R 3 Pint LD program in Japanese, Comment overlap text line
+0553 R 3 DGE: Font size setting isn't kept if DGE is closed
+0554 R 3 PRT: Font size modified smaller, print options
+0557 R 3 dsys0def.h on all OS,included New OS, there is an error
+0560 R 3 SFC: Output window not updated after compile
+0562 R 3 IOWT: save is done if no protection key
+0564 R 3 DPM/DDB: Help on target/network->singleTextLine
+0565 R 3 PLCI: remove Help field on Network not possible
+0567 R 3 Cycle time not set to 0 if uncheck the trigger check.box
+0570 R 3 Hard architecture: some config may be unreachable
+0575 R 3 Refresh of resource, ask info to each res 2 times, not 1
+0576 R 3 No Error if identical bindings
+0580 R 3 FC: if insert lot of contacts, impossible to select coil
+0583 R 3 Error appear after edit binding and press OK
+0585 R 3 Copy DPM.ini, DGE.ini & EDFC.ini to BIN directory
+0588 R 3 Access to help after select instance of IEC FB (bug)
+0589 R 3 GPF when compiling FBlock in IL
+0596 R 3 CMP: IL inside FC programs can not be compiled
+0598 R 3 IL on array: compil. but do not work (unknown TIC code)
+0600 R 3 DPM: CODE is still shown instead of RUN
+0602 R 3 Impossible to browse variables with IXL API
+0607 R 3 DIP: Refresh problems on DIP with devices
+0610 R 3 DGE: the mouse desappear after select a draw link
+0611 R 3 OS9:Device control fct not found appear even if declared
+0614 R 3 DDC: order not save after do 'Sort descending' or asc...
+0616 R 3 DDB:No check for param of FB with same type name
+0617 R 3 DIP: board no refreshed if resource stop/start
+0627 R 3 GPF: open the DGE and switch to defined words
+0632 R 3 IOWT: error appear in IO filter of a TIME channel
+0638 R 3 CMP FBD: err if AND connected directly to a function
+0639 R 3 Download & save may generate high max cycle time
+0640 R 3 CMP:GPF when compiling ST with more 255 chars
+0651 R 3 DGE: display of compiling errors of other progam
+0652 R 3 IOWT:strange actions after REDO/UNDO a connection
+0655 R 3 CMP error not clear when SFC transition = var name
+0662 R 3 FC : Possible to edit comments in debug mode
+0667 R 3 SFC: debug mode, many items should be greyed
+0668 R 3 Resource created just in dictionary after answer 'NO'
+0678 R 3 SFC: impossible to remove split in the SFC editor
+0679 R 3 ST:if blank line and text are selected, Delete is grayed
+0680 R 3 Debug:connect config and network can be made
+0682 R 3 SFC: pop-up menu don't work with LD action block
+0688 R 3 DDC: 'Expand array/structure' menu don't work
+0714 R 3 SFC:can add some code into a SFC action block
+0028 R 4 DDC: no defaut group "None" in french and german
+0032 R 4 dictionary trees in english, for french and german
+0039 R 4 TransAppli: spelling error + minor things
+0074 R 4 FC:CTRL+V will move the mouse to arbitrary position  AVi
+0104 R 4 LD:Save hidden parameters of blocks
+0117 R 4 DGE: no control icon in the menu bar
+0158 R 4 DDC: string size with a float format
+0215 R 4 DPM: no help in extended menu of resource properties
+0219 R 4 DGE:No tooltip on the two last icons of the LD toolbar
+0222 R 4 DPM: French/German window titles not translated
+0291 R 4 FBD: impossible to remove instance name
+0321 R 4 dsysDsaOpen() does not check successfull file open
+0351 R 4 DPM: should not connect on non-existing resource
+0356 R 4 FBD: not same font when edit comment and see comment
+0369 R 4 No test on value of hidden parameter
+0370 R 4 DGE: Multi spy window after reopen ST programs
+0372 R 4 DIP:(panel of IO)value column width can be reduced to 0
+0375 R 4 ProDk.chm:Binding configuration appears twice        AVi
+0376 R 4 ProDk.chm: spelling errors                           AVi
+0377 R 4 ProDk.chm: missing hyperlinks
+0402 R 4 Can't spy defined words in DGE editors
+0404 R 4 DPM : wrong error message (document/dictionary)
+0416 R 4 FC : zoom+ not the same than LD editor
+0421 R 4 DGE : 'delete' never gray if coil is selected
+0435 R 4 DPM : grayed 'on line change: download' icon toolbar
+0441 R 4 FC: Problem of refresh when copy/paste and undo
+0451 R 4 SFC: action or transition name not saved when cut/paste
+0481 R 4 HLP: the change to set "Retain" is not exact         AVi
+0483 R 4 DDC: change Font size do not change line height
+0490 R 4 PRDKHlp:plc.txt,"char" to be changed into "character"
+0492 R 4 FBD: compilation error when using systm variables
+0496 R 4 Spelling errors in Resource Settings
+0507 R 4 PIO.chm: Description Run Time Io struct. of a channel
+0514 R 4 DDC: t#999h should not be allowed
+0516 R 4 Diaddd.err: acknwoledgment -> acknowledgment
+0534 R 4 Select Var: 'local+ local' and 'local' button selected
+0540 R 4 DIP: if io.rws missing there's a message box
+0563 R 4 Can't read or write string with more 252 chars. with HSD
+0566 R 4 DDC: debug pb in if 2 locals var with same name
+0568 R 4 CMP: ':= missing on the left' instead of 'on the right'
+0569 R 4 Simulate project from \TPL=> adding var for spy fails
+0571 R 4 DPM: GPF after opening many projects
+0572 R 4 DIP:click on other device should unselect current cell
+0574 R 4 DTA.ini: Debug refresh rate not respected
+0587 R 4 IOWT in debug: dble click on + - cell opens dialog
+0591 R 4 FBD: links not entirely accessible on the top screen
+0594 R 4 FBD: cursor disappears on some points after zooming
+0595 R 4 LD:Find/Replace does not work on sub-strings
+0597 R 4 FBD:Find/Replace does not work on sub-strings
+0605 R 4 IL:standard functions Insert & Replace don't work
+0621 R 4 SFC: level2 is in read-only after stop debug
+0622 R 4 DDC: File/exit should not exit from DPM
+0624 R 4 comment of HIDDEN Pou parameters are not displayed
+0629 R 4 PLCI can be started twice from DPM
+0676 R 4 SFC: strange appearance after use 'Delete action block'
+0681 R 4 SFC: Zoom button don't work after use zoom slider in LD
+0420 R 5 DGE : Fb is empty after do undo in LD editor
+0698 R 5 DIP: Support info should be greyed in HElp menu
+0712 R 5 DGE/ST:doesn't respond after replacing all
+
+
+
+List of bugs corrected in the 4.02 release
+------------------------------------------
+
+0002 C 4 ILST:No error if ' is missing for a string cte       
+0003 C 2 CMP: No error message appear if "*)" missing         
+0005 C 3 restart debug option doesn't work in Dpm/Simul       
+0012 C 3 GPF:overflow of character for message variable       
+0013 C 3 GPF when SFC contains more than 255 letters          
+0024 C 3 DDC: Variable refresh problems when simulate         
+0041 C 3 Long response time of DGE if ISaVM is stopped        
+0074 R 4 FC:CTRL+V will move the mouse to arbitrary position  
+0081 C 2 Displayed text when some comm error occur is wrong   
+0092 C 4 FC: Copy/paste of connector is not good              
+0100 C 4 DGE: variables not refresch in debug mode            
+0105 C 2 Strange font after some manipulation (windows res.   
+0115 C 4 DDC: cut of several lines only cuts first name       
+0116 C 4 SFC:remove insert action block in pop-up in level1   
+0131 C 2 PLCI: Impossible to choose 2 target in a F or FB     
+0147 C 4 DDC: Error deleting an array variable.               
+0149 C 3 HELP: replace long by unsigned long in Pro.chm     
+0162 R 4 DDC: cannot exit from defined words menu        
+0163 C 4 DDC:  Edit icons' menu inactive.                     
+0168 C 3 CMP:2 programs are compiled even though no modific 
+0170 C 3 DDC: Print icon toolbar always grayed                
+0172 C 4 FC: Tool tip appear in the output window             
+0174 C 2 PRT: GPF when print from dictionnary                 
+0175 C 3 DDC: Error making undo in a no-headline array .      
+0176 C 4 FBD:Superimposing of function  blocks.               
+0180 R 2 FC: execution wrong when a loop back           
+0184 C 4 IOWT: Error in "device index" selection box          
+0188 C 3 Error appear if you write an empty IP address        
+0190 C 3 CMP:Compile all program if delete local var          
+0191 C 3 Print: unavailable when Variables is selected        
+0192 C 3 DDC: Output parameter with dimension in FB           
+0194 C 3 Possible to create variable read and output          
+0196 C 4 Impossible to go to all variables after error        
+0197 C 3 Empty group if create a variable in a function       
+0203 C 4 GPF:Run EDSF1.exe without the protection key       
+0212 C 3 DDC:only the name is cut after select a row        
+0213 C 4 Error message in types item after creating str      
+0214 R 3 OS-9 ETCP error 700                                 
+0216 C 4 Number cells appears in the left of the grid        
+0217 C 3 Print: Page number of table of content is not print 
+0221 C 3 LD:Ladder pou can be modified in debug mode         
+0223 C 4 IOWT:debugging window appears in not debug mode     
+0224 C 2 Impossible to restart kernel if DINT / 0   PATCH    
+0225 C 3 Problem after stop all and restart the resource      
+0227 R 3 DTA:Error 513 appear during a long time in debug mode     
+0229 C 3 Print: Page numbering not correct                    
+0231 C 2 DTA use 100% of the CPU                              
+0233 C 3 LD:Double click on 1rst param open variable box    
+0234 R 3 CMP: bad generate code after compile FBD    PATCH253 
+0235 C 2 Download don't work if 1 configuration               
+0236 C 3 Download: if "save" option not checked-> error       
+0237 R 3 CMP no error with string array of a FB      PATCH253 
+0238 C 1 GPF: compile program with complex devices            
+0239 C 2 not able to change nb channels of cplex devices      
+0240 C 3 FC: Problems with copy paste of 'test' with LD code  
+0242 R 3 OEM parameters are missing after 3 resources   
+0243 C 3 Problem if check resource box to download            
+0244 R 3 Problem after call ixlResInfoGet, ixlResPouInfoGet        
+0245 C 3 CMP:Bad size of STRING OEM parameters                
+0248 C 3 IOWT :Impossible to change param of a device         
+0249 C 3 DTA does not pass any command line parameters        
+0250 C 2 not able to see value of IO of cplex in debug        
+0251 C 2 DPM not respond. if undo after connect variable      
+0252 C 2 DIP: incoherent information for complex devices      
+0253 C 1 IOWT:impossible to write param of complex dev.       
+0254 C 2 CMP: Array of array don't work in debug mode         
+0255 C 1 GPF IOWT: change complex devices to virtual          
+0257 C 2 Impossible to restart resources after do a stop all  
+0258 R 3 IOWT: Reverse of boolean channel doesn't work  
+0259 C 2 CMP: GPF if OEM param nb of cplx IO start at 1       
+0260 C 3 CMP:No errors appear if compile DINT:=ARRAY;         
+0261 C 3 SFC menu apear in small characters (win98 system)    
+0263 C 1 compile program with array and error in the array    
+0265 C 3 CMP: Error appear if do F(Var.Tab)                   
+0266 C 3 Errors appear in some case when we call F with arr.  
+0267 C 3 No check perform after open prj renamed in expl.     
+0268 R 3 CMP IL:error if compile LD A, AND( B OR C )          
+0269 C 2 FB Instance still in database after delete block     
+0271 C 1 start debug mode and open the LD prog of P00271      
+0275 C 3 LD: bad generate code after compile P00275           
+0276 C 3 LD:enable input is missing for '=' and '<>' blocks   
+0281 C 3 CMP: compile errors with temporary variables         
+0282 R 3 CMP: wrong generated code in the calling FB POU      
+0283 C 3 IOWT:debug array in wiring tool isn't always succes  
+0285 C 3 bad execution of USEND_S and URCV_S blocks           
+0287 C 1 GPF: expand an array of array in debug mode          
+0289 C 3 Always "reduced" symbol table                        
+0290 C 3 I/O : last channel variable still in unwired list    
+0293 C 3 SFC: In LD transition, after copy/paste -> 2 rungs   
+0296 C 3 CMP: error appear after compile P00296               
+0298 C 2 CMP error when input var. on a contact in FBD        
+0299 C 2 Error if left power bar is linked to LD connector    
+0301 C 2 FC Compiling/exec not OK when connector used         
+0302 C 2 DPM: FC child moved to Father, are still child       
+0303 C 2 Symbol not update after delete group connected to device  
+0306 C 1 FC: GPF after open father FC in debug mode           
+0307 C 1 After exec of sub-prog does not return to father     
+0308 C 2 Verify FBD generates a GPF (inp not connected)       
+0309 C 2 ?Refresh? for value when many var. in debug          
+0313 C 3 GPF: stop the debug mode when diagnosis is open      
+0315 R 3 Call 'ixl...ResStoredGet()' then a system error appears   
+0316 C 1 GPF IO panel (DIP) if local I/O                      
+0317 C 2 CMP:the instruction  X+1. is not executed            
+0318 C 2 If parse of symbol file has error file not closed    
+0319 C 1 DDC:GPF dictionary in debug with IOs local           
+0321 R 4 dsysDsaOpen() does not check successfull file open        
+0322 C 2 FC: Connector to End symbol -> bad Stf file          
+0325 C 1 GPF compile prog with function that return string    
+0327 C 3 CMP IL:no error if '*)' end of comment is missing    
+0329 C 2 Some VA of system variable are identical and wrong   
+0330 C 2 CMP:Some offsets in the table KVB are wrong          
+0331 C 4 unkown compile error after change in a FC program    
+0334 C 3 Resource still running after stop all                
+0335 C 1 DTA do GPF after start debug mode with 25 res.       
+0336 C 3 error after compile FBD program with sel and loop    
+0337 C 3 Ptr setup lost after print or close dialogue box     
+0339 C 3 DRVs (%) are not supported by FBD compiler           
+0341 C 3 END_IF unexpected if error in other step of SFC      
+0342 C 2 Connection error because of bad info in DDB          
+0343 C 2 CMP/FBD: if two blocks connected directly, errors    
+0344 C 1 GPF:find/replace after close SFC prog                
+0345 C 2 SFC: GPF after Find/Replace - Replace All            
+0347 C 3 Print: up/down buttons of margins are in reverse     
+0348 C 3 CMP error: we want write in a not wiring bool out.   
+0349 C 1 binding crash with ETCP driver on VxWorks,...        
+0350 C 2 Pb when download several resources at the same tim   
+0352 R 3 DIP execution problem with simple string device           
+0353 C 1 CMP/DGE: GPF when start compile FBD program          
+0355 C 2 err if corner used after var connect to block ouput  
+0357 C 2 FBD/CMP: err if 2 blocks interconnected              
+0358 C 2 Error not expected if use Case or instance of FB     
+0359 C 2 kernel TIC unknown tic code (wrong goto offset)      
+0360 C 4 Wrong execution of two block intances calls               
+0361 C 3 ETCP closes bad socket descriptor of zero value           
+0362 C 2 Bad code generate after comp. FBD program with LD    
+0363 C 1 DGE/CMP: GPF when start compiling a func block       
+0366 C 3 DTA:Variables not refreshed in cycle to cycle mode   
+0367 C 2 CMP: No error for Boo action on a non-existing var   
+0369 R 4 No test on value of hidden parameter                      
+0371 C 2 TIC:FB parameter is a  array field with structure    
+0374 C 2 CMP: error not expected if do loop on OR operator    
+0378 C 2 CMP/FBD: corner + Not + and: Not is forgotten        
+0380 C 1 GPF: start debug mode after modify SFC program       
+0381 C 1 GPF when the DGE want to spy I/O variables           
+0382 C 3 error not expected with ANY_TO_BOOL and a loop       
+0383 C 3 FC: error appear when use connector to END           
+0384 C 1 FOR in a function block is not executed              
+0387 C 1 GPF if choosing 'no' in 'project renaming' dialog    
+0388 C 2 GPF : copy and paste of resource in the link arch.   
+0389 C 1 GPF: start debug in the DGE editor                   
+0392 C 1 CMP: if big program, code is segmented               
+0400 C 1 GPF if you try to spy defined words in DGE editor    
+0401 C 1 CMP:Initial value not set for outputs                
+0408 C 1 DPM : GPF & Blue screen after open close projects    
+0410 C 3 Zoom scroll bar not grayed if we are in level 2      
+0411 C 3 undo don't work after change connector to action     
+0412 C 3 Paste icon tool bar always visible in the tool bar   
+0414 C 2 FC : code is lost after do a renumber                
+0415 C 4 FC:refresh not good after use 'go to' in edit menu   
+0418 C 3 FC : ST toolbar disappear after close action         
+0424 C 1 DGE not responding after align coil in LD editor     
+0425 C 1 FC:GPF after open child of father (father is open)   
+0426 C 3 FC : child do not appear in the list on subprogram   
+0427 C 2 delete type,var with ?? type changed to other type   
+0431 R 3 CMP:problem when  when create a mono array variable       
+0432 C 1 IOWT: GPF after change number of channel     
+0433 C 1 Opening FBD prg->GPF                                 
+0434 C 1 GPF in HW view after delete conf & move conf         
+0436 C 4 FC: Problem with refresh when modify a test          
+0437 C 2 GPF : CnxNbr in DTA.ini is set to (Rnb+1)*2-1        
+0438 C 2 Impossible to download more than 16 resources        
+0439 C 3 LD: variable not refresh in debug mode               
+0444 C 1 IOWT:GPF after change 'number of channels' and no save    
+D001 C 1 DPM not responding if click on sort ascending      
+D002 C 1 GPF: create structure and delete it                
+D005 C 1 double click on 'defined words' cell in debug mode 
+D008 C 1 Message box of duplicate variable always appeared  
+D009 C 1 GPF after expand array and stop debug mode   
+
+
+
+List of bugs corrected in the 4.01 release
+------------------------------------------
+
+0001 C 4 DDC: 'text' button in the color dialog box disappear      
+0004 C 3 CMP: Wrong compiler error message in ST                   
+0007 C 2 PRT: GPF after click on 'close' in document generator     
+0008 C 4 DPM: in Tile mode, the system menu of link do not appear  
+0009 C 4 DDC:missing control on dimension of a FB output           
+0011 C 5 Connection with communication function block failed       
+0015 C 2 DDC: Arrays: PB when deploying them, dim aren't OK        
+0018 C 3 HLP: tgvmbiev.htm wrong error variable name               
+0019 C 4 HLP: tgcfcf.htm,tgcfcb.htm  _BUFFER should be _BUFADD     
+0020 C 2 PRT: GPF after click on 'close' in document generator     
+0026 C 4 DPM: Prohibited characters in variable groups' names.     
+0027 C 2 DDC: impossible to define defined words without pb        
+0029 C 2 Can't swap Yes/NO on Retain cells after Close/Open        
+0030 C 4 Comment cell in defined words is paint                    
+0031 C 3 Message appear if you go to I/O and you return to DDC     
+0034 C 4 Cross displayed after change type of instance to BOOL     
+0037 C 4 DDC: control icon's menu is empty.                        
+0038 C 2 DPM: possible to delete all the configs and resources     
+0040 C 3 Dongle not recognised if MoxGRAF dongle also present      
+0045 C 3 Error in "Reserved word" table                            
+0047 C 4 luISA_CLKRATE variable init missing in Vxw startup Scrip  
+0051 C 3 Bad init of var managing warnings in target               
+0052 C 4 DPM:Possibility to make cells disappear                   
+0053 C 3 Format for F parameters is not the same (3.30 and Pro)    
+0054 C 4 In Windows 98 systems: ADD program appear in small chara  
+0055 C 4 DPM:Only icon, no text available in cut option .          
+0056 C 4 DPM:overlap of network and configuration.                 
+0057 C 2 DPM:GPF making CTRL+Z (hardware view)                     
+0058 C 3 DPM:cut resource should not be available                  
+0063 C 4 DPM:Help not open in 'ResourceProperties',target/code...  
+0065 C 4 NDPM:Spelling mistake: "Extented" tab should be "Extende  
+0066 C 4 DPM: Hardware architecture no control in config name      
+0069 C 2 ENO should not be added as output of ANY_TO_BOOL          
+0071 C 2 GPF after choose no in the I/O wiring editor              
+0072 C 3 I/O wiring:Free I/O device channels always appear         
+0073 C 2 IOWT:Selecting any board will lead to CPU usage near 60%  
+0076 C 4 FC:The title of the option toolbar is missing             
+0079 C 4 FC: The zoom+ in debug mode doesn't work                  
+0080 C 3 IOWT:two successive dialogs box appear after exit         
+0082 C 4 DGE: Place a block near one input two input are linked    
+0083 C 4 DGE: Dictionary shouldn't be restore                      
+0085 C 2 PRT:pages are overlapping                                 
+0090 C 3 FBD: 'C' user function,short name disappear               
+0091 C 3 DPM:GPF if try to open a binding link                     
+0093 C 4 SFC: Cursor not updated after delete                      
+0094 C 4 SFC: "detail level2" displays the ST toolbar              
+0096 C 4 SFC: select level2 with drag&drop shows black portion     
+0097 C 3 On line modification: bad message about CRC occured       
+0099 C 3 ST:In debug mode, can't spy STRING variables              
+0101 C 3 Undo does work well in FC                                 
+0102 C 4 Program description not saved from editors                
+0103 C 4 FC: no pop-up menu when multi selection                   
+0106 C 3 SFC: Find/replace does not work well                      
+0109 C 4 function AND_MASK, OR_MASK, NOT_MASK, XOR_MASK: get help  
+0111 C 4 HLP:remove in dbapix the line about version               
+0119 C 3 FBD:print with japanese comment truncated                 
+0122 C 3 SFC:change language to an ST action & clicl in level1(no  
+0123 C 4 SFC:zoom bar can't be moved completly to the left         
+0124 C 3 SFC:it is possible to place jump over step                
+0125 C 4 SFC:visual link of  2 transition or 2 steps               
+0127 C 4 FC: previous LD level2 appears in new LD level2           
+0128 C 3 it's possible to delete language type or  action qualifi  
+0129 C 3 SFC:move a divergence to the left of the screen           
+0132 C 2 FC 2nd level of actions overlap Footer                    
+0133 C 4 SFC:invisible  branch of link when move it to the left    
+0142 C 4 SFC:Steps are renamed when move in the graph with arrows  
+0145 C 4 PRT:history with big font ->text overlaps lines           
+0146 C 3 Compiler: Error in ST .                                   
+0148 C 3 PRT: table of content does not show POU name              
+0149 C 3 HELP: replace long by unsigned long in Pro.chm            
+0150 C 3 SFC: code lost if you place comment in action name        
+0151 C 3 FC PRT: LD comment of action or test is not in Japanese   
+0152 C 4 Compiler: "10"constant  is known only like sint.          
+0153 C 2 SCC: missing ' ) ' in the generate code                   
+0154 C 1 DDC: GPF after save resize cell of structure              
+0156 C 3 SCC: DINT constant not declared in the aplli.h            
+0157 C 3 SCC: execution problem with a project with 2 functions    
+0159 C 2 DDC: possible to create instance with input direction     
+0160 C 1 DDC: GPF adding a row betwen variable's dimensions        
+0164 C 4 Compiler: Unexp. error compiling an array with [0..0] di  
+0166 C 3 No compilation error when do v_tab_dint[ v_tab_dint ]     
+0167 C 1 CMP: GPF after compile tab_dint[ 1 + v_tab_dint ]         
+0168 C 3 CMP: 2 programs are compiled even though no modification  
+
+
+
+

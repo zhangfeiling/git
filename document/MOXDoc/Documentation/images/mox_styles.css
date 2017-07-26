@@ -1,0 +1,228 @@
+/* MOX Products CD CSS file */
+
+/*/////////////////////////////////////////////
+Defaults and Main Overides
+/////////////////////////////////////////////*/
+
+* {margin: 0;	padding: 0; color: #666666;}
+
+/*/////////////////////////////////////////////
+Layout
+/////////////////////////////////////////////*/
+
+body {
+	margin: 0 auto;
+	width: 800px;
+	border: 1px solid #00A1A1;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#banner {
+	background: url(banner.png);
+	width: 800px;
+	height: 215px;
+}
+
+#banner * {display: none;}
+
+#footer {
+	width: 800px;
+}
+
+/*/////////////////////////////////////////////
+Home Page
+/////////////////////////////////////////////*/
+
+.hardware, .software, .project {
+	width: 200px;
+	height: 200px;
+	float: left;
+}
+
+.hardware, .software {
+	height: 250px;
+}
+
+.project {
+	height: 600px;
+}
+
+h1 {
+	width: 200px;
+	height: 35px;
+	color: white;
+	font-weight: bold;
+	font-size: 70%;
+	background: #516869 url(heading_line.png) 199px 9px no-repeat;
+	line-height: 35px;
+	text-indent: 30px;
+	text-align: left;
+}
+
+span h1 {
+	background: #516869 
+}
+
+ul {margin-top: 10px;}
+
+li {
+	list-style: none;
+	text-indent: 30px;
+	font-size: 60%;
+	line-height: 20px;
+}
+
+/*/////////////////////////////////////////////
+Normal Pages
+/////////////////////////////////////////////*/
+#main {
+	margin-left: 21px;
+}
+
+#main h2 {
+	color: #41B9B8;
+	margin: 20px;
+	
+}
+
+#main h3 {
+	color: #41B9B8;
+	margin: 15px 20px 10px 20px;
+	font-weight: normal;
+	font-size: 16pt;
+}
+
+#main p {
+	margin: 20px;
+	font-size: 70%;
+	line-height: 180%;
+}
+
+#main blockquote {
+	margin: 20px 20px 20px 20px;/*
+	width: 500px;
+	font-size: 85%;
+	line-height: 160%;*/
+	color: #BDC7BD;
+	font-size: 12pt;
+	font-weight: bold;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	width: 75%;
+	line-height: 140%;
+}
+
+#main li {
+	background: url(bullet.png) 11px 7px no-repeat;
+	font-size: 70%;
+	text-indent: 20px;
+}
+
+#main li.resources {
+	background: none;
+}
+
+#main ul {
+	margin-left: 10px
+}
+
+#main img.right {
+	float: right;
+	margin-right: 60px;
+}
+
+/*/////////////////////////////////////////////
+Quick Links
+/////////////////////////////////////////////*/
+#quick {
+	float: right;
+	width: 190px;
+	margin: 10px;
+	padding: 0;
+}
+
+#quick ul {
+	list-style-type: none;
+	background: none;
+	margin: 0px
+	padding: 0px;
+}
+
+#quick ul li {
+	
+}
+
+#quick li a.alt, #quick li a.alt:link, #quick li a.alt:visited {
+	background: #41B9B8;
+}
+
+#quick li a, #quick li a:link, #quick li a:visited {
+	display: block;
+	padding: 14px 12px 1px 0;
+	margin: 0;
+	text-align: left;
+	background: #01A1A1;
+	text-indent: 10px;
+	color: white;
+	width: 168px;
+}
+
+#quick li a:hover, #quick li a.alt:hover {
+	background: #53C5C4;
+}
+
+#quick li a.home, #quick li a.home:link, #quick li a.home:visited {
+	background: white;
+	border: 1px solid #01A1A1;
+	margin: 0px 0 2px 0;
+	color: #01A1A1;
+	width: 166px;
+}
+
+#quick li a.home:hover {
+	background: #DEF3F3;
+}
+/*/////////////////////////////////////////////
+Navigation and Links
+/////////////////////////////////////////////*/
+
+a, a:link, a:visited {
+	color: #8D9A9B;
+	text-decoration: none;
+	background: url(bullet.png) no-repeat 0 4px;
+	padding-left: 5px;
+}
+
+a:hover {	
+	background: none;
+	padding-left: 0;
+}
+
+/*/////////////////////////////////////////////
+Footer
+/////////////////////////////////////////////*/
+
+#footer {
+	margin-top: 30px;
+}
+
+#footer p {
+	margin-left: 30px;
+	font-size: 60%;
+	color:#9FDCDD;
+	margin-bottom: 8px;
+}
+
+#footer p span {
+margin-left: 60px;
+}
+
+#footer a, #footer a:link, #footer a:visited  {
+	color: #00AEAE;
+	background: none;
+	padding: 0;
+	text-decoration: underline;
+}
+
+#footer a:hover {
+	color: #01A1A1;
+}
